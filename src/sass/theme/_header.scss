@@ -1,0 +1,139 @@
+header {
+  background-color: var(--col-white) !important;
+  transition: background-color 0.3s ease;
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  a,
+  a.nav-link {
+    font-family: var(--ff-body);
+    font-size: var(--fs-200);
+    font-weight: var(--fw-light);
+    color: var(--col-primary-black);
+    transition:
+      color var(--transition),
+      font-weight var(--transition);
+    display: inline-block;
+    text-decoration: none;
+    padding: 0;
+    position: relative;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: var(--col-primary-black);
+      text-decoration: none;
+      font-weight: var(--fw-semi);
+    }
+  }
+
+  .navbar-nav .nav-link {
+    display: inline-grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link::after {
+    content: attr(data-text);
+    font-weight: var(--fw-semi);
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .logo-clip {
+    overflow: hidden;
+    display: inline-block;
+    height: 25px;
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
+
+  // Keep a reasonable min-width on larger screens but allow smaller viewports to shrink.
+  @media (min-width: 992px) {
+    .logo-clip {
+      min-width: 240px;
+    }
+  }
+  .logo-inner {
+    display: inline-block;
+    transform: translateX(0);
+    svg {
+      display: block;
+      height: 25px;
+      width: auto;
+    }
+  }
+
+  .current_page_item > .nav-link,
+  .current_page_parent > .nav-link,
+  .current-page-ancestor > .nav-link,
+  .current-menu-parent > .nav-link,
+  .current-menu-ancestor > .nav-link,
+  .dropdown.current-page-ancestor > .nav-link,
+  .dropdown.current-menu-item > .nav-link {
+    color: var(--col-lime-900);
+    font-weight: var(--fw-semi);
+  }
+
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      min-height: 100svh;
+      /* Do not set display:flex or height, let Bootstrap animate */
+    }
+    .navbar-nav {
+      width: 100%;
+      padding-bottom: 2rem;
+    }
+    .nav-link,
+    .navbar-nav .nav-link {
+      font-size: var(--fs-600);
+      padding: 1rem 0;
+    }
+    .dropdown-item {
+      font-size: var(--fs-600);
+    }
+
+    .fs-subtle a {
+      font-size: var(--fs-600);
+    }
+  }
+
+  // Override Bootstrap dropdown arrow with Font Awesome icon
+  .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    content: "\f107"; // Font Awesome angle-down icon
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    border: none;
+  }
+
+  .navbar-nav {
+    margin-block: 0;
+  }
+
+  .navbar-toggler {
+    color: var(--col-primary-black);
+  }
+}
+
+.navbar-collapse.collapse.show {
+  background-color: var(--col-white);
+  border-color: var(--col-neutral-50);
+  ul {
+    padding-block-start: 3rem;
+    padding-inline-start: 1.5rem;
+  }
+}
+
+header:has(.navbar-collapse.collapse.show) {
+  background-color: var(--col-white) !important;
+}
+.collapse,
+.collapsing {
+  transition: none !important;
+}

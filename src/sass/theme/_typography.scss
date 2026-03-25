@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "Suisse";
+  src:
+    url("../fonts/SuisseIntl-Light.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse";
+  src:
+    url("../fonts/SuisseIntl-Regular.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse";
+  src:
+    url("../fonts/SuisseIntl-SemiBold.woff2") format("woff2"),
+    url("../fonts/SuisseIntl-SemiBold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// :root {
+//   font-variant-ligatures: none;
+// }
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+body,
+.body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// =========================
+// TYPOGRAPHY
+// =========================
+
+// Headings
+h1,
+.h1 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-700);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  // text-wrap: balance;
+  margin-bottom: 0;
+}
+h2,
+.h2 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-light);
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  // text-wrap: balance;
+}
+h3,
+.h3 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h3-page-subtitle);
+  line-height: 1.2;
+  // text-wrap: balance;
+}
+h4,
+.h4 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h4-body-bold);
+  line-height: var(--lh-h4-body-bold);
+  font-weight: var(--fw-bold);
+  // text-wrap: balance;
+}
+
+// Button text
+.button-text,
+button,
+.btn {
+  font-family: var(--ff-body);
+  font-size: var(--fs-700-text);
+  line-height: var(--lh-button-text);
+  font-weight: var(--fw-button-text);
+}
+
+// Helper classes for standalone typography variables
+.fw-light {
+  font-weight: var(--fw-light);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-semi {
+  font-weight: var(--fw-semi);
+}
+
+.fs-50 {
+  font-size: var(--fs-50);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-850 {
+  font-size: var(--fs-850);
+}
+.fs-875 {
+  font-size: var(--fs-875);
+}
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-950 {
+  font-size: var(--fs-950);
+}
+
+.lh-tightest {
+  line-height: var(--lh-tightest);
+}
+.lh-tight {
+  line-height: var(--lh-tight);
+}
+.lh-normal {
+  line-height: var(--lh-normal);
+}
+
+// Links
+a {
+  color: var(--col-accent-400);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:focus-visible {
+  outline: 2px solid var(--col-accent-400);
+  outline-offset: 2px;
+}
+
+// Media rhythm
+p,
+ul,
+ol,
+blockquote,
+figure {
+  margin-block: 0.75em;
+}
+.w-constrained-md {
+  max-width: 72ch;
+  text-wrap: balance;
+}
+
+.w-constrained-40 {
+  max-width: 40ch;
+  text-wrap: balance;
+}
+
+.w-constrained {
+  max-width: var(--width, 60ch);
+}
+
+strong {
+  font-weight: var(--fw-semi);
+}
+
+.text-balance {
+  text-wrap: balance;
+}

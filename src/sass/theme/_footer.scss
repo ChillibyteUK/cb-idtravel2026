@@ -66,5 +66,8 @@
   &__colophon {
     color: var(--col-neutral-700);
     font-size: var(--fs-50);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-100);
+    letter-spacing: var(--ls-20);
   }
 }

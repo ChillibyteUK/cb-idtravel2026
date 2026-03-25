@@ -60,39 +60,52 @@ h2,
 h3,
 .h3,
 h4,
-.h4 {
+.h4,
+.font-h1,
+.font-h2,
+.font-h3,
+.font-h4 {
   font-family: var(--font-family);
 }
 
 h1,
-.h1 {
+.h1,
+.font-h1 {
   font-size: var(--fs-850);
   font-weight: var(--fw-book);
   line-height: var(--lh-850);
-  letter-spacing: -0.01em;
-  margin-bottom: 0;
+  letter-spacing: var(--ls--15);
 }
 
 h2,
-.h2 {
+.h2,
+.font-h2 {
   font-size: var(--fs-700);
   font-weight: var(--fw-book);
   line-height: var(--lh-700);
-  letter-spacing: -0.005em;
+  letter-spacing: var(--ls--10);
 }
 
 h3,
-.h3 {
+.h3,
+.font-h3 {
   font-size: var(--fs-600);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-600);
+  letter-spacing: var(--ls--5);
 }
 
 h4,
-.h4 {
+.h4,
+.font-h4 {
   font-size: var(--fs-500);
   line-height: var(--lh-500);
   font-weight: var(--fw-semibold);
+}
+
+h1,
+.h1 {
+  margin-bottom: 0;
 }
 
 // Button text
@@ -103,6 +116,7 @@ button,
   font-size: var(--fs-100);
   line-height: var(--lh-100);
   font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-10);
 }
 
 /* base */
@@ -110,6 +124,7 @@ button,
   font-size: var(--fs-50);
   font-weight: var(--fw-regular);
   line-height: var(--lh-50);
+  letter-spacing: var(--ls-20);
 }
 
 .font-body {
@@ -123,7 +138,7 @@ button,
   font-weight: var(--fw-regular);
   line-height: var(--lh-200);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls--40);
 }
 
 /* shared tokens */
@@ -133,13 +148,11 @@ button,
   line-height: var(--lh-400);
 }
 
-.font-callout,
-.font-h3 {
+.font-callout {
   font-size: var(--fs-600);
 }
 
-.font-callout-large,
-.font-h2 {
+.font-callout-large {
   font-size: var(--fs-700);
 }
 
@@ -152,48 +165,28 @@ button,
   font-weight: var(--fw-semibold);
 }
 
-.font-h4 {
-  font-size: var(--fs-500);
-  font-weight: var(--fw-semibold);
-  line-height: var(--lh-500);
-}
-
-.font-h3 {
-  font-weight: var(--fw-semibold);
-  line-height: var(--lh-600);
-}
-
-.font-h2 {
-  font-weight: var(--fw-book);
-  line-height: var(--lh-700);
-}
-
-.font-h1 {
-  font-size: var(--fs-850);
-  font-weight: var(--fw-book);
-  line-height: var(--lh-850);
-}
-
 .font-callout {
   font-weight: var(--fw-light);
-  line-height: 1.25;
+  line-height: var(--lh-500);
 }
 
 .font-callout-large {
   font-weight: var(--fw-light);
-  line-height: 1.2;
+  line-height: var(--lh-600);
 }
 
 .font-hero {
   font-size: var(--fs-875);
   font-weight: var(--fw-book);
   line-height: var(--lh-875);
+  letter-spacing: var(--ls--30);
 }
 
 .font-hero-lg {
   font-size: var(--fs-900);
   font-weight: var(--fw-book);
   line-height: var(--lh-900);
+  letter-spacing: var(--ls--40);
 }
 
 // Helper classes for standalone typography variables

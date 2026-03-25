@@ -1,16 +1,16 @@
 header {
-  background-color: var(--col-white) !important;
+  background-color: var(--col-ink) !important;
   transition: background-color 0.3s ease;
   &.scrolled {
-    background-color: rgba(255, 255, 255, 0.6) !important;
+    background-color: hsla( 250, 48%, 10%, 0.6 ) !important;
   }
 
   a,
   a.nav-link {
-    font-family: var(--ff-body);
-    font-size: var(--fs-200);
-    font-weight: var(--fw-light);
-    color: var(--col-primary-black);
+    font-family: var(--font-family);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-regular);
+    color: var(--col-white);
     transition:
       color var(--transition),
       font-weight var(--transition);
@@ -21,9 +21,9 @@ header {
     &:hover,
     &:focus,
     &:focus-visible {
-      color: var(--col-primary-black);
+      color: var(--col-primary-250);
       text-decoration: none;
-      font-weight: var(--fw-semi);
+      font-weight: var(--fw-semibold);
     }
   }
 
@@ -35,7 +35,7 @@ header {
 
   .navbar-nav .nav-link::after {
     content: attr(data-text);
-    font-weight: var(--fw-semi);
+    font-weight: var(--fw-semibold);
     display: block;
     height: 0;
     overflow: hidden;
@@ -74,8 +74,8 @@ header {
   .current-menu-ancestor > .nav-link,
   .dropdown.current-page-ancestor > .nav-link,
   .dropdown.current-menu-item > .nav-link {
-    color: var(--col-lime-900);
-    font-weight: var(--fw-semi);
+    color: var(--col-primary-250);
+    font-weight: var(--fw-semibold);
   }
 
   @media (max-width: 991px) {
@@ -117,7 +117,7 @@ header {
   }
 
   .navbar-toggler {
-    color: var(--col-primary-black);
+    color: var(--col-white);
   }
 }
 

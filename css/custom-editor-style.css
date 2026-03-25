@@ -1,36 +1,86 @@
 @charset "UTF-8";
 :root {
-  /* =========================
-     COLOURS (HSL + computed)
-     ========================= */
-  --hsl-primary-black: 60 4% 5%;
-  --col-primary-black: hsl(var(--hsl-primary-black));
-  --col-white: #fff;
-  --col-neutral-1100: #22211e;
-  --col-neutral-900: #505049;
-  --col-neutral-800: #5e5d55;
-  --hsl-neutral-800: 53 5% 35%;
-  --col-neutral-700: #77766c;
-  --col-neutral-600: #939287;
-  --col-neutral-500: #aeada1;
-  --col-neutral-400: #c9c7bc;
-  --col-neutral-300: #dddcd2;
-  --col-neutral-200: #ebe9e1;
-  --col-neutral-100: #f8f7f0;
-  --col-purple-900: #2f13ba;
-  --col-lime-1100: #345a00;
-  --hsl-lime-1000: 85 100% 21%;
-  --col-lime-1000: hsl(var(--hsl-lime-1000));
-  --hsl-lime-900: 85 100% 25%;
-  --col-lime-900: hsl(var(--hsl-lime-900));
-  --col-lime-800: #5e9f00;
-  --col-lime-600: #94dd2c;
-  --col-lime-400: #b8ff52;
-  --hsl-lime-300: 85 95% 75%;
-  --col-lime-300: hsl(var(--hsl-lime-300));
-  --hsl-lime-200: 85 90% 84%;
-  --col-lime-200: hsl(var(--hsl-lime-200));
-  --col-lime-100: #eefed9;
+  /* ========
+     COLOURS
+     ======== */
+  --col-white: #FFFFFF;
+  --col-neutral-050: #F7F6FA;
+  --col-neutral-100: #F0EFF4;
+  --col-neutral-150: #E7E6EC;
+  --col-neutral-200: #E0DFE6;
+  --col-neutral-250: #D7D5DE;
+  --col-neutral-300: #CFCDD9;
+  --col-neutral-350: #C3C0CF;
+  --col-neutral-400: #B6B3C3;
+  --col-neutral-450: #A9A5B8;
+  --col-neutral-500: #9793A8;
+  --col-neutral-550: #89859C;
+  --col-neutral-600: #77738C;
+  --col-neutral-650: #65617B;
+  --col-neutral-700: #55506B;
+  --col-neutral-750: #47425E;
+  --col-neutral-800: #3B3652;
+  --col-neutral-850: #2D2843;
+  --col-neutral-900: #1D1933;
+  --col-ink: #110D25;
+  --col-primary-050: #F2F5FF;
+  --col-primary-100: #E4EAFF;
+  --col-primary-150: #D1DAFF;
+  --col-primary-200: #BFCBFF;
+  --col-primary-250: #A7B6FF;
+  --col-primary-300: #8EA1FF;
+  --col-primary-350: #768BFF;
+  --col-primary-400: #5E75FF;
+  --col-primary-450: #4B63F5;
+  --col-primary-500: #3C52E0;
+  --col-primary-550: #3246C4;
+  --col-primary-600: #2A3AA8;
+  --col-primary-650: #232F8C;
+  --col-primary-700: #1C2571;
+  --col-primary-750: #161C56;
+  --col-primary-800: #11143D;
+  --col-primary-850: #0C0D27;
+  --col-primary-900: #070711;
+  --col-secondary-050: #F4FBF9;
+  --col-secondary-100: #E6F6F2;
+  --col-secondary-150: #D2EFE8;
+  --col-secondary-200: #BFE8DE;
+  --col-secondary-250: #A6DDCF;
+  --col-secondary-300: #8DD2C0;
+  --col-secondary-350: #74C7B1;
+  --col-secondary-400: #5BBCA2;
+  --col-secondary-450: #49AA90;
+  --col-secondary-500: #3A957E;
+  --col-secondary-550: #317F6C;
+  --col-secondary-600: #29695A;
+  --col-secondary-650: #215449;
+  --col-secondary-700: #1A4038;
+  --col-secondary-750: #132C27;
+  --col-secondary-800: #0D1A18;
+  --col-secondary-850: #070C0B;
+  --col-secondary-900: #030605;
+  --col-accent-050: #FFF7F2;
+  --col-accent-100: #FFEFE5;
+  --col-accent-150: #FFDFCC;
+  --col-accent-200: #FFD0B2;
+  --col-accent-250: #FFBE94;
+  --col-accent-300: #FFAD75;
+  --col-accent-350: #FF9C57;
+  --col-accent-400: #FF8B38;
+  --col-accent-450: #F07C2E;
+  --col-accent-500: #D96D26;
+  --col-accent-550: #BF5F1F;
+  --col-accent-600: #A65119;
+  --col-accent-650: #8C4313;
+  --col-accent-700: #73360E;
+  --col-accent-750: #59280A;
+  --col-accent-800: #401C06;
+  --col-accent-850: #261003;
+  --col-accent-900: #120801;
+  --col-success-500: #2E9B5F;
+  --col-warning-500: #F2A900;
+  --col-error-500: #D64545;
+  --col-info-500: #3A7BD5;
   --grad-main: linear-gradient(
     to bottom,
     var(--col-white),
@@ -41,39 +91,40 @@
   /* =========================
      TYPOGRAPHY (families/weights)
      ========================= */
-  --ff-heading:
-    "Suisse", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  --font-family:
+    "Suisse International", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --ff-body:
-    "Suisse", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --fw-semi: 500; /* Semi */
-  --fw-regular: 400; /* Regular */
-  --fw-light: 300; /* Light */
-  --lh-tightest: 1;
-  --lh-tight: 1.1;
-  --lh-snug: 1.2;
-  --lh-normal: 1.5;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-book: 450;
+  --fw-semibold: 600;
+  /* line heights */
+  --lh-50: 1.4;
+  --lh-100: 1.55;
+  --lh-200: 1.5;
+  --lh-400: 1.3;
+  --lh-500: 1.25;
+  --lh-600: 1.2;
+  --lh-700: 1.15;
+  --lh-850: 1.1;
+  --lh-875: 1.05;
+  --lh-900: 1;
   /* =========================
     TYPOGRAPHY
     ========================= */
   /* body size defined globally */
   --fs-body: 18px;
-  /* fixed base levels */
-  --fs-50: 0.8889rem; /* ~16px */
-  --fs-100: 1rem; /* 18px floor and cap */
-  --fs-200: 1.125rem; /* ~20px floor and cap */
-  /* fluid-down heading levels – refined lower scaling */
-  --fs-300: clamp(1rem, 0.95rem + 0.5vw, 1.25rem); /* 16→22px */
-  --fs-400: clamp(1.0625rem, 0.9rem + 0.6vw, 1.375rem); /* 17→25px */
-  --fs-500: clamp(1.1875rem, 0.9rem + 1vw, 1.751rem); /* 19→32px */
-  --fs-600: clamp(1.3125rem, 0.9rem + 1.2vw, 1.999rem); /* 21→36px */
-  --fs-700: clamp(1.4375rem, 0.9rem + 1.4vw, 2.25rem); /* 23→40px */
-  --fs-800: clamp(1.5rem, 0.9rem + 1.6vw, 2.5rem); /* 24→45px */
-  --fs-850: clamp(1.875rem, 0.95rem + 1.9vw, 3.125rem); /* 30→56px */
-  --fs-875: clamp(2.25rem, 1rem + 2.2vw, 3.5rem); /* 36→72px */
-  --fs-900: clamp(2.5rem, 1rem + 3vw, 5rem); /* 48→90px */
-  --fs-950: clamp(3.4375rem, 1rem + 4vw, 6.25rem); /* 55→112px */
+  /* font sizes (fluid clamp: min, preferred, max) */
+  --fs-50: 0.8889rem;
+  --fs-100: 1rem;
+  --fs-200: 1.1111rem;
+  --fs-400: clamp(1.2222rem, 1.1rem + 0.6vw, 1.375rem);
+  --fs-500: clamp(1.4444rem, 1.25rem + 0.9vw, 1.75rem);
+  --fs-600: clamp(1.6667rem, 1.4rem + 1.2vw, 2rem);
+  --fs-700: clamp(1.9444rem, 1.6rem + 1.4vw, 2.25rem);
+  --fs-850: clamp(2.3333rem, 1.9rem + 2vw, 3.125rem);
+  --fs-875: clamp(2.7778rem, 2.2rem + 2.5vw, 3.5rem);
+  --fs-900: clamp(3.3333rem, 2.6rem + 3vw, 5rem);
   /* === Utilities === */
   --transition: 250ms ease-out;
   --h-top: 57px;
@@ -81,37 +132,87 @@
 }
 
 :root {
-  /* =========================
-     COLOURS (HSL + computed)
-     ========================= */
-  --hsl-primary-black: 60 4% 5%;
-  --col-primary-black: hsl(var(--hsl-primary-black));
-  --col-white: #fff;
-  --col-neutral-1100: #22211e;
-  --col-neutral-900: #505049;
-  --col-neutral-800: #5e5d55;
-  --hsl-neutral-800: 53 5% 35%;
-  --col-neutral-700: #77766c;
-  --col-neutral-600: #939287;
-  --col-neutral-500: #aeada1;
-  --col-neutral-400: #c9c7bc;
-  --col-neutral-300: #dddcd2;
-  --col-neutral-200: #ebe9e1;
-  --col-neutral-100: #f8f7f0;
-  --col-purple-900: #2f13ba;
-  --col-lime-1100: #345a00;
-  --hsl-lime-1000: 85 100% 21%;
-  --col-lime-1000: hsl(var(--hsl-lime-1000));
-  --hsl-lime-900: 85 100% 25%;
-  --col-lime-900: hsl(var(--hsl-lime-900));
-  --col-lime-800: #5e9f00;
-  --col-lime-600: #94dd2c;
-  --col-lime-400: #b8ff52;
-  --hsl-lime-300: 85 95% 75%;
-  --col-lime-300: hsl(var(--hsl-lime-300));
-  --hsl-lime-200: 85 90% 84%;
-  --col-lime-200: hsl(var(--hsl-lime-200));
-  --col-lime-100: #eefed9;
+  /* ========
+     COLOURS
+     ======== */
+  --col-white: #FFFFFF;
+  --col-neutral-050: #F7F6FA;
+  --col-neutral-100: #F0EFF4;
+  --col-neutral-150: #E7E6EC;
+  --col-neutral-200: #E0DFE6;
+  --col-neutral-250: #D7D5DE;
+  --col-neutral-300: #CFCDD9;
+  --col-neutral-350: #C3C0CF;
+  --col-neutral-400: #B6B3C3;
+  --col-neutral-450: #A9A5B8;
+  --col-neutral-500: #9793A8;
+  --col-neutral-550: #89859C;
+  --col-neutral-600: #77738C;
+  --col-neutral-650: #65617B;
+  --col-neutral-700: #55506B;
+  --col-neutral-750: #47425E;
+  --col-neutral-800: #3B3652;
+  --col-neutral-850: #2D2843;
+  --col-neutral-900: #1D1933;
+  --col-ink: #110D25;
+  --col-primary-050: #F2F5FF;
+  --col-primary-100: #E4EAFF;
+  --col-primary-150: #D1DAFF;
+  --col-primary-200: #BFCBFF;
+  --col-primary-250: #A7B6FF;
+  --col-primary-300: #8EA1FF;
+  --col-primary-350: #768BFF;
+  --col-primary-400: #5E75FF;
+  --col-primary-450: #4B63F5;
+  --col-primary-500: #3C52E0;
+  --col-primary-550: #3246C4;
+  --col-primary-600: #2A3AA8;
+  --col-primary-650: #232F8C;
+  --col-primary-700: #1C2571;
+  --col-primary-750: #161C56;
+  --col-primary-800: #11143D;
+  --col-primary-850: #0C0D27;
+  --col-primary-900: #070711;
+  --col-secondary-050: #F4FBF9;
+  --col-secondary-100: #E6F6F2;
+  --col-secondary-150: #D2EFE8;
+  --col-secondary-200: #BFE8DE;
+  --col-secondary-250: #A6DDCF;
+  --col-secondary-300: #8DD2C0;
+  --col-secondary-350: #74C7B1;
+  --col-secondary-400: #5BBCA2;
+  --col-secondary-450: #49AA90;
+  --col-secondary-500: #3A957E;
+  --col-secondary-550: #317F6C;
+  --col-secondary-600: #29695A;
+  --col-secondary-650: #215449;
+  --col-secondary-700: #1A4038;
+  --col-secondary-750: #132C27;
+  --col-secondary-800: #0D1A18;
+  --col-secondary-850: #070C0B;
+  --col-secondary-900: #030605;
+  --col-accent-050: #FFF7F2;
+  --col-accent-100: #FFEFE5;
+  --col-accent-150: #FFDFCC;
+  --col-accent-200: #FFD0B2;
+  --col-accent-250: #FFBE94;
+  --col-accent-300: #FFAD75;
+  --col-accent-350: #FF9C57;
+  --col-accent-400: #FF8B38;
+  --col-accent-450: #F07C2E;
+  --col-accent-500: #D96D26;
+  --col-accent-550: #BF5F1F;
+  --col-accent-600: #A65119;
+  --col-accent-650: #8C4313;
+  --col-accent-700: #73360E;
+  --col-accent-750: #59280A;
+  --col-accent-800: #401C06;
+  --col-accent-850: #261003;
+  --col-accent-900: #120801;
+  --col-success-500: #2E9B5F;
+  --col-warning-500: #F2A900;
+  --col-error-500: #D64545;
+  --col-info-500: #3A7BD5;
   --grad-main: linear-gradient(
     to bottom,
     var(--col-white),
@@ -122,39 +223,40 @@
   /* =========================
      TYPOGRAPHY (families/weights)
      ========================= */
-  --ff-heading:
-    "Suisse", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  --font-family:
+    "Suisse International", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --ff-body:
-    "Suisse", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --fw-semi: 500; /* Semi */
-  --fw-regular: 400; /* Regular */
-  --fw-light: 300; /* Light */
-  --lh-tightest: 1;
-  --lh-tight: 1.1;
-  --lh-snug: 1.2;
-  --lh-normal: 1.5;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-book: 450;
+  --fw-semibold: 600;
+  /* line heights */
+  --lh-50: 1.4;
+  --lh-100: 1.55;
+  --lh-200: 1.5;
+  --lh-400: 1.3;
+  --lh-500: 1.25;
+  --lh-600: 1.2;
+  --lh-700: 1.15;
+  --lh-850: 1.1;
+  --lh-875: 1.05;
+  --lh-900: 1;
   /* =========================
     TYPOGRAPHY
     ========================= */
   /* body size defined globally */
   --fs-body: 18px;
-  /* fixed base levels */
-  --fs-50: 0.8889rem; /* ~16px */
-  --fs-100: 1rem; /* 18px floor and cap */
-  --fs-200: 1.125rem; /* ~20px floor and cap */
-  /* fluid-down heading levels – refined lower scaling */
-  --fs-300: clamp(1rem, 0.95rem + 0.5vw, 1.25rem); /* 16→22px */
-  --fs-400: clamp(1.0625rem, 0.9rem + 0.6vw, 1.375rem); /* 17→25px */
-  --fs-500: clamp(1.1875rem, 0.9rem + 1vw, 1.751rem); /* 19→32px */
-  --fs-600: clamp(1.3125rem, 0.9rem + 1.2vw, 1.999rem); /* 21→36px */
-  --fs-700: clamp(1.4375rem, 0.9rem + 1.4vw, 2.25rem); /* 23→40px */
-  --fs-800: clamp(1.5rem, 0.9rem + 1.6vw, 2.5rem); /* 24→45px */
-  --fs-850: clamp(1.875rem, 0.95rem + 1.9vw, 3.125rem); /* 30→56px */
-  --fs-875: clamp(2.25rem, 1rem + 2.2vw, 3.5rem); /* 36→72px */
-  --fs-900: clamp(2.5rem, 1rem + 3vw, 5rem); /* 48→90px */
-  --fs-950: clamp(3.4375rem, 1rem + 4vw, 6.25rem); /* 55→112px */
+  /* font sizes (fluid clamp: min, preferred, max) */
+  --fs-50: 0.8889rem;
+  --fs-100: 1rem;
+  --fs-200: 1.1111rem;
+  --fs-400: clamp(1.2222rem, 1.1rem + 0.6vw, 1.375rem);
+  --fs-500: clamp(1.4444rem, 1.25rem + 0.9vw, 1.75rem);
+  --fs-600: clamp(1.6667rem, 1.4rem + 1.2vw, 2rem);
+  --fs-700: clamp(1.9444rem, 1.6rem + 1.4vw, 2.25rem);
+  --fs-850: clamp(2.3333rem, 1.9rem + 2vw, 3.125rem);
+  --fs-875: clamp(2.7778rem, 2.2rem + 2.5vw, 3.5rem);
+  --fs-900: clamp(3.3333rem, 2.6rem + 3vw, 5rem);
   /* === Utilities === */
   --transition: 250ms ease-out;
   --h-top: 57px;
@@ -251,8 +353,10 @@ p {
 }
 
 abbr[title] {
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
+  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
 }
 
@@ -2636,14 +2740,20 @@ progress {
 }
 
 .user-select-all {
+  -webkit-user-select: all !important;
+  -moz-user-select: all !important;
   user-select: all !important;
 }
 
 .user-select-auto {
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
   user-select: auto !important;
 }
 
 .user-select-none {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
   user-select: none !important;
 }
 

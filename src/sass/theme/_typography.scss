@@ -1,28 +1,30 @@
 @font-face {
-  font-family: "Suisse";
-  src:
-    url("../fonts/SuisseIntl-Light.woff2") format("woff2"),
-    url("../fonts/SuisseIntl-Light.woff") format("woff");
+  font-family: "Suisse International";
+  src: url("../fonts/SuisseIntl-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Suisse";
-  src:
-    url("../fonts/SuisseIntl-Regular.woff2") format("woff2"),
-    url("../fonts/SuisseIntl-Regular.woff") format("woff");
+  font-family: "Suisse International";
+  src: url("../fonts/SuisseIntl-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Suisse";
-  src:
-    url("../fonts/SuisseIntl-SemiBold.woff2") format("woff2"),
-    url("../fonts/SuisseIntl-SemiBold.woff") format("woff");
+  font-family: "Suisse International";
+  src: url("../fonts/SuisseIntl-Book.woff") format("woff");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Suisse International";
+  src: url("../fonts/SuisseIntl-SemiBold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -38,10 +40,10 @@
 
 body,
 .body {
-  font-family: var(--ff-body);
+  font-family: var(--font-family);
   font-size: var(--fs-body);
   font-weight: var(--fw-regular);
-  line-height: var(--lh-body);
+  line-height: var(--lh-100);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,47 +54,146 @@ body,
 
 // Headings
 h1,
-.h1 {
-  font-family: var(--ff-body);
-  font-size: var(--fs-700);
-  line-height: 1;
-  letter-spacing: -0.01em;
-  // text-wrap: balance;
-  margin-bottom: 0;
-}
+.h1,
 h2,
-.h2 {
-  font-family: var(--ff-body);
-  font-size: var(--fs-500);
-  font-weight: var(--fw-light);
-  line-height: 1.1;
-  letter-spacing: -0.005em;
-  // text-wrap: balance;
-}
+.h2,
 h3,
-.h3 {
-  font-family: var(--ff-body);
-  font-size: var(--fs-h3-page-subtitle);
-  line-height: 1.2;
-  // text-wrap: balance;
-}
+.h3,
 h4,
 .h4 {
-  font-family: var(--ff-heading);
-  font-size: var(--fs-h4-body-bold);
-  line-height: var(--lh-h4-body-bold);
-  font-weight: var(--fw-bold);
-  // text-wrap: balance;
+  font-family: var(--font-family);
+}
+
+h1,
+.h1 {
+  font-size: var(--fs-850);
+  font-weight: var(--fw-book);
+  line-height: var(--lh-850);
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+}
+
+h2,
+.h2 {
+  font-size: var(--fs-700);
+  font-weight: var(--fw-book);
+  line-height: var(--lh-700);
+  letter-spacing: -0.005em;
+}
+
+h3,
+.h3 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-600);
+}
+
+h4,
+.h4 {
+  font-size: var(--fs-500);
+  line-height: var(--lh-500);
+  font-weight: var(--fw-semibold);
 }
 
 // Button text
 .button-text,
 button,
 .btn {
-  font-family: var(--ff-body);
-  font-size: var(--fs-700-text);
-  line-height: var(--lh-button-text);
-  font-weight: var(--fw-button-text);
+  font-family: var(--font-family);
+  font-size: var(--fs-100);
+  line-height: var(--lh-100);
+  font-weight: var(--fw-semibold);
+}
+
+/* base */
+.font-small {
+  font-size: var(--fs-50);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-50);
+}
+
+.font-body {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-100);
+}
+
+.font-signpost {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-200);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* shared tokens */
+.font-lead,
+.font-h5 {
+  font-size: var(--fs-400);
+  line-height: var(--lh-400);
+}
+
+.font-callout,
+.font-h3 {
+  font-size: var(--fs-600);
+}
+
+.font-callout-large,
+.font-h2 {
+  font-size: var(--fs-700);
+}
+
+/* specific roles */
+.font-lead {
+  font-weight: var(--fw-light);
+}
+
+.font-h5 {
+  font-weight: var(--fw-semibold);
+}
+
+.font-h4 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-500);
+}
+
+.font-h3 {
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-600);
+}
+
+.font-h2 {
+  font-weight: var(--fw-book);
+  line-height: var(--lh-700);
+}
+
+.font-h1 {
+  font-size: var(--fs-850);
+  font-weight: var(--fw-book);
+  line-height: var(--lh-850);
+}
+
+.font-callout {
+  font-weight: var(--fw-light);
+  line-height: 1.25;
+}
+
+.font-callout-large {
+  font-weight: var(--fw-light);
+  line-height: 1.2;
+}
+
+.font-hero {
+  font-size: var(--fs-875);
+  font-weight: var(--fw-book);
+  line-height: var(--lh-875);
+}
+
+.font-hero-lg {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-book);
+  line-height: var(--lh-900);
 }
 
 // Helper classes for standalone typography variables
@@ -102,8 +203,11 @@ button,
 .fw-regular {
   font-weight: var(--fw-regular);
 }
+.fw-book {
+  font-weight: var(--fw-book);
+}
 .fw-semi {
-  font-weight: var(--fw-semi);
+  font-weight: var(--fw-semibold);
 }
 
 .fs-50 {
@@ -116,7 +220,7 @@ button,
   font-size: var(--fs-200);
 }
 .fs-300 {
-  font-size: var(--fs-300);
+  font-size: var(--fs-300, var(--fs-200));
 }
 .fs-400 {
   font-size: var(--fs-400);
@@ -131,7 +235,7 @@ button,
   font-size: var(--fs-700);
 }
 .fs-800 {
-  font-size: var(--fs-800);
+  font-size: var(--fs-800, var(--fs-700));
 }
 .fs-850 {
   font-size: var(--fs-850);
@@ -143,17 +247,17 @@ button,
   font-size: var(--fs-900);
 }
 .fs-950 {
-  font-size: var(--fs-950);
+  font-size: var(--fs-950, var(--fs-900));
 }
 
 .lh-tightest {
-  line-height: var(--lh-tightest);
+  line-height: var(--lh-900);
 }
 .lh-tight {
-  line-height: var(--lh-tight);
+  line-height: var(--lh-850);
 }
 .lh-normal {
-  line-height: var(--lh-normal);
+  line-height: var(--lh-100);
 }
 
 // Links
@@ -190,7 +294,7 @@ figure {
 }
 
 strong {
-  font-weight: var(--fw-semi);
+  font-weight: var(--fw-semibold);
 }
 
 .text-balance {

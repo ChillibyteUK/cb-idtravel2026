@@ -100,13 +100,15 @@ function widgets_init() {
 
     register_nav_menus(
         array(
-            'primary_nav'          => 'Primary Nav',
-            'footer_menu_services' => 'Footer Services',
-            'footer_menu_about'    => 'Footer About',
-            'footer_menu_identity' => 'Footer Identity',
-            'footer_menu_legal'    => 'Footer Legal & Info',
-            'footer_menu_media'    => 'Footer Media',
-            'footer_menu_global'   => 'Footer Global',
+            'primary_nav'            => 'Primary Nav',
+            'footer_menu_business'   => 'Footer Business',
+            'footer_menu_about'      => 'Footer About',
+            'footer_menu_solutions'  => 'Footer Solutions',
+            'footer_menu_specialist' => 'Footer Specialist',
+            'footer_menu_resources'  => 'Footer Resources',
+            'footer_menu_identity'   => 'Footer Identity',
+            'footer_menu_locations'  => 'Footer Locations',
+            'footer_menu_legal'      => 'Footer Legal & Info',
         )
     );
 

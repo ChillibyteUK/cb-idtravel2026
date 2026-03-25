@@ -12,18 +12,11 @@ $page_for_posts = get_option( 'page_for_posts' );
 get_header();
 ?>
 <main id="main" class="news-insights">
-	<section class="news-insights-hero has-lime-1000-border-bottom">
-		<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
-			<h1 class="id-container px-4 px-md-5 fs-850 fw-light has-lime-1100-color lh-tightest pt-2 pb-1">
-				Insights &amp; perspectives
+	<section class="news-insights-hero has-neutral-400-border-bottom">
+		<div class="has-neutral-400-border-top has-neutral-400-border-bottom mt-5">
+			<h1 class="id-container px-4 px-md-5 has-white-color font-hero pt-2 pb-2">
+				Newsroom and perspectives
 			</h1>
-		</div>
-		<div class="has-lime-1000-border-bottom mb-4">
-			<div class="id-container px-4 px-md-5">
-				<h1 class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1">
-					Here's how we're shaping what's next
-				</h1>
-			</div>
 		</div>
 		<div class="id-container px-4 px-md-5 pt-5 pb-5">
 			<div class="row">

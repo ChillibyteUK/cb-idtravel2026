@@ -13,7 +13,24 @@
  * category, icon, render template, and supports various features.
  */
 function acf_blocks() {
-    if ( function_exists( 'acf_register_block_type' ) ) {
+	if ( function_exists( 'acf_register_block_type' ) ) {
+
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_cta',
+				'title'           => 'CB CTA',
+				'description'     => 'Reusable CTA block powered by site-wide CTA options.',
+				'render_template' => 'blocks/cb-cta.php',
+				'category'        => 'layout',
+				'icon'            => 'megaphone',
+				'keywords'        => array( 'cta', 'call to action' ),
+				'mode'            => 'edit',
+				'supports'        => array(
+					'align' => false,
+					'mode'  => true,
+				),
+			)
+		);
 
 		// INSERT NEW BLOCKS HERE.
 

@@ -441,12 +441,12 @@ for (; i < all.length; i++) {
 //   border-radius: 0;
 // }
 
-.has-lime-1000-border-top {
-  border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
+.has-neutral-400-border-top {
+  border-top: 1px solid var(--col-neutral-400) !important;
 }
 
-.has-lime-1000-border-bottom {
-  border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
+.has-neutral-400-border-bottom {
+  border-bottom: 1px solid var(--col-neutral-400) !important;
 }
 
 .service-parents {

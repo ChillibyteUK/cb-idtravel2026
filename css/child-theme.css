@@ -22430,7 +22430,7 @@ header:has(.navbar-collapse.collapse.show) {
   font-size: var(--fs-600);
   font-weight: var(--fw-book);
   margin-block: 2rem;
-  padding-block: 0.25rem;
+  padding-block: 0.75rem 1.5rem;
 }
 
 .text-page {

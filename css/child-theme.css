@@ -22285,7 +22285,7 @@ header:has(.navbar-collapse.collapse.show) {
   aspect-ratio: 5/4;
 }
 .insight-type-grid.grid-type-1 .insight-type-grid__date {
-  color: var(--col-neutral-500);
+  color: var(--col-raspberry-100);
 }
 .insight-type-grid.grid-type-full .insight-type-grid__card-1 .insight-type-grid__image {
   aspect-ratio: 4/3;
@@ -22309,7 +22309,7 @@ header:has(.navbar-collapse.collapse.show) {
   aspect-ratio: 16/9;
 }
 .insight-type-grid.grid-type-full .insight-type-grid__date {
-  color: var(--col-neutral-600);
+  color: var(--col-raspberry-100);
 }
 .insight-type-grid__image-wrapper {
   overflow: hidden;
@@ -22324,7 +22324,7 @@ header:has(.navbar-collapse.collapse.show) {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .insight-type-grid__category {
-  border-bottom: 1px solid var(--col-neutral-500) !important;
+  border-bottom: 1px solid var(--col-raspberry-100) !important;
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: var(--fs-50);
@@ -22364,6 +22364,7 @@ header:has(.navbar-collapse.collapse.show) {
   -o-object-fit: cover;
   object-fit: cover;
   position: fixed;
+  top: var(--h-top);
 }
 .single-blog .post-hero-clip-group {
   aspect-ratio: 16/9;
@@ -22398,13 +22399,13 @@ header:has(.navbar-collapse.collapse.show) {
   line-height: var(--lh-875);
 }
 .single-blog .post-date-row {
-  border-top: 1px solid var(--col-raspberry-200) !important;
   padding-bottom: 2rem;
 }
 .single-blog .post-date-row .post-date {
-  color: var(--col-neutral-700);
+  color: var(--col-neutral-500);
   text-transform: uppercase;
   font-weight: var(--fw-regular);
+  font-size: var(--fs-50);
   margin-bottom: 0.5rem;
 }
 .single-blog .post-content .container, .single-blog .post-content .wp-block-group:not(.alignfull) {
@@ -22857,8 +22858,22 @@ span a {
  *
  * @package  cb-idtravel2026
  */
-.cb-recent-news.has-purple-900-background-color .insight-type-grid__date {
-  color: var(--col-purple-200) !important;
+.cb-recent-news {
+  background-color: var(--col-raspberry);
+  color: var(--col-white);
+}
+.cb-recent-news__pre-title {
+  background-color: var(--col-raspberry-450);
+  border-top: 1px solid var(--col-raspberry-400);
+  border-bottom: 1px solid var(--col-raspberry-400);
+  padding-block: 0.75rem;
+  color: var(--col-white);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-300);
+  line-height: 1;
+}
+.cb-recent-news .insight-type-grid__date {
+  color: var(--col-raspberry-100);
 }
 
 body {

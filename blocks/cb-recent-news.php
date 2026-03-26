@@ -37,8 +37,8 @@ $arrow         = '/img/arrow-n600.svg';
 $block_title   = 'PRESS';
 
 ?>
-<section id="<?php echo esc_attr( $block_id ); ?>" class="cb-latest-insights cb-recent-news <?= esc_attr( $background ); ?>">
-	<div class="cb-latest-insights__pre-title <?= esc_attr( $section_title ); ?>">
+<section id="<?php echo esc_attr( $block_id ); ?>" class="cb-recent-news <?= esc_attr( $background ); ?>">
+	<div class="cb-recent-news__pre-title <?= esc_attr( $section_title ); ?>">
 		<div class="id-container pt-2 pb-1 px-4 px-md-5">
 			<?= esc_html( $block_title ); ?>
 		</div>
@@ -103,7 +103,7 @@ $block_title   = 'PRESS';
 						</div>
 						<div class="insight-type-grid__date d-flex align-items-center gap-2">
 							<?php echo get_the_date( 'j F Y' ); ?> 
- 							<img src="<?php echo esc_url( get_stylesheet_directory_uri() . $arrow ); ?>" width=14 height=13 alt="" />
+							<?= cb_sanitise_svg( get_stylesheet_directory_uri() . '/img/arrow-n600.svg', 'insight-type-grid__arrow', 14, 13 ) ?>
 						</div>
 					</div>
 				</a>	

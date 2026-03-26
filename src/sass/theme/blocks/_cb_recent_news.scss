@@ -5,9 +5,21 @@
  */
 
 .cb-recent-news {
-    &.has-purple-900-background-color {
-        .insight-type-grid__date {
-            color: var(--col-purple-200) !important;
-        }
+    background-color: var(--col-raspberry);
+    color: var(--col-white);
+
+    &__pre-title {
+        background-color: var(--col-raspberry-450);
+        border-top: 1px solid var(--col-raspberry-400);
+        border-bottom: 1px solid var(--col-raspberry-400);
+        padding-block: 0.75rem;
+        color: var(--col-white);
+        font-weight: var(--fw-regular);
+        font-size: var(--fs-300);
+        line-height: 1;
+    }
+
+    .insight-type-grid__date {
+        color: var(--col-raspberry-100);
     }
 }

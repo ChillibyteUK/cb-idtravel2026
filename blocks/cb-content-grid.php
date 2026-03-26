@@ -1,0 +1,248 @@
+<?php
+/**
+ * CB Content Grid Block Template
+ *
+ * @package cb-idtravel2026
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+$block_id = $block['id'] ?? wp_unique_id( 'cb-content-grid-' );
+
+$rows = get_field( 'rows' );
+
+if ( empty( $rows ) ) {
+	return;
+}
+
+$bg_class = '';
+if ( isset( $block['supports']['color']['background'] ) && $block['supports']['color']['background'] ) {
+	$bg_color = $block['backgroundColor'] ?? '';
+	if ( $bg_color ) {
+		$bg_class = 'has-' . esc_attr( $bg_color ) . '-background-color';
+	}
+}
+
+$text_class = '';
+if ( isset( $block['supports']['color']['text'] ) && $block['supports']['color']['text'] ) {
+	$text_color = $block['textColor'] ?? '';
+	if ( $text_color ) {
+		$text_class = 'has-' . esc_attr( $text_color ) . '-color';
+	}
+}
+
+$section_classes = array( 'cb-content-grid' );
+if ( $bg_class ) {
+	$section_classes[] = $bg_class;
+}
+if ( $text_class ) {
+	$section_classes[] = $text_class;
+}
+?>
+<section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
+	<div class="id-container py-5 px-4 px-md-5">
+		<?php
+		foreach ( $rows as $row_index => $row ) {
+			$column_layout = $row['column_layout'] ?? '12';
+			$modules       = $row['modules'] ?? array();
+
+			$row_classes = array( 'cb-content-grid__row  pt-4 pb-5' );
+
+			$grid_classes = array( 'row', 'g-5' );
+
+			switch ( $column_layout ) {
+				case '12':
+					$grid_classes[] = 'cb-content-grid__row--full';
+					break;
+				case '6-6':
+					$grid_classes[] = 'cb-content-grid__row--two-col';
+					break;
+				case '4-8':
+					$grid_classes[] = 'cb-content-grid__row--third-twothirds';
+					break;
+				case '8-4':
+					$grid_classes[] = 'cb-content-grid__row--twothirds-third';
+					break;
+				case '4-4-4':
+					$grid_classes[] = 'cb-content-grid__row--three-col';
+					break;
+				case '3-3-3-3':
+					$grid_classes[] = 'cb-content-grid__row--four-col';
+					break;
+			}
+			?>
+			<div class="<?= esc_attr( implode( ' ', $row_classes ) ); ?>" data-row-index="<?= esc_attr( $row_index ); ?>">
+				<div class="<?= esc_attr( implode( ' ', $grid_classes ) ); ?>">
+					<?php
+					foreach ( $modules as $module_index => $module ) {
+						$module_type = $module['module_type'] ?? 'empty';
+
+						$col_classes = array( 'cb-content-grid__module' );
+
+						switch ( $column_layout ) {
+							case '12':
+								$col_classes[] = 'col-md-12';
+								break;
+							case '6-6':
+								$col_classes[] = 'col-md-6';
+								break;
+							case '4-8':
+								$col_classes[] = 0 === $module_index ? 'col-md-4' : 'col-md-8';
+								break;
+							case '8-4':
+								$col_classes[] = 0 === $module_index ? 'col-md-8' : 'col-md-4';
+								break;
+							case '4-4-4':
+								$col_classes[] = 'col-md-4';
+								break;
+							case '3-3-3-3':
+								$col_classes[] = 'col-md-3';
+								break;
+						}
+
+						$col_classes[] = 'cb-content-grid__module--' . esc_attr( $module_type );
+						?>
+						<div class="<?= esc_attr( implode( ' ', $col_classes ) ); ?>" data-module-index="<?= esc_attr( $module_index ); ?>">
+							<?php
+							switch ( $module_type ) {
+								case 'h2':
+									$h2_text = $module['h2_text'] ?? '';
+									if ( $h2_text ) {
+										?>
+										<h2 class="cb-content-grid__h2"><?= esc_html( $h2_text ); ?></h2>
+										<?php
+									}
+									break;
+
+								case 'h3':
+									$h3_text = $module['h3_text'] ?? '';
+									if ( $h3_text ) {
+										?>
+										<h3 class="cb-content-grid__h3"><?= esc_html( $h3_text ); ?></h3>
+										<?php
+									}
+									break;
+
+								case 'text':
+									$text_content = $module['text_content'] ?? '';
+									$text_fs      = $module['text_font_size'] ?? 'fs-100';
+									$text_fw      = $module['text_font_weight'] ?? 'fw-regular';
+									?>
+									<div class="cb-content-grid__text <?= esc_attr( $text_fs ); ?> <?= esc_attr( $text_fw ); ?>">
+										<?= wp_kses_post( $text_content ); ?>
+									</div>
+									<?php
+									break;
+
+								case 'list':
+									$list_content = $module['list_content'] ?? '';
+									$list_fs     = $module['list_font_size'] ?? 'fs-100';
+									$list_fw     = $module['list_font_weight'] ?? 'fw-regular';
+									if ( $list_content ) {
+										?>
+										<ul class="cb-content-grid__list <?= esc_attr( $list_fs ); ?> <?= esc_attr( $list_fw ); ?>">
+											<?= cb_list( $list_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										</ul>
+										<?php
+									}
+									break;
+
+								case 'image':
+									$image_id     = $module['image'] ?? null;
+									$aspect       = $module['image_aspect_ratio'] ?? '16x9';
+									$caption      = $module['image_caption'] ?? '';
+									$aspect_class = '';
+
+									switch ( $aspect ) {
+										case 'native':
+											$aspect_class = '';
+											break;
+										case '21x9':
+											$aspect_class = 'ratio ratio-21x9';
+											break;
+										case '16x9':
+											$aspect_class = 'ratio ratio-16x9';
+											break;
+										case '4x3':
+											$aspect_class = 'ratio ratio-4x3';
+											break;
+										case '1x1':
+											$aspect_class = 'ratio ratio-1x1';
+											break;
+									}
+
+									if ( $image_id ) {
+										?>
+										<div class="cb-content-grid__image-wrap <?= esc_attr( $aspect_class ); ?>">
+											<?= wp_get_attachment_image( $image_id, 'full', false, array( 'class' => 'img-fluid cb-content-grid__image' ) ); ?>
+										</div>
+										<?php
+									}
+
+									if ( $caption ) {
+										?>
+										<p class="cb-content-grid__caption small"><?= esc_html( $caption ); ?></p>
+										<?php
+									}
+									break;
+
+								case 'empty':
+								default:
+									break;
+							}
+							?>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+			</div>
+			<?php
+		}
+		?>
+	</div>
+</section>
+
+<script>
+(function() {
+	function matchImageHeights() {
+		var rows = document.querySelectorAll('.cb-content-grid__row');
+		rows.forEach(function(row) {
+			var modules = row.querySelectorAll('.cb-content-grid__module--image');
+			if (modules.length < 2) return;
+
+			var maxHeight = 0;
+			var images = [];
+
+			modules.forEach(function(mod) {
+				var img = mod.querySelector('.cb-content-grid__image-wrap');
+				if (img) {
+					var rect = img.getBoundingClientRect();
+					if (rect.height > maxHeight) {
+						maxHeight = rect.height;
+					}
+					images.push(img);
+				}
+			});
+
+			if (maxHeight > 0) {
+				images.forEach(function(img) {
+					img.style.height = maxHeight + 'px';
+				});
+			}
+		});
+	}
+
+	var resizeTimer;
+	window.addEventListener('resize', function() {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(matchImageHeights, 100);
+	});
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', matchImageHeights);
+	} else {
+		matchImageHeights();
+	}
+})();
+</script>

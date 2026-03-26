@@ -11,7 +11,7 @@
   --col-neutral-250: #d7d5de;
   --col-neutral-300: #cfcdd9;
   --col-neutral-350: #c3c0cf;
-  --hsl-neutral-400: 251, 12%, 73%;
+  --hsl-neutral-400: 251 12% 73%;
   --col-neutral-400: #b6b3c3;
   --col-neutral-450: #a9a5b8;
   --col-neutral-500: #9793a8;
@@ -26,6 +26,7 @@
   --col-ink: #110d25;
   --col-neutral-1000: #040013;
   --col-raspberry-050: #ffeaee;
+  --hsl-raspberry-100: 347 100% 93%;
   --col-raspberry-100: #ffdbe3;
   --col-raspberry-200: #ffb8c6;
   --col-raspberry-300: #ff9bae;
@@ -59,13 +60,11 @@
   --col-indigo-350: #a370db;
   --col-indigo-400: #935ad2;
   --col-indigo-450: #8544cc;
-  --grad-main: linear-gradient(
-    to bottom,
-    var(--col-white),
-    var(--col-lime-100),
-    var(--col-lime-200),
-    var(--col-lime-300)
-  );
+  --grad-main: linear-gradient(to bottom,
+      var(--col-white),
+      var(--col-lime-100),
+      var(--col-lime-200),
+      var(--col-lime-300));
   /* =========================
      TYPOGRAPHY (families/weights)
      ========================= */
@@ -131,7 +130,7 @@
   --col-neutral-250: #d7d5de;
   --col-neutral-300: #cfcdd9;
   --col-neutral-350: #c3c0cf;
-  --hsl-neutral-400: 251, 12%, 73%;
+  --hsl-neutral-400: 251 12% 73%;
   --col-neutral-400: #b6b3c3;
   --col-neutral-450: #a9a5b8;
   --col-neutral-500: #9793a8;
@@ -146,6 +145,7 @@
   --col-ink: #110d25;
   --col-neutral-1000: #040013;
   --col-raspberry-050: #ffeaee;
+  --hsl-raspberry-100: 347 100% 93%;
   --col-raspberry-100: #ffdbe3;
   --col-raspberry-200: #ffb8c6;
   --col-raspberry-300: #ff9bae;
@@ -179,13 +179,11 @@
   --col-indigo-350: #a370db;
   --col-indigo-400: #935ad2;
   --col-indigo-450: #8544cc;
-  --grad-main: linear-gradient(
-    to bottom,
-    var(--col-white),
-    var(--col-lime-100),
-    var(--col-lime-200),
-    var(--col-lime-300)
-  );
+  --grad-main: linear-gradient(to bottom,
+      var(--col-white),
+      var(--col-lime-100),
+      var(--col-lime-200),
+      var(--col-lime-300));
   /* =========================
      TYPOGRAPHY (families/weights)
      ========================= */

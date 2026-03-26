@@ -15,6 +15,8 @@
 function acf_blocks() {
 	if ( function_exists( 'acf_register_block_type' ) ) {
 
+		// INSERT NEW BLOCKS HERE.
+
 		acf_register_block_type(
 			array(
 				'name'            => 'cb_cta',
@@ -32,8 +34,6 @@ function acf_blocks() {
 			)
 		);
 
-		// INSERT NEW BLOCKS HERE.
-
         acf_register_block_type(
             array(
                 'name'            => 'cb_recent_news',
@@ -50,6 +50,26 @@ function acf_blocks() {
                 ),
             )
         );
+
+		acf_register_block_type(
+			array(
+				'name'            => 'cb-content-grid',
+				'title'           => 'CB Content Grid',
+				'description'     => 'Modular content grid with rows and columns.',
+				'render_template' => 'blocks/cb-content-grid.php',
+				'category'        => 'layout',
+				'icon'            => 'layout',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'  => true,
+					'align' => true,
+					'color' => array(
+						'text'       => true,
+						'background' => true,
+					),
+				),
+			)
+		);
 
     }
 }

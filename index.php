@@ -91,8 +91,8 @@ get_header();
 							<?php the_title(); ?>
 						</div>
 						<div class="insight-type-grid__date d-flex align-items-center gap-2">
-							<?php echo get_the_date( 'j F Y' ); ?> 
- 							<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-n900.svg' ); ?>" width=14 height=13 alt="" />
+							<?php echo get_the_date( 'j F Y' ); ?>
+							<?= cb_sanitise_svg( get_stylesheet_directory_uri() . '/img/arrow-n600.svg', 'insight-type-grid__arrow', 14, 13 ) ?>
 						</div>
 					</div>
 				</a>	

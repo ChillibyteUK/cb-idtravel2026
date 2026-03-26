@@ -21,7 +21,7 @@ header {
     &:hover,
     &:focus,
     &:focus-visible {
-      color: var(--col-primary-250);
+      color: var(--col-purple-500);
       text-decoration: none;
       font-weight: var(--fw-semibold);
     }
@@ -74,7 +74,7 @@ header {
   .current-menu-ancestor > .nav-link,
   .dropdown.current-page-ancestor > .nav-link,
   .dropdown.current-menu-item > .nav-link {
-    color: var(--col-primary-250);
+    color: var(--col-purple-500);
     font-weight: var(--fw-semibold);
   }
 

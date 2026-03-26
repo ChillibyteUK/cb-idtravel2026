@@ -34,6 +34,23 @@ function acf_blocks() {
 
 		// INSERT NEW BLOCKS HERE.
 
+        acf_register_block_type(
+            array(
+                'name'            => 'cb_recent_news',
+                'title'           => __( 'CB Recent News' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/cb-recent-news.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
     }
 }
 add_action( 'acf/init', 'acf_blocks' );

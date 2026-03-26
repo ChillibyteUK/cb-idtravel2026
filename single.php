@@ -19,17 +19,17 @@ if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
 $post_style = $first_category->slug;
 
 switch ( $post_style ) {
-	case 'press':
-		$post_style = 'post-press';
+	case 'news':
+		$post_style = 'post-news';
 		break;
 	case 'insights':
 		$post_style = 'post-insight';
 		break;
-	case 'perspectives':
-		$post_style = 'post-insight';
+	case 'people':
+		$post_style = 'post-people';
 		break;
 	default:
-		$post_style = 'post-press';
+		$post_style = 'post-news';
 		break;
 }
 
@@ -72,7 +72,7 @@ switch ( $post_style ) {
 		<div class="id-container px-4 px-md-5">
 			<div class="row">
 				<div class="col-md-9">
-					<h1 class="pt-1 has-850-font-size fw-light"><?= esc_html( get_the_title() ); ?></h1>
+					<h1 class="pt-1"><?= esc_html( get_the_title() ); ?></h1>
 				</div>
 			</div>
 		</div>

@@ -842,6 +842,83 @@ function cb_vimeo_url_with_dnt( $url ) {
 }
 
 /**
+ * REST endpoint: sideload an external image into the local media library.
+ */
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'cb-utility/v1',
+			'/sideload-image',
+			array(
+				'methods'             => 'POST',
+				'permission_callback' => function () {
+					return current_user_can( 'upload_files' );
+				},
+				'callback'            => function ( $request ) {
+					$url     = $request->get_param( 'url' );
+					$post_id = $request->get_param( 'post_id' );
+
+					if ( empty( $url ) ) {
+						return new WP_Error( 'missing_url', 'Image URL is required.', array( 'status' => 400 ) );
+					}
+
+					if ( ! current_user_can( 'upload_files' ) ) {
+						return new WP_Error( 'forbidden', 'You do not have permission to upload files.', array( 'status' => 403 ) );
+					}
+
+					// Strip size suffix from IDENTITY URL for the original.
+					$url_original = preg_replace( '/-\d{2,4}x\d{2,4}(\.\w+)$/', '$1', $url );
+
+					// Sideload the image.
+					$attachment_id = media_sideload_image( $url_original, $post_id, null, 'id' );
+
+					if ( is_wp_error( $attachment_id ) ) {
+						return $attachment_id;
+					}
+
+					$attachment_url = wp_get_attachment_url( $attachment_id );
+					$alt           = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+
+					return array(
+						'id'       => (int) $attachment_id,
+						'url'      => $attachment_url,
+						'filename' => get_post_field( 'post_name', $attachment_id ),
+						'alt'      => $alt,
+					);
+				},
+			)
+		);
+	}
+);
+
+/**
+ * Enqueue admin-only block editor JS for the external image download feature.
+ */
+add_action(
+	'enqueue_block_editor_assets',
+	function () {
+		$file = get_stylesheet_directory() . '/js/cb-sideload-image.js';
+		if ( ! file_exists( $file ) ) {
+			return;
+		}
+		wp_enqueue_script(
+			'cb-sideload-image',
+			get_stylesheet_directory_uri() . '/js/cb-sideload-image.js',
+			array( 'wp-data', 'wp-dom-ready', 'wp-api-fetch', 'wp-element', 'wp-edit-post' ),
+			filemtime( $file ),
+			true
+		);
+	}
+);
+add_action( 'admin_footer', function() {
+	echo '<div id="cb-sideload-debug" style="position:fixed;bottom:5px;right:5px;background:#000;color:#0f0;padding:4px 8px;font-size:12px;z-index:999999;display:none;">CB SIDELOAD: ' . ( wp_script_is( 'cb-sideload-image', 'enqueued' ) ? 'ENQUEUED' : 'NOT ENQUEUED' ) . '</div>';
+}, 999 );
+add_action( 'admin_head', function() {
+	echo '<style>#cb-sideload-debug{display:' . ( isset( $_GET['cb_debug'] ) ? 'block' : 'none' ) . '}</style>';
+}, 999 );
+
+/**
  * Load, augment, and sanitize an SVG from attachment ID or local file path.
  *
  * @param int|string   $svg_source Attachment ID or local SVG file path/URL.

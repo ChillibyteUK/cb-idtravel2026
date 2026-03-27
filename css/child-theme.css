@@ -22941,6 +22941,16 @@ span a {
   display: none;
 }
 
+.cb-signpost-header {
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  text-transform: uppercase;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+  padding-block: 1rem 0.75rem;
+  line-height: 1;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

@@ -497,3 +497,35 @@ add_filter(
 	10,
 	2
 );
+
+
+add_action(
+	'after_setup_theme',
+	function() {
+		remove_filter( 'tiny_mce_before_init', 'understrap_tiny_mce_before_init' );
+	},
+	20
+);
+
+add_filter( 'tiny_mce_before_init', 'cb_tiny_mce_before_init', 20 );
+
+/**
+ * Limit TinyMCE style formats to child theme options.
+ *
+ * @param array $settings TinyMCE settings array.
+ * @return array
+ */
+function cb_tiny_mce_before_init( $settings ) {
+	$settings['style_formats'] = wp_json_encode(
+		array(
+			array(
+				'title'   => 'Standfirst',
+				'block'   => 'p',
+				'classes' => 'font-lead',
+			),
+		)
+	);
+	$settings['style_formats_merge'] = false;
+
+	return $settings;
+}

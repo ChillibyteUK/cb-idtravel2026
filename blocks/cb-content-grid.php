@@ -186,6 +186,27 @@ if ( $text_class ) {
 									}
 									break;
 
+								case 'video':
+									$video_url = $module['video_url'] ?? '';
+
+									if ( $video_url ) {
+										$video_url = cb_vimeo_url_with_dnt( $video_url );
+										?>
+										<div class="cb-content-grid__video-wrap ratio ratio-16x9">
+											<iframe
+												class="cb-content-grid__video"
+												src="<?= esc_url( $video_url ); ?>"
+												title="Vimeo video player"
+												frameborder="0"
+												allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+												referrerpolicy="strict-origin-when-cross-origin"
+												allowfullscreen>
+											</iframe>
+										</div>
+										<?php
+									}
+									break;
+
 								case 'empty':
 								default:
 									break;

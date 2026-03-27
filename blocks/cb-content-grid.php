@@ -45,8 +45,20 @@ if ( $text_class ) {
 		foreach ( $rows as $row_index => $row ) {
 			$column_layout = $row['column_layout'] ?? '12';
 			$modules       = $row['modules'] ?? array();
+			$has_h2_module = false;
+
+			foreach ( $modules as $module ) {
+				if ( 'h2' === ( $module['module_type'] ?? '' ) && ! empty( $module['h2_text'] ) ) {
+					$has_h2_module = true;
+					break;
+				}
+			}
 
 			$row_classes = array( 'cb-content-grid__row  pt-4 pb-5' );
+
+			if ( $has_h2_module ) {
+				$row_classes[] = 'cb-content-grid__row--has-h2';
+			}
 
 			$grid_classes = array( 'row', 'g-5' );
 

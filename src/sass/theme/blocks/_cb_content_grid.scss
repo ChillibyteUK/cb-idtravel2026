@@ -2,8 +2,12 @@
   .cb-content-grid__row {
     border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
 
-    &+.cb-content-grid__row {
+    & + .cb-content-grid__row {
       margin-top: 2rem;
+    }
+
+    &.cb-content-grid__row--has-h2 {
+      border-top: 0;
     }
   }
 
@@ -59,7 +63,8 @@
   }
 
   .cb-content-grid__text {
-    p, ul {
+    p,
+    ul {
       margin-bottom: 1.5rem;
     }
     ul {

@@ -22881,6 +22881,9 @@ span a {
 .cb-content-grid .cb-content-grid__row + .cb-content-grid__row {
   margin-top: 2rem;
 }
+.cb-content-grid .cb-content-grid__row.cb-content-grid__row--has-h2 {
+  border-top: 0;
+}
 .cb-content-grid .cb-content-grid__h2 {
   text-wrap: balance;
   width: 50%;
@@ -22924,7 +22927,8 @@ span a {
 .cb-content-grid .cb-content-grid__text ul li:last-child {
   margin-bottom: 0;
 }
-.cb-content-grid .cb-content-grid__text p, .cb-content-grid .cb-content-grid__text ul {
+.cb-content-grid .cb-content-grid__text p,
+.cb-content-grid .cb-content-grid__text ul {
   margin-bottom: 1.5rem;
 }
 .cb-content-grid .cb-content-grid__text ul li {

@@ -911,6 +911,28 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Enqueue admin-only ACF editor fix for repeater WYSIWYG fields.
+ */
+add_action(
+	'acf/input/admin_enqueue_scripts',
+	function () {
+		$file = get_stylesheet_directory() . '/js/cb-editor-fix.js';
+
+		if ( ! file_exists( $file ) ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'cb-editor-fix',
+			get_stylesheet_directory_uri() . '/js/cb-editor-fix.js',
+			array( 'acf-input' ),
+			filemtime( $file ),
+			true
+		);
+	}
+);
 add_action( 'admin_footer', function() {
 	echo '<div id="cb-sideload-debug" style="position:fixed;bottom:5px;right:5px;background:#000;color:#0f0;padding:4px 8px;font-size:12px;z-index:999999;display:none;">CB SIDELOAD: ' . ( wp_script_is( 'cb-sideload-image', 'enqueued' ) ? 'ENQUEUED' : 'NOT ENQUEUED' ) . '</div>';
 }, 999 );

@@ -22992,6 +22992,41 @@ span a {
   margin-bottom: 0;
 }
 
+.stat-hero {
+  background-color: var(--col-ink);
+  color: var(--col-white);
+  padding-block: 8rem 5rem;
+}
+.stat-hero .h1-wrapper {
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+}
+.stat-hero h1, .stat-hero .h1 {
+  text-wrap: balance;
+  width: 60%;
+  padding-bottom: 5rem;
+  font-size: var(--fs-900);
+  letter-spacing: var(--ls--40);
+  line-height: 1;
+}
+.stat-hero__cta-title {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls--5);
+}
+.stat-hero__intro {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+  margin-bottom: 1.5rem;
+}
+.stat-hero__stat {
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  font-weight: var(--fw-book);
+  font-size: var(--fs-900);
+  letter-spacing: var(--ls--30);
+  line-height: 1;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

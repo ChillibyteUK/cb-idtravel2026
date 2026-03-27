@@ -1,0 +1,39 @@
+.cb-image-feature-overlay {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 70vh;
+  background-color: var(--col-ink);
+  background-image: var(--_bg-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--col-white);
+
+  &__overlay {
+    position: relative;
+    width: 100%;
+    isolation: isolate;
+    margin-top: 25rem;
+  }
+
+  &__overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("../img/blur.jpg") center / cover no-repeat;
+    opacity: 0.9;
+  }
+
+  &__content {
+    max-width: 64rem;
+    font-size: var(--fs-500);
+    line-height: var(--lh-500);
+    font-weight: var(--fw-light);
+    letter-spacing: var(--ls--10);
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

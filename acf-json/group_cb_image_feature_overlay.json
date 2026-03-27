@@ -1,0 +1,64 @@
+{
+  "key": "group_cb_image_feature_overlay",
+  "title": "CB Image Feature Overlay",
+  "fields": [
+    {
+      "key": "field_cb_image_feature_overlay_image",
+      "label": "Image",
+      "name": "image",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "Select the background image for the section.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "40",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "allow_in_bindings": 1,
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_cb_image_feature_overlay_content",
+      "label": "Overlay Content",
+      "name": "content",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Enter the overlay copy. Line breaks will become paragraphs.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "60",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 8,
+      "placeholder": "",
+      "new_lines": "",
+      "allow_in_bindings": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/cb-image-feature-overlay"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

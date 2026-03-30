@@ -2,9 +2,10 @@
   background-color: var(--col-raspberry);
   color: var(--col-white);
 
-  > .id-container > .row {
+  .hr {
     border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
     margin-top: 0;
+    padding-bottom: 1rem;
   }
 
   h2 {

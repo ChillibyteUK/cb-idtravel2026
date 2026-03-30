@@ -88,7 +88,7 @@ if ( empty( $active_card['title'] ) ) {
 		<?php if ( get_field( 'title' ) ) : ?>
 			<h2 class="my-5"><?= esc_html( get_field( 'title' ) ); ?></h2>
 		<?php endif; ?>
-
+		<div class="hr"></div>
 		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
 				<div class="cb-business-travel-nav__intro" data-solutions-nav-panel>

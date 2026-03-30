@@ -22880,9 +22880,10 @@ span a {
   background-color: var(--col-raspberry);
   color: var(--col-white);
 }
-.cb-business-travel-nav > .id-container > .row {
+.cb-business-travel-nav .hr {
   border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
   margin-top: 0;
+  padding-bottom: 1rem;
 }
 .cb-business-travel-nav h2, .cb-business-travel-nav .h2 {
   width: min(80vw, 50%);
@@ -23231,9 +23232,10 @@ span a {
   line-height: 1;
 }
 
-.cb-solutions-nav > .id-container > .row {
+.cb-solutions-nav .hr {
   border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
   margin-top: 0;
+  padding-bottom: 1rem;
 }
 .cb-solutions-nav h2, .cb-solutions-nav .h2 {
   width: min(80vw, 50%);

@@ -83,6 +83,7 @@ if ( empty( $active_card['title'] ) ) {
 			<?php
 		}
 		?>
+		<div class="hr"></div>
 		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
 				<div class="cb-solutions-nav__intro" data-solutions-nav-panel>

@@ -109,7 +109,10 @@ if ( empty( $active_card['title'] ) ) {
 										<?= wp_get_attachment_image( $card['image'], 'large', false, array( 'class' => 'cb-solutions-nav__card-image' ) ); ?>
 									<?php endif; ?>
 								</div>
-								<div class="cb-solutions-nav__card-title"><?= esc_html( $card['title'] ); ?></div>
+								<div class="cb-solutions-nav__card-title">
+									<span class="cb-solutions-nav__card-title-text"><?= esc_html( $card['title'] ); ?></span>
+									<span class="cb-solutions-nav__card-arrow"><?= cb_sanitise_svg( get_stylesheet_directory() . '/img/arrow-n600.svg', 'cb-solutions-nav__card-arrow-icon', 16, 16 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+								</div>
 								<div class="cb-solutions-nav__card-summary" hidden>
 									<?= wp_kses_post( $card['summary'] ); ?>
 								</div>

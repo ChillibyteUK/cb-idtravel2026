@@ -217,7 +217,9 @@ AOS.init({
 
 // Swap solutions nav intro content on card hover/focus.
 (function () {
-  const navs = document.querySelectorAll(".cb-solutions-nav");
+  const navs = document.querySelectorAll(
+    ".cb-solutions-nav, .cb-business-travel-nav",
+  );
 
   if (!navs.length) return;
 
@@ -234,9 +236,7 @@ AOS.init({
 
       title.textContent = card.dataset.cardTitle || "";
 
-      const summaryTemplate = card.querySelector(
-        ".cb-solutions-nav__card-summary",
-      );
+      const summaryTemplate = card.querySelector("[hidden]");
       summary.innerHTML = summaryTemplate ? summaryTemplate.innerHTML : "";
     };
 

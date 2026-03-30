@@ -1,4 +1,7 @@
-.cb-solutions-nav {
+.cb-business-travel-nav {
+  background-color: var(--col-raspberry);
+  color: var(--col-white);
+
   > .id-container > .row {
     border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
     margin-top: 0;
@@ -37,10 +40,10 @@
 
   &__title {
     margin-bottom: 1.25rem;
-    font-size: var(--fs-500);
+    font-size: var(--fs-400);
     font-weight: var(--fw-semibold);
-    line-height: 0.95;
-    letter-spacing: var(--ls--10);
+    line-height: var(--lh-400);
+    letter-spacing: var(--ls--5);
     text-wrap: balance;
   }
 
@@ -52,6 +55,15 @@
     p:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(
+      var(--cb-business-travel-columns, 5),
+      minmax(0, 1fr)
+    );
+    gap: 1.5rem;
   }
 
   &__card {
@@ -158,8 +170,18 @@
       padding-right: 0;
     }
 
+    &__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     &__card {
       aspect-ratio: 4 / 5;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    &__cards {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 }

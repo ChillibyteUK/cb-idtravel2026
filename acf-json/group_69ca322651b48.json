@@ -78,6 +78,18 @@
                 "operator": "==",
                 "value": "12"
             }
+        ],
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "30"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "32"
+            }
         ]
     ],
     "menu_order": 0,
@@ -90,5 +102,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774858862
+    "modified": 1774867684
 }

@@ -22101,7 +22101,7 @@ header .navbar-nav .nav-link::after {
 header .logo-clip {
   overflow: hidden;
   display: inline-block;
-  height: 25px;
+  height: 30px;
   margin-right: 1rem;
   vertical-align: middle;
 }

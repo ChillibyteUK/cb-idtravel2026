@@ -481,3 +481,9 @@ for (; i < all.length; i++) {
     border-bottom: 1px solid var(--col-lime-900);
   }
 }
+
+hr,
+hr.wp-block-separator {
+  border-top: 1px solid var(--col-neutral-500) !important;
+  opacity: 1;
+}

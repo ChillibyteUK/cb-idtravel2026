@@ -22477,11 +22477,6 @@ header:has(.navbar-collapse.collapse.show) {
   display: none;
 }
 
-hr.wp-block-separator {
-  border-top: 1px solid var(--col-neutral-500) !important;
-  opacity: 1;
-}
-
 .text-page {
   background-color: var(--col-white);
   color: var(--col-primary-black);
@@ -23222,6 +23217,15 @@ span a {
   background-size: cover;
   color: var(--col-white);
 }
+.cb-image-feature-overlay--hero {
+  min-height: 100vh;
+}
+.cb-image-feature-overlay--hero h1, .cb-image-feature-overlay--hero .h1 {
+  font-size: var(--fs-900);
+  line-height: 1;
+  letter-spacing: var(--ls--40);
+  font-weight: var(--fw-book);
+}
 .cb-image-feature-overlay__overlay {
   position: relative;
   width: 100%;
@@ -23908,6 +23912,12 @@ for (; i < all.length; i++) {
 }
 .service-parents li:last-child {
   border-bottom: 1px solid var(--col-lime-900);
+}
+
+hr,
+hr.wp-block-separator {
+  border-top: 1px solid var(--col-neutral-500) !important;
+  opacity: 1;
 }
 
 .has-blue-color,

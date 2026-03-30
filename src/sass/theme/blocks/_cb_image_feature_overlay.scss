@@ -10,6 +10,17 @@
   background-size: cover;
   color: var(--col-white);
 
+  &--hero {
+    min-height: 100vh;
+
+    h1 {
+      font-size: var(--fs-900);
+      line-height: 1;
+      letter-spacing: var(--ls--40);
+      font-weight: var(--fw-book);
+    }
+  }
+
   &__overlay {
     position: relative;
     width: 100%;

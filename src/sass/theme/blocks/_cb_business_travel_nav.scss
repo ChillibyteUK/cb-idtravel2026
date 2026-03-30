@@ -101,10 +101,10 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        hsl(var(--hsl-raspberry) / 0) 0%,
-        hsl(var(--hsl-raspberry) / 0.18) 38%,
-        hsl(var(--hsl-raspberry) / 0.72) 72%,
-        hsl(var(--hsl-raspberry) / 0.96) 100%
+        hsl(var(--hsl-raspberry-600) / 0) 0%,
+        hsl(var(--hsl-raspberry-600) / 0.18) 38%,
+        hsl(var(--hsl-raspberry-600) / 0.72) 72%,
+        hsl(var(--hsl-raspberry-600) / 0.96) 100%
       );
       z-index: 1;
       pointer-events: none;

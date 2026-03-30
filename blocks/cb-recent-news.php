@@ -11,32 +11,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Block ID.
-$block_id  = $block['id'] ?? '';
-$blog_type = get_query_var( 'blog_type', '' );
+$block_id   = $block['id'] ?? '';
+$blog_type  = get_query_var( 'blog_type', '' );
+$blog_types = array();
 
-// if blog_type is not set, check get_field('category') for a term id (single or array) and use that.
-if ( ! $blog_type ) {
+if ( ! empty( $blog_type ) ) {
+	$blog_types = is_array( $blog_type ) ? $blog_type : array( $blog_type );
+}
+
+// If blog_type is not set, use selected category or categories from the block field.
+if ( empty( $blog_types ) ) {
 	$cat_field = get_field( 'category' );
-	$first_cat = null;
-	if ( is_array( $cat_field ) && count( $cat_field ) > 0 ) {
-		$first_cat = $cat_field[0];
-	} elseif ( ! empty( $cat_field ) ) {
-		$first_cat = $cat_field;
-	}
-	if ( $first_cat ) {
-		$category_term = get_term( $first_cat );
+	$cat_ids   = is_array( $cat_field ) ? $cat_field : ( ! empty( $cat_field ) ? array( $cat_field ) : array() );
+
+	foreach ( $cat_ids as $cat_id ) {
+		$category_term = get_term( $cat_id );
 		if ( $category_term && ! is_wp_error( $category_term ) ) {
-			$blog_type = $category_term->slug;
+			$blog_types[] = $category_term->slug;
 		}
 	}
 }
+
+$blog_types = array_values( array_unique( array_filter( $blog_types ) ) );
+$primary_blog_type = $blog_types[0] ?? '';
 
 $background    = 'has-primary-black-background-color';
 $section_title = 'has-primary-black-background-color';
 $arrow         = '/img/arrow-n600.svg';
 $block_title   = 'PRESS';
 
-switch ( $blog_type ) {
+switch ( $primary_blog_type ) {
 	case 'news':
 		$block_title   = 'NEWS';
 		$background    = 'has-primary-black-background-color';
@@ -69,12 +73,15 @@ switch ( $blog_type ) {
 			$args = array(
                 'post_type'      => 'post',
                 'post_status'    => array( 'publish' ),
-                'orderby'        => 'date',
-                'order'          => 'DESC', // Descending order.
-                'posts_per_page' => 3,    // Get all posts.
+				'orderby'        => 'date',
+				'order'          => 'DESC', // Descending order.
+				'posts_per_page' => 3,    // Get all posts.
 				'post__not_in'   => array( get_the_ID() ), // exclude current post.
-				'category_name'  => $blog_type,
-            );
+			);
+
+			if ( ! empty( $blog_types ) ) {
+				$args['category_name'] = implode( ',', $blog_types );
+			}
 			$q    = new WP_Query( $args );
 
 			$counter = 0;
@@ -121,7 +128,7 @@ switch ( $blog_type ) {
 							<?php the_title(); ?>
 						</div>
 						<?php
-						if ( 'news' === $blog_type || 'insights' === $blog_type ) {
+						if ( in_array( 'news', $blog_types, true ) || in_array( 'insights', $blog_types, true ) ) {
 							?>
 						<div class="insight-type-grid__date d-flex align-items-center gap-2">
 							<?php echo get_the_date( 'j F Y' ); ?> 

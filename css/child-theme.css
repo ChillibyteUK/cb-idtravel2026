@@ -23382,7 +23382,6 @@ span a {
   text-wrap: balance;
 }
 .cb-solutions-nav__summary {
-  max-width: 34rem;
   font-size: var(--fs-200);
   line-height: var(--lh-500);
 }

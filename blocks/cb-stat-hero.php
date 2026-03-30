@@ -10,6 +10,16 @@ defined( 'ABSPATH' ) || exit;
 $block_title = get_field( 'title' ) ? get_field( 'title' ) : get_the_title();
 
 $block_link = get_field( 'cta_link' );
+$stats      = array();
+
+for ( $index = 1; $index <= 4; $index++ ) {
+	$stats[] = array(
+		'intro'  => get_field( 'stat_intro_' . $index ),
+		'prefix' => get_field( 'stat_' . $index . '_prefix' ),
+		'value'  => get_field( 'stat_' . $index ),
+		'suffix' => get_field( 'stat_' . $index . '_suffix' ),
+	);
+}
 
 ?>
 <section class="stat-hero">
@@ -19,25 +29,25 @@ $block_link = get_field( 'cta_link' );
 		</div>
 		<div class="row g-4">
 			<div class="col-lg-4">
-				<a class="id-button mb-5" href="<?= esc_url( $block_link['url'] ); ?>" target="<?= esc_attr( $block_link['target'] ); ?>"><?= esc_html( $block_link['title'] ); ?></a>
+				<?php if ( ! empty( $block_link['url'] ) && ! empty( $block_link['title'] ) ) : ?>
+					<a class="id-button mb-5" href="<?= esc_url( $block_link['url'] ); ?>" target="<?= esc_attr( $block_link['target'] ?: '_self' ); ?>"><?= esc_html( $block_link['title'] ); ?></a>
+				<?php endif; ?>
 				<div class="stat-hero__cta-title"><?= esc_html( get_field( 'cta_title' ) ); ?></div>
 			</div>
-			<div class="col-md-6 col-lg-2">
-				<div class="stat-hero__intro"><?= esc_html( get_field( 'stat_intro_1' ) ); ?></div>
-				<div class="stat-hero__stat"><?= esc_html( get_field( 'stat_1' ) ); ?></div>
-			</div>
-			<div class="col-md-6 col-lg-2">
-				<div class="stat-hero__intro"><?= esc_html( get_field( 'stat_intro_2' ) ); ?></div>
-				<div class="stat-hero__stat"><?= esc_html( get_field( 'stat_2' ) ); ?></div>
-			</div>
-			<div class="col-md-6 col-lg-2">
-				<div class="stat-hero__intro"><?= esc_html( get_field( 'stat_intro_3' ) ); ?></div>
-				<div class="stat-hero__stat"><?= esc_html( get_field( 'stat_3' ) ); ?></div>
-			</div>
-			<div class="col-md-6 col-lg-2">
-				<div class="stat-hero__intro"><?= esc_html( get_field( 'stat_intro_4' ) ); ?></div>
-				<div class="stat-hero__stat"><?= esc_html( get_field( 'stat_4' ) ); ?></div>
-			</div>
+			<?php foreach ( $stats as $stat ) : ?>
+				<div class="col-md-6 col-lg-2">
+					<div class="stat-hero__intro"><?= esc_html( $stat['intro'] ); ?></div>
+					<div class="stat-hero__stat">
+						<?php if ( '' !== (string) $stat['prefix'] ) : ?>
+							<span class="stat-hero__stat-prefix"><?= esc_html( $stat['prefix'] ); ?></span>
+						<?php endif; ?>
+						<span class="stat-hero__stat-value" data-stat-target="<?= esc_attr( is_numeric( $stat['value'] ) ? $stat['value'] : 0 ); ?>">0</span>
+						<?php if ( '' !== (string) $stat['suffix'] ) : ?>
+							<span class="stat-hero__stat-suffix"><?= esc_html( $stat['suffix'] ); ?></span>
+						<?php endif; ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

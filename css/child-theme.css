@@ -23229,10 +23229,16 @@ span a {
 .stat-hero__stat {
   border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
   border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  display: flex;
+  align-items: baseline;
+  gap: 0.1em;
   font-weight: var(--fw-book);
   font-size: var(--fs-900);
   letter-spacing: var(--ls--30);
   line-height: 1;
+}
+.stat-hero__stat-value, .stat-hero__stat-prefix, .stat-hero__stat-suffix {
+  display: inline-block;
 }
 
 .cb-solutions-nav .hr {

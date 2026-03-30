@@ -7097,6 +7097,44 @@
 		  });
 		})();
 
+		// Count up stat hero values when they enter view.
+		(function () {
+		  const statHeroes = document.querySelectorAll(".stat-hero");
+		  if (!statHeroes.length) return;
+		  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		  const animateValue = element => {
+		    const target = Number(element.dataset.statTarget || 0);
+		    if (!Number.isFinite(target)) {
+		      return;
+		    }
+		    if (prefersReducedMotion || target === 0) {
+		      element.textContent = String(target);
+		      return;
+		    }
+		    const duration = 1200;
+		    const startTime = performance.now();
+		    const tick = now => {
+		      const progress = Math.min((now - startTime) / duration, 1);
+		      const eased = 1 - Math.pow(1 - progress, 3);
+		      element.textContent = String(Math.round(target * eased));
+		      if (progress < 1) {
+		        window.requestAnimationFrame(tick);
+		      }
+		    };
+		    window.requestAnimationFrame(tick);
+		  };
+		  const observer = new IntersectionObserver((entries, obs) => {
+		    entries.forEach(entry => {
+		      if (!entry.isIntersecting) return;
+		      entry.target.querySelectorAll(".stat-hero__stat-value").forEach(animateValue);
+		      obs.unobserve(entry.target);
+		    });
+		  }, {
+		    threshold: 0.35
+		  });
+		  statHeroes.forEach(hero => observer.observe(hero));
+		})();
+
 		/*
 
 		  // Header background

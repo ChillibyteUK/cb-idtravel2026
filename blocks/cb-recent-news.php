@@ -120,10 +120,16 @@ switch ( $blog_type ) {
 						<div class="insight-type-grid__title">
 							<?php the_title(); ?>
 						</div>
+						<?php
+						if ( 'news' === $blog_type || 'insights' === $blog_type ) {
+							?>
 						<div class="insight-type-grid__date d-flex align-items-center gap-2">
 							<?php echo get_the_date( 'j F Y' ); ?> 
 							<?= cb_sanitise_svg( get_stylesheet_directory_uri() . '/img/arrow-n600.svg', 'insight-type-grid__arrow', 14, 13 ) ?>
 						</div>
+							<?php
+						}
+						?>
 					</div>
 				</a>	
 			</div>

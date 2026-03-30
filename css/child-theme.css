@@ -23400,6 +23400,42 @@ span a {
   }
 }
 
+.cta-hero {
+  background-color: var(--col-white);
+  color: var(--col-ink);
+  padding-block: 3rem 5rem;
+}
+.cta-hero .h1-wrapper {
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  margin-bottom: 5rem;
+}
+.cta-hero h1, .cta-hero .h1 {
+  text-wrap: balance;
+  font-size: var(--fs-850);
+  font-weight: var(--fw-book);
+  letter-spacing: var(--ls--20);
+  line-height: 1;
+}
+.cta-hero__cta-title {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls--5);
+}
+.cta-hero__intro {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+  margin-bottom: 1.5rem;
+}
+.cta-hero__content {
+  font-weight: var(--fw-light);
+}
+.cta-hero__content > p:first-of-type {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-600);
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

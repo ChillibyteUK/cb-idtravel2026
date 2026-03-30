@@ -16,7 +16,7 @@ header {
       font-weight var(--transition);
     display: inline-block;
     text-decoration: none;
-    padding: 0;
+    padding: 0.2rem 0 0 0;
     position: relative;
     &:hover,
     &:focus,
@@ -24,6 +24,14 @@ header {
       color: var(--col-purple-500);
       text-decoration: none;
       font-weight: var(--fw-semibold);
+    }
+  }
+
+  li.raspberry a {
+    background-color: var(--col-raspberry);
+    padding-inline: 1rem !important;
+    &:hover {
+      color: var(--col-white);
     }
   }
 

@@ -22066,7 +22066,7 @@ header a.nav-link {
   transition: color var(--transition), font-weight var(--transition);
   display: inline-block;
   text-decoration: none;
-  padding: 0;
+  padding: 0.2rem 0 0 0;
   position: relative;
 }
 header a:hover, header a:focus, header a:focus-visible,
@@ -22076,6 +22076,13 @@ header a.nav-link:focus-visible {
   color: var(--col-purple-500);
   text-decoration: none;
   font-weight: var(--fw-semibold);
+}
+header li.raspberry a {
+  background-color: var(--col-raspberry);
+  padding-inline: 1rem !important;
+}
+header li.raspberry a:hover {
+  color: var(--col-white);
 }
 header .navbar-nav .nav-link {
   display: inline-grid;

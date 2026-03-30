@@ -19,6 +19,24 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb-testimonial',
+				'title'           => 'CB Testimonial',
+				'description'     => 'Testimonial quote block.',
+				'render_template' => 'blocks/cb-testimonial.php',
+				'category'        => 'layout',
+				'icon'            => 'format-quote',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_solutions_nav',
 				'title'           => __( 'CB Solutions Nav' ),
 				'category'        => 'layout',

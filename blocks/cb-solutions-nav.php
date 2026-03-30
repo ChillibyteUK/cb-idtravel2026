@@ -93,7 +93,7 @@ if ( empty( $active_card['title'] ) ) {
 				</div>
 			</div>
 
-			<div class="<?= esc_attr( $cards_column_class ); ?>">
+			<div class="<?= esc_attr( $cards_column_class ); ?> pb-5">
 				<div class="row gx-4 gy-4">
 					<?php foreach ( $cards as $index => $card ) : ?>
 						<div class="<?= esc_attr( $card_column_class ); ?>">

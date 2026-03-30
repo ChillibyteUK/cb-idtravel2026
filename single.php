@@ -28,6 +28,9 @@ switch ( $post_style ) {
 	case 'people':
 		$post_style = 'post-people';
 		break;
+	case 'tmc':
+		$post_style = 'post-tmc';
+		break;
 	default:
 		$post_style = 'post-news';
 		break;

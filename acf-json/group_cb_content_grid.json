@@ -143,6 +143,7 @@
                                 "h2": "H2 Heading",
                                 "h3": "H3 Heading",
                                 "text": "Text",
+                                "qa": "Q&A",
                                 "list": "List",
                                 "image": "Image",
                                 "video": "Video",
@@ -323,6 +324,83 @@
                             "create_options": 0,
                             "save_options": 0,
                             "parent_repeater": "field_cb_content_grid_modules"
+                        },
+                        {
+                            "key": "field_cb_content_grid_qa_rows",
+                            "label": "Q&A Rows",
+                            "name": "qa_rows",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_cb_content_grid_module_type",
+                                        "operator": "==",
+                                        "value": "qa"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "field_cb_content_grid_qa_question",
+                            "button_label": "Add Q&A Row",
+                            "rows_per_page": 20,
+                            "parent_repeater": "field_cb_content_grid_modules",
+                            "sub_fields": [
+                                {
+                                    "key": "field_cb_content_grid_qa_question",
+                                    "label": "Question",
+                                    "name": "qa_question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_cb_content_grid_qa_rows"
+                                },
+                                {
+                                    "key": "field_cb_content_grid_qa_answer",
+                                    "label": "Answer",
+                                    "name": "qa_answer",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "60",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "rows": 4,
+                                    "placeholder": "",
+                                    "new_lines": "br",
+                                    "parent_repeater": "field_cb_content_grid_qa_rows"
+                                }
+                            ]
                         },
                         {
                             "key": "field_cb_content_grid_image",
@@ -584,5 +662,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774879179
+    "modified": 1774880532
 }

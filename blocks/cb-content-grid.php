@@ -223,6 +223,39 @@ if ( $text_class ) {
 									}
 									break;
 
+								case 'qa':
+									$qa_rows = $module['qa_rows'] ?? array();
+
+									if ( ! empty( $qa_rows ) && is_array( $qa_rows ) ) {
+										?>
+										<div class="cb-content-grid__qa">
+											<?php foreach ( $qa_rows as $qa_row ) : ?>
+												<?php
+												$qa_question = $qa_row['qa_question'] ?? '';
+												$qa_answer   = $qa_row['qa_answer'] ?? '';
+
+												if ( ! $qa_question && ! $qa_answer ) {
+													continue;
+												}
+												?>
+												<div class="cb-content-grid__qa-row row g-4 pb-5 align-items-start">
+													<div class="col-lg-4">
+														<?php if ( $qa_question ) : ?>
+															<h3 class="cb-content-grid__qa-question"><?= wp_kses_post( $qa_question ); ?></h3>
+														<?php endif; ?>
+													</div>
+													<div class="col-lg-8">
+														<?php if ( $qa_answer ) : ?>
+															<div class="cb-content-grid__qa-answer"><?= wp_kses_post( $qa_answer ); ?></div>
+														<?php endif; ?>
+													</div>
+												</div>
+											<?php endforeach; ?>
+										</div>
+										<?php
+									}
+									break;
+
 								case 'empty':
 								default:
 									break;

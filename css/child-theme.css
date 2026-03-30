@@ -23144,6 +23144,17 @@ span a {
 .cb-content-grid .cb-content-grid__text p:last-child {
   margin-bottom: 0;
 }
+.cb-content-grid .cb-content-grid__qa-question {
+  margin-bottom: 0;
+}
+.cb-content-grid .cb-content-grid__qa-row + .cb-content-grid__qa-row {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+}
+.cb-content-grid .cb-content-grid__qa-answer p:last-child {
+  margin-bottom: 0;
+}
 .cb-content-grid .cb-content-grid__image-wrap {
   overflow: hidden;
 }

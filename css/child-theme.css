@@ -23268,6 +23268,12 @@ span a {
   background-size: cover;
   color: var(--col-white);
 }
+.cb-image-feature-overlay__overlay {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+  margin-top: 25rem;
+}
 .cb-image-feature-overlay--hero {
   min-height: 100vh;
 }
@@ -23277,11 +23283,8 @@ span a {
   letter-spacing: var(--ls--40);
   font-weight: var(--fw-book);
 }
-.cb-image-feature-overlay__overlay {
-  position: relative;
-  width: 100%;
-  isolation: isolate;
-  margin-top: 25rem;
+.cb-image-feature-overlay--hero .cb-image-feature-overlay__overlay {
+  margin-top: 0;
 }
 .cb-image-feature-overlay__overlay::before {
   content: "";

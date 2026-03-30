@@ -23194,8 +23194,8 @@ span a {
 }
 
 .cb-signpost-header {
-  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
-  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/1);
   text-transform: uppercase;
   font-size: var(--fs-200);
   font-weight: var(--fw-regular);

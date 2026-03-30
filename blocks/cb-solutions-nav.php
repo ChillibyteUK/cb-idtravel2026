@@ -107,7 +107,7 @@ if ( empty( $active_card['title'] ) ) {
 							>
 								<div class="cb-solutions-nav__card-media">
 									<?php if ( $card['image'] ) : ?>
-										<?= wp_get_attachment_image( $card['image'], 'large', false, array( 'class' => 'cb-solutions-nav__card-image' ) ); ?>
+										<?= wp_get_attachment_image( $card['image'], 'full', false, array( 'class' => 'cb-solutions-nav__card-image' ) ); ?>
 									<?php endif; ?>
 								</div>
 								<div class="cb-solutions-nav__card-title">

@@ -1,18 +1,17 @@
 .cb-solutions-nav {
-  
-  .row {
+  > .id-container > .row {
     border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
     margin-top: 0;
   }
+
   h2 {
-    width: min(80vw,50%);
+    width: min(80vw, 50%);
     text-wrap: balance;
   }
+
   &__intro {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 100%;
     padding: 1.5rem 1rem 1.5rem 0;
 
     ul {
@@ -22,11 +21,11 @@
       padding-inline-start: 0;
 
       li {
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
 
         &:not(:first-of-type) {
           border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
-          padding-top: 0.75rem;
+          padding-top: 0.5rem;
         }
 
         &:last-child {
@@ -60,8 +59,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    aspect-ratio: 4 / 5;
-    height: 100%;
+    aspect-ratio: 268 / 341;
     overflow: hidden;
     color: var(--col-white);
     text-decoration: none;
@@ -128,7 +126,7 @@
     }
 
     &__card {
-      min-height: 18rem;
+      aspect-ratio: 4 / 5;
     }
   }
 }

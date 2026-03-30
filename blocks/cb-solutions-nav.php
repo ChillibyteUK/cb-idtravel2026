@@ -17,7 +17,8 @@ $current_page_id    = get_queried_object_id();
 $current_parent_id  = $current_page_id ? wp_get_post_parent_id( $current_page_id ) : 0;
 $is_solution_page   = $current_page_id && (int) $solutions_parent->ID === (int) $current_parent_id;
 $intro_column_class = $is_solution_page ? 'col-lg-6' : 'col-lg-4';
-$card_column_class  = 'col-md-6 col-lg-2';
+$cards_column_class = $is_solution_page ? 'col-lg-6' : 'col-lg-8';
+$card_column_class  = $is_solution_page ? 'col-md-6 col-lg-4' : 'col-md-6 col-lg-3';
 
 $solution_pages = get_pages(
 	array(
@@ -82,7 +83,7 @@ if ( empty( $active_card['title'] ) ) {
 			<?php
 		}
 		?>
-		<div class="row g-4 align-items-stretch">
+		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
 				<div class="cb-solutions-nav__intro" data-solutions-nav-panel>
 					<h3 class="cb-solutions-nav__title" data-solutions-nav-title><?= esc_html( $active_card['title'] ); ?></h3>
@@ -92,27 +93,31 @@ if ( empty( $active_card['title'] ) ) {
 				</div>
 			</div>
 
-			<?php foreach ( $cards as $index => $card ) : ?>
-				<div class="<?= esc_attr( $card_column_class ); ?>">
-					<a
-						class="cb-solutions-nav__card<?= 0 === $index ? ' is-active' : ''; ?>"
-						href="<?= esc_url( $card['url'] ); ?>"
-						data-solutions-nav-card
-						data-card-title="<?= esc_attr( $card['title'] ); ?>"
-						<?= $current_page_id === (int) $card['id'] ? 'aria-current="page"' : ''; ?>
-					>
-						<div class="cb-solutions-nav__card-media">
-							<?php if ( $card['image'] ) : ?>
-								<?= wp_get_attachment_image( $card['image'], 'large', false, array( 'class' => 'cb-solutions-nav__card-image' ) ); ?>
-							<?php endif; ?>
+			<div class="<?= esc_attr( $cards_column_class ); ?>">
+				<div class="row gx-4 gy-4">
+					<?php foreach ( $cards as $index => $card ) : ?>
+						<div class="<?= esc_attr( $card_column_class ); ?>">
+							<a
+								class="cb-solutions-nav__card<?= 0 === $index ? ' is-active' : ''; ?>"
+								href="<?= esc_url( $card['url'] ); ?>"
+								data-solutions-nav-card
+								data-card-title="<?= esc_attr( $card['title'] ); ?>"
+								<?= $current_page_id === (int) $card['id'] ? 'aria-current="page"' : ''; ?>
+							>
+								<div class="cb-solutions-nav__card-media">
+									<?php if ( $card['image'] ) : ?>
+										<?= wp_get_attachment_image( $card['image'], 'large', false, array( 'class' => 'cb-solutions-nav__card-image' ) ); ?>
+									<?php endif; ?>
+								</div>
+								<div class="cb-solutions-nav__card-title"><?= esc_html( $card['title'] ); ?></div>
+								<div class="cb-solutions-nav__card-summary" hidden>
+									<?= wp_kses_post( $card['summary'] ); ?>
+								</div>
+							</a>
 						</div>
-						<div class="cb-solutions-nav__card-title"><?= esc_html( $card['title'] ); ?></div>
-						<div class="cb-solutions-nav__card-summary" hidden>
-							<?= wp_kses_post( $card['summary'] ); ?>
-						</div>
-					</a>
+					<?php endforeach; ?>
 				</div>
-			<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
 </section>

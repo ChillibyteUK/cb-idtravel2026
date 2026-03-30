@@ -7074,6 +7074,29 @@
 		// }
 		// )();
 
+		// Swap solutions nav intro content on card hover/focus.
+		(function () {
+		  const navs = document.querySelectorAll(".cb-solutions-nav");
+		  if (!navs.length) return;
+		  navs.forEach(nav => {
+		    const title = nav.querySelector("[data-solutions-nav-title]");
+		    const summary = nav.querySelector("[data-solutions-nav-summary]");
+		    const cards = nav.querySelectorAll("[data-solutions-nav-card]");
+		    if (!title || !summary || !cards.length) return;
+		    const setActiveCard = card => {
+		      cards.forEach(item => item.classList.remove("is-active"));
+		      card.classList.add("is-active");
+		      title.textContent = card.dataset.cardTitle || "";
+		      const summaryTemplate = card.querySelector(".cb-solutions-nav__card-summary");
+		      summary.innerHTML = summaryTemplate ? summaryTemplate.innerHTML : "";
+		    };
+		    cards.forEach(card => {
+		      card.addEventListener("mouseenter", () => setActiveCard(card));
+		      card.addEventListener("focus", () => setActiveCard(card));
+		    });
+		  });
+		})();
+
 		/*
 
 		  // Header background

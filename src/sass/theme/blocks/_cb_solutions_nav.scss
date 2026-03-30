@@ -1,0 +1,114 @@
+.cb-solutions-nav {
+  
+  .row {
+    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+    margin-top: 0;
+  }
+  h2 {
+    width: min(80vw,50%);
+    text-wrap: balance;
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100%;
+    padding: 1.5rem 1rem 1.5rem 0;
+  }
+
+  &__title {
+    margin-bottom: 1.25rem;
+    font-size: var(--fs-500);
+    font-weight: var(--fw-semibold);
+    line-height: 0.95;
+    letter-spacing: var(--ls--10);
+    text-wrap: balance;
+  }
+
+  &__summary {
+    max-width: 34rem;
+    font-size: var(--fs-200);
+    line-height: var(--lh-500);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    aspect-ratio: 4 / 5;
+    height: 100%;
+    overflow: hidden;
+    color: var(--col-white);
+    text-decoration: none;
+    isolation: isolate;
+    background: var(--col-ink);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        hsl(var(--hsl-ink) / 0.1) 0%,
+        hsl(var(--hsl-ink) / 0.72) 100%
+      );
+      transition: opacity 180ms ease;
+    }
+
+    &:hover::before,
+    &:focus-visible::before,
+    &.is-active::before {
+      opacity: 0.8;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--col-raspberry);
+      outline-offset: 3px;
+    }
+  }
+
+  &__card-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      160deg,
+      var(--col-raspberry-400),
+      var(--col-ink)
+    );
+  }
+
+  &__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__card-title {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    padding: 1.1rem 1rem;
+    font-size: var(--fs-200);
+    line-height: var(--lh-300);
+    font-weight: var(--fw-semibold);
+    text-wrap: balance;
+  }
+
+  @media (max-width: 991.98px) {
+    &__intro {
+      padding-right: 0;
+    }
+
+    &__card {
+      min-height: 18rem;
+    }
+  }
+}

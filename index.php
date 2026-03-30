@@ -44,6 +44,14 @@ get_header();
                 'orderby'        => 'date',
                 'order'          => 'DESC', // Descending order.
                 'posts_per_page' => -1,    // Get all posts.
+				// only in the insights or perspective categories.
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'category',
+						'field'    => 'slug',
+						'terms'    => array( 'insights', 'perspectives' ),
+					),
+				),
             );
 			$q = new WP_Query( $args );
 

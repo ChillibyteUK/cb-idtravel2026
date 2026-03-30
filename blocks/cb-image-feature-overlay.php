@@ -54,7 +54,7 @@ if ( $image_id ) {
 			<hr>
 			<div class="row g-4 pt-4">
 				<div class="col-lg-8">
-					<h1><?= esc_html( get_field( 'title' ) ); ?></h1>
+					<h1><?= wp_kses_post( get_field( 'title' ) ); ?></h1>
 				</div>
 				<div class="col-lg-4">
 					<?php if ( ! empty( $block_link['url'] ) && ! empty( $block_link['title'] ) ) : ?>

@@ -106,7 +106,7 @@
             "label": "Title (h1)",
             "name": "title",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -126,9 +126,9 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         },
         {
             "key": "field_69ca7dfcad888",
@@ -204,5 +204,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774878275
+    "modified": 1774884481
 }

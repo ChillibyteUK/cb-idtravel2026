@@ -62,6 +62,10 @@ if ( $text_class ) {
 
 			$grid_classes = array( 'row', 'g-5' );
 
+			if ( 'Yes' === $row['has_line'][0] ) {
+				$grid_classes[] = 'cb-content-grid__row--has-line';
+			}
+
 			switch ( $column_layout ) {
 				case '12':
 					$grid_classes[] = 'cb-content-grid__row--full';

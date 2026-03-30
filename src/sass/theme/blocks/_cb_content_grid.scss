@@ -1,6 +1,8 @@
 .cb-content-grid {
   .cb-content-grid__row {
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    &.--has-line {
+      border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    }
 
     & + .cb-content-grid__row {
       margin-top: 2rem;

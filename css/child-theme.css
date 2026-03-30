@@ -22426,6 +22426,12 @@ header:has(.navbar-collapse.collapse.show) {
   margin-bottom: 2rem;
   padding-block: 1rem 2rem;
 }
+.single-blog .post-content .post-people p:first-of-type {
+  border-bottom: none;
+}
+.single-blog .post-content .post-people .post-date {
+  display: none;
+}
 .single-blog .post-content h2, .single-blog .post-content .h2 {
   border-top: 1px solid var(--col-neutral-500) !important;
   color: var(--col-white);

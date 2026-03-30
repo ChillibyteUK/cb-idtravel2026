@@ -207,6 +207,14 @@
       margin-bottom: 2rem;
       padding-block: 1rem 2rem;
     }
+    .post-people {
+      p:first-of-type {
+        border-bottom: none;
+      }
+      .post-date {
+        display: none;
+      }
+    }
 
     h2 {
       border-top: 1px solid var(--col-neutral-500) !important;

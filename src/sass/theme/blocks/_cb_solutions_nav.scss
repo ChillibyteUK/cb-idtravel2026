@@ -66,25 +66,6 @@
     isolation: isolate;
     background: var(--col-ink);
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        180deg,
-        hsl(var(--hsl-ink) / 0.1) 0%,
-        hsl(var(--hsl-ink) / 0.72) 100%
-      );
-      transition: opacity 180ms ease;
-    }
-
-    &:hover::before,
-    &:focus-visible::before,
-    &.is-active::before {
-      opacity: 0.8;
-    }
-
     &:focus-visible {
       outline: 2px solid var(--col-raspberry);
       outline-offset: 3px;
@@ -100,6 +81,21 @@
       var(--col-raspberry-400),
       var(--col-ink)
     );
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        hsl(var(--hsl-ink) / 0) 0%,
+        hsl(var(--hsl-ink) / 0.18) 38%,
+        hsl(var(--hsl-ink) / 0.72) 72%,
+        hsl(var(--hsl-ink) / 0.96) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
   }
 
   &__card-image {
@@ -107,6 +103,8 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    position: relative;
+    z-index: 0;
   }
 
   &__card-title {
@@ -114,6 +112,8 @@
     z-index: 2;
     margin-top: auto;
     padding: 1.1rem 1rem;
+    color: var(--col-white);
+    text-shadow: 0 1px 2px hsl(var(--hsl-ink) / 0.45);
     font-size: var(--fs-200);
     line-height: var(--lh-300);
     font-weight: var(--fw-semibold);

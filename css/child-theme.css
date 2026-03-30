@@ -22924,6 +22924,7 @@ span a {
   max-width: 34rem;
   font-size: var(--fs-200);
   line-height: var(--lh-500);
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
 }
 .cb-business-travel-nav__summary p:last-child {
   margin-bottom: 0;

@@ -82,6 +82,6 @@
   }
 
   .cb-content-grid__module--empty {
-    display: none;
+    min-height: 1px;
   }
 }

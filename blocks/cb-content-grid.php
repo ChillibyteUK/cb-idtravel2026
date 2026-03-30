@@ -121,7 +121,7 @@ if ( $text_class ) {
 									$h2_text = $module['h2_text'] ?? '';
 									if ( $h2_text ) {
 										?>
-										<h2 class="cb-content-grid__h2"><?= esc_html( $h2_text ); ?></h2>
+										<h2 class="cb-content-grid__h2"><?= wp_kses_post( $h2_text ); ?></h2>
 										<?php
 									}
 									break;
@@ -130,7 +130,7 @@ if ( $text_class ) {
 									$h3_text = $module['h3_text'] ?? '';
 									if ( $h3_text ) {
 										?>
-										<h3 class="cb-content-grid__h3"><?= esc_html( $h3_text ); ?></h3>
+										<h3 class="cb-content-grid__h3"><?= wp_kses_post( $h3_text ); ?></h3>
 										<?php
 									}
 									break;

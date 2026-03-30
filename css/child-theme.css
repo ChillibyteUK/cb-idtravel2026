@@ -23150,7 +23150,7 @@ span a {
   padding-bottom: 0.5rem;
 }
 .cb-content-grid .cb-content-grid__module--empty {
-  display: none;
+  min-height: 1px;
 }
 
 .cb-signpost-header {

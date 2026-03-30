@@ -63,7 +63,7 @@ if ( $text_class ) {
 			$grid_classes = array( 'row', 'g-5' );
 
 			if ( 'Yes' === $row['has_line'][0] ) {
-				$grid_classes[] = 'cb-content-grid__row--has-line';
+				$row_classes[] = 'cb-content-grid__row--has-line';
 			}
 
 			switch ( $column_layout ) {

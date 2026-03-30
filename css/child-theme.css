@@ -23125,7 +23125,7 @@ span a {
   }
 }
 
-.cb-content-grid .cb-content-grid__row.--has-line {
+.cb-content-grid .cb-content-grid__row--has-line {
   border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
 }
 .cb-content-grid .cb-content-grid__row + .cb-content-grid__row {

@@ -117,8 +117,8 @@
   --fs-900: clamp(3.3333rem, 2.6rem + 3vw, 5rem);
   /* === Utilities === */
   --transition: 250ms ease-out;
-  --h-top: 57px;
-  --h-top-desktop: 57px;
+  --h-top: 62px;
+  --h-top-desktop: 62px;
 }
 
 /*!
@@ -23275,7 +23275,7 @@ span a {
   margin-top: 15rem;
 }
 .cb-image-feature-overlay--hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--h-top));
 }
 .cb-image-feature-overlay--hero h1, .cb-image-feature-overlay--hero .h1 {
   font-size: var(--fs-900);

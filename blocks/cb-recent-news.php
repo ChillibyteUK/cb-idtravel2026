@@ -36,6 +36,25 @@ $section_title = 'has-primary-black-background-color';
 $arrow         = '/img/arrow-n600.svg';
 $block_title   = 'PRESS';
 
+switch ( $blog_type ) {
+	case 'news':
+		$block_title   = 'NEWS';
+		$background    = 'has-primary-black-background-color';
+		$section_title = 'has-primary-black-background-color';
+		break;
+	case 'tmc':
+		$block_title   = 'OTHER RELATED ARTICLES';
+		$background    = 'has-ink-background-color';
+		$section_title = 'has-neutral-800-background-color';
+		break;
+	default:
+		$block_title   = 'PRESS';
+		$background    = 'has-primary-black-background-color';
+		$section_title = 'has-primary-black-background-color';
+		break;
+}
+
+
 ?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-recent-news <?= esc_attr( $background ); ?>">
 	<div class="cb-recent-news__pre-title <?= esc_attr( $section_title ); ?>">

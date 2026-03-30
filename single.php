@@ -12,11 +12,11 @@ get_header();
 $categories     = get_the_category();
 $first_category = null;
 if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
-	// get space separated list of category slugs.
 	$first_category = $categories[0];
 }
 
-$post_style = $first_category->slug;
+$category_slug = $first_category instanceof WP_Term ? $first_category->slug : 'news';
+$post_style    = $category_slug;
 
 switch ( $post_style ) {
 	case 'news':
@@ -68,7 +68,7 @@ switch ( $post_style ) {
 	</div>
 	<div class="category-wrapper">
 		<div class="id-container px-4 px-md-5">
-			<div class="category <?= esc_attr( $first_category->slug ); ?>"><?= esc_html( $first_category->name ); ?></div>
+			<div class="category <?= esc_attr( $category_slug ); ?>"><?= esc_html( $first_category instanceof WP_Term ? $first_category->name : 'News' ); ?></div>
 		</div>
 	</div>
 	<div class="post-title">
@@ -103,6 +103,31 @@ switch ( $post_style ) {
 		</div>
 	</div>
 
+	<?php
+	$cta = null;
+	$btype = $category_slug;
+
+	switch ( $category_slug ) {
+		case 'news':
+			$cta = get_field( 'press_cta', 'option' );
+			break;
+		case 'insights':
+			$cta = get_field( 'insight_cta', 'option' );
+			break;
+		case 'people':
+			$cta = get_field( 'press_cta', 'option' );
+			break;
+		case 'tmc':
+			$cta = get_field( 'press_cta', 'option' );
+			break;
+		default:
+			$cta = get_field( 'press_cta', 'option' );
+			break;
+	}
+
+	set_query_var( 'cta_choice', $cta );
+	set_query_var( 'blog_type', $btype );
+	?>
 	<section class="recent-news">
 		<?php
 		get_template_part( 'blocks/cb-recent-news' );
@@ -110,22 +135,6 @@ switch ( $post_style ) {
 	</section>
 	<?php
 
-	// include cta template.
-	switch ( $first_category->slug ) {
-		case 'press':
-			$cta = get_field( 'press_cta', 'option' );
-			break;
-		case 'insights':
-			$cta = get_field( 'insight_cta', 'option' );
-			break;
-		case 'perspectives':
-			$cta = get_field( 'insight_cta', 'option' );
-			break;
-		default:
-			$cta = get_field( 'press_cta', 'option' );
-			break;
-	}
-	set_query_var( 'cta_choice', $cta );
 	get_template_part( 'blocks/cb-cta' );
 
 	?>

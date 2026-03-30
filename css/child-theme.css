@@ -23141,6 +23141,9 @@ span a {
 .cb-content-grid .cb-content-grid__h3 {
   margin-bottom: 0;
 }
+.cb-content-grid .cb-content-grid__text p:first-child {
+  margin-top: 0;
+}
 .cb-content-grid .cb-content-grid__text p:last-child {
   margin-bottom: 0;
 }

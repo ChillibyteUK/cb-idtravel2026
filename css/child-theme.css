@@ -22341,6 +22341,20 @@ header:has(.navbar-collapse.collapse.show) {
   text-transform: uppercase;
   font-size: var(--fs-50);
 }
+.insight-type-grid.tmc-index {
+  background-color: var(--col-white);
+  color: var(--col-ink);
+}
+.insight-type-grid.tmc-index .insight-type-grid__image-wrapper {
+  margin-bottom: 0.75rem;
+}
+.insight-type-grid.tmc-index .insight-type-grid__title {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--col-raspberry-100) !important;
+}
+.insight-type-grid.tmc-index .insight-type-grid__date {
+  color: var(--col-ink);
+}
 
 .single-blog {
   background-color: var(--_background);

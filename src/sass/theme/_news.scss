@@ -13,6 +13,7 @@
 
 .insight-type-grid {
   color: var(--col-white);
+
   &__arrow {
     transition: transform var(--transition);
   }
@@ -88,6 +89,7 @@
     .insight-type-grid__date {
       color: var(--col-raspberry-100);
     }
+
   }
   &__image-wrapper {
     overflow: hidden;
@@ -116,6 +118,21 @@
   &__date {
     text-transform: uppercase;
     font-size: var(--fs-50);
+  }
+
+  &.tmc-index {
+    background-color: var(--col-white);
+    color: var(--col-ink);
+    .insight-type-grid__image-wrapper {
+      margin-bottom: 0.75rem;
+    }
+    .insight-type-grid__title {
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--col-raspberry-100) !important;
+    }
+    .insight-type-grid__date {
+      color: var(--col-ink);
+    }
   }
 }
 

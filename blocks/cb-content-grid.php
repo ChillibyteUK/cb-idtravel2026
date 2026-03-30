@@ -163,6 +163,24 @@ if ( $text_class ) {
 									}
 									break;
 
+								case 'quote':
+									$quote_text = $module['quote_text'] ?? '';
+									$quote_link = $module['quote_link'] ?? array();
+
+									if ( $quote_text ) {
+										?>
+										<div class="cb-content-grid__quote-wrap">
+											<blockquote class="cb-content-grid__quote mb-4"><?= wp_kses_post( $quote_text ); ?></blockquote>
+											<?php if ( ! empty( $quote_link['url'] ) && ! empty( $quote_link['title'] ) ) : ?>
+												<a class="id-button" href="<?= esc_url( $quote_link['url'] ); ?>" target="<?= esc_attr( $quote_link['target'] ?: '_self' ); ?>">
+													<?= esc_html( $quote_link['title'] ); ?>
+												</a>
+											<?php endif; ?>
+										</div>
+										<?php
+									}
+									break;
+
 								case 'image':
 									$image_id     = $module['image'] ?? null;
 									$aspect       = $module['image_aspect_ratio'] ?? '16x9';

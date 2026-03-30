@@ -52,6 +52,11 @@ if ( $extra_classes ) {
 	$section_classes[] = $extra_classes;
 }
 
+// Support Gutenberg color picker.
+$bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+$section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg ) ) );
+
 $cards = array();
 
 foreach ( $solution_pages as $page ) {

@@ -22422,15 +22422,9 @@ header:has(.navbar-collapse.collapse.show) {
   font-size: var(--fs-500);
   font-weight: var(--fw-light);
   line-height: var(--lh-600);
-  border-bottom: 1px solid var(--col-neutral-500) !important;
+  border-bottom: 1px solid var(--col-neutral-500);
   margin-bottom: 2rem;
   padding-block: 1rem 2rem;
-}
-.single-blog .post-content .post-people p:first-of-type {
-  border-bottom: none;
-}
-.single-blog .post-content .post-people .post-date {
-  display: none;
 }
 .single-blog .post-content h2, .single-blog .post-content .h2 {
   border-top: 1px solid var(--col-neutral-500) !important;
@@ -22439,6 +22433,12 @@ header:has(.navbar-collapse.collapse.show) {
   font-weight: var(--fw-book);
   margin-block: 2rem;
   padding-block: 0.75rem 1.5rem;
+}
+.single-blog.post-people p:first-of-type {
+  border-bottom: none !important;
+}
+.single-blog.post-people .post-date {
+  display: none;
 }
 
 .text-page {

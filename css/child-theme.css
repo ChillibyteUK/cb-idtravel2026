@@ -23154,14 +23154,16 @@ span a {
   font-weight: var(--fw-light);
   line-height: var(--lh-400);
   letter-spacing: var(--ls--5);
+  padding-top: 3.5rem;
 }
 .cb-content-grid .cb-content-grid__quote::before {
   content: '"';
   position: absolute;
-  top: -4.5rem;
-  left: 0;
+  top: -0.5rem;
+  left: -0.25rem;
   font-size: 8rem;
   color: var(--col-white);
+  line-height: 1;
 }
 .cb-content-grid .cb-content-grid__quote-link {
   display: inline-flex;

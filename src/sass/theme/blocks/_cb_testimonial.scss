@@ -30,36 +30,51 @@
     display: table;
   }
 
-  &.has-neutral-100-background-color {
+  &.has-neutral-200-background-color {
     .cb-testimonial__quote {
       color: var(--col-ink);
     }
 
     .cb-testimonial__author {
-      color: var(--col-white);
-      background-color: var(--col-ink);
+      color: var(--col-ink);
+      background-color: var(--col-white);
     }
 
     .cb-testimonial__company {
-      color: var(--col-ink);
-      background-color: var(--col-purple-200);
+      color: var(--col-white);
+      background-color: var(--col-raspberry);
     }
   }
 
-  &.has-raspberry-900-background-color,
-  &.has-ink-background-color {
+  &.has-raspberry-background-color {
     .cb-testimonial__quote {
-      color: var(--col-neutral-050);
+      color: var(--col-white);
     }
 
     .cb-testimonial__author {
       color: var(--col-ink);
-      background-color: var(--col-lime-200);
+      background-color: var(--col-purple-300);
     }
 
     .cb-testimonial__company {
-      color: var(--col-neutral-050);
-      background-color: hsl(var(--hsl-neutral-050) / 0.14);
+      color: var(--col-white);
+      background-color: var(--col-purple-1100);
+    }
+  }
+
+  &.has-purple-400-background-color {
+    .cb-testimonial__quote {
+      color: var(--col-ink);
+    }
+
+    .cb-testimonial__author {
+      color: var(--col-ink);
+      background-color: var(--col-white);
+    }
+
+    .cb-testimonial__company {
+      color: var(--col-white);
+      background-color: var(--col-raspberry);
     }
   }
 

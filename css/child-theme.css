@@ -23182,27 +23182,38 @@ span a {
 .cb-testimonial__company {
   display: table;
 }
-.cb-testimonial.has-neutral-100-background-color .cb-testimonial__quote {
+.cb-testimonial.has-neutral-200-background-color .cb-testimonial__quote {
   color: var(--col-ink);
 }
-.cb-testimonial.has-neutral-100-background-color .cb-testimonial__author {
+.cb-testimonial.has-neutral-200-background-color .cb-testimonial__author {
+  color: var(--col-ink);
+  background-color: var(--col-white);
+}
+.cb-testimonial.has-neutral-200-background-color .cb-testimonial__company {
   color: var(--col-white);
-  background-color: var(--col-ink);
+  background-color: var(--col-raspberry);
 }
-.cb-testimonial.has-neutral-100-background-color .cb-testimonial__company {
+.cb-testimonial.has-raspberry-background-color .cb-testimonial__quote {
+  color: var(--col-white);
+}
+.cb-testimonial.has-raspberry-background-color .cb-testimonial__author {
   color: var(--col-ink);
-  background-color: var(--col-purple-200);
+  background-color: var(--col-purple-300);
 }
-.cb-testimonial.has-raspberry-900-background-color .cb-testimonial__quote, .cb-testimonial.has-ink-background-color .cb-testimonial__quote {
-  color: var(--col-neutral-050);
+.cb-testimonial.has-raspberry-background-color .cb-testimonial__company {
+  color: var(--col-white);
+  background-color: var(--col-purple-1100);
 }
-.cb-testimonial.has-raspberry-900-background-color .cb-testimonial__author, .cb-testimonial.has-ink-background-color .cb-testimonial__author {
+.cb-testimonial.has-purple-400-background-color .cb-testimonial__quote {
   color: var(--col-ink);
-  background-color: var(--col-lime-200);
 }
-.cb-testimonial.has-raspberry-900-background-color .cb-testimonial__company, .cb-testimonial.has-ink-background-color .cb-testimonial__company {
-  color: var(--col-neutral-050);
-  background-color: hsl(var(--hsl-neutral-050)/0.14);
+.cb-testimonial.has-purple-400-background-color .cb-testimonial__author {
+  color: var(--col-ink);
+  background-color: var(--col-white);
+}
+.cb-testimonial.has-purple-400-background-color .cb-testimonial__company {
+  color: var(--col-white);
+  background-color: var(--col-raspberry);
 }
 @media (max-width: 767.98px) {
   .cb-testimonial__quote {

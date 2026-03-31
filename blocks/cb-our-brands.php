@@ -13,6 +13,11 @@ $brands     = get_field( 'brands' ) ?: array();
 
 $section_classes = array( 'cb-our-brands' );
 
+// Support Gutenberg color picker.
+$bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+$section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg ) ) );
+
 if ( ! empty( $block['className'] ) ) {
 	$section_classes[] = $block['className'];
 }

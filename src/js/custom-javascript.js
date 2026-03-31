@@ -218,7 +218,7 @@ AOS.init({
 // Swap solutions nav intro content on card hover/focus.
 (function () {
   const navs = document.querySelectorAll(
-    ".cb-solutions-nav, .cb-business-travel-nav",
+    ".cb-solutions-nav, .cb-business-travel-nav, .cb-specialist-travel-nav",
   );
 
   if (!navs.length) return;

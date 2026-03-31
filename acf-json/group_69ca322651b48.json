@@ -90,6 +90,13 @@
                 "operator": "!=",
                 "value": "32"
             }
+        ],
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "20"
+            }
         ]
     ],
     "menu_order": 0,
@@ -102,5 +109,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774867684
+    "modified": 1774961949
 }

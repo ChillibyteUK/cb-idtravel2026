@@ -23492,6 +23492,138 @@ span a {
   display: inline-block;
 }
 
+.cb-specialist-travel-nav {
+  background-color: var(--col-neutral-050);
+  color: var(--col-ink);
+}
+.cb-specialist-travel-nav__heading {
+  margin: 0;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.cb-specialist-travel-nav__intro {
+  padding-top: 0.5rem;
+}
+.cb-specialist-travel-nav__title {
+  margin-bottom: 1rem;
+  font-size: var(--fs-500);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-300);
+  letter-spacing: var(--ls--5);
+  text-wrap: balance;
+}
+.cb-specialist-travel-nav__summary {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-500);
+}
+.cb-specialist-travel-nav__summary p:last-child {
+  margin-bottom: 0;
+}
+.cb-specialist-travel-nav__intro {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem 1.5rem 0;
+}
+.cb-specialist-travel-nav__intro ul {
+  font-size: var(--fs-100);
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
+  padding-inline-start: 0;
+}
+.cb-specialist-travel-nav__intro ul li {
+  margin-bottom: 0.25rem;
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  padding-top: 0.25rem;
+}
+.cb-specialist-travel-nav__intro ul li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/1);
+}
+.cb-specialist-travel-nav__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 268/341;
+  overflow: hidden;
+  color: var(--col-white);
+  text-decoration: none;
+  isolation: isolate;
+  background: var(--col-ink);
+}
+.cb-specialist-travel-nav__card:focus-visible {
+  outline: 2px solid var(--col-raspberry);
+  outline-offset: 3px;
+}
+.cb-specialist-travel-nav__card-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(160deg, var(--col-raspberry-400), var(--col-ink));
+}
+.cb-specialist-travel-nav__card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(var(--hsl-ink)/0) 0%, hsl(var(--hsl-ink)/0.18) 38%, hsl(var(--hsl-ink)/0.72) 72%, hsl(var(--hsl-ink)/0.96) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.cb-specialist-travel-nav__card-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+.cb-specialist-travel-nav__card-title {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.1rem 1rem;
+  color: var(--col-white);
+  text-shadow: 0 1px 2px hsl(var(--hsl-ink)/0.45);
+  font-size: var(--fs-200);
+  line-height: var(--lh-300);
+  font-weight: var(--fw-regular);
+  text-wrap: balance;
+}
+.cb-specialist-travel-nav__card-title-text {
+  min-width: 0;
+}
+.cb-specialist-travel-nav__card-arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  color: currentColor;
+}
+.cb-specialist-travel-nav__card-arrow-icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-arrow-icon {
+  transform: rotate(0deg);
+}
+@media (max-width: 991.98px) {
+  .cb-specialist-travel-nav__card {
+    aspect-ratio: 4/5;
+  }
+}
+
 .cb-solutions-nav .hr {
   border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
   margin-top: 0;

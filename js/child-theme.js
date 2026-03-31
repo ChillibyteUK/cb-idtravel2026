@@ -7076,7 +7076,7 @@
 
 		// Swap solutions nav intro content on card hover/focus.
 		(function () {
-		  const navs = document.querySelectorAll(".cb-solutions-nav, .cb-business-travel-nav");
+		  const navs = document.querySelectorAll(".cb-solutions-nav, .cb-business-travel-nav, .cb-specialist-travel-nav");
 		  if (!navs.length) return;
 		  navs.forEach(nav => {
 		    const title = nav.querySelector("[data-solutions-nav-title]");

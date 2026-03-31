@@ -14,58 +14,26 @@
  */
 function cb_register_taxes() {
 
-    $args = array(
-        'labels'             => array(
-            'name'          => 'Services',
-            'singular_name' => 'Service',
-        ),
+	$args = array(
+		'labels'             => array(
+			'name'          => 'People',
+			'singular_name' => 'Person',
+		),
         'public'             => true,
         'publicly_queryable' => true,
         'hierarchical'       => true,
         'show_ui'            => true,
-        'show_in_nav_menus'  => true,
-        'show_tagcloud'      => false,
-        'show_in_quick_edit' => true,
-        'show_admin_column'  => true,
-        'show_in_rest'       => true,
-        'rewrite'            => false,
-    );
-    register_taxonomy( 'service', array( 'case_study', 'post' ), $args );
+		'show_in_nav_menus'  => true,
+		'show_tagcloud'      => false,
+		'show_in_quick_edit' => true,
+		'show_admin_column'  => true,
+		'show_in_rest'       => true,
+		'rewrite'            => array(
+			'slug'       => 'people',
+			'with_front' => false,
+		),
+	);
+    register_taxonomy( 'person', array( 'post' ), $args );
 
-	// $args = array(
-    //     'labels'             => array(
-    //         'name'          => 'Themes',
-    //         'singular_name' => 'Theme',
-    //     ),
-    //     'public'             => true,
-    //     'publicly_queryable' => true,
-    //     'hierarchical'       => true,
-    //     'show_ui'            => true,
-    //     'show_in_nav_menus'  => true,
-    //     'show_tagcloud'      => false,
-    //     'show_in_quick_edit' => true,
-    //     'show_admin_column'  => true,
-    //     'show_in_rest'       => true,
-    //     'rewrite'            => false,
-    // );
-    // register_taxonomy( 'theme', array( 'case_study', 'post' ), $args );
-
-    // $args = array(
-    //     'labels'             => array(
-    //         'name'          => 'Regions',
-    //         'singular_name' => 'Region',
-    //     ),
-    //     'public'             => true,
-    //     'publicly_queryable' => true,
-    //     'hierarchical'       => true,
-    //     'show_ui'            => true,
-    //     'show_in_nav_menus'  => true,
-    //     'show_tagcloud'      => false,
-    //     'show_in_quick_edit' => true,
-    //     'show_admin_column'  => true,
-    //     'show_in_rest'       => true,
-    //     'rewrite'            => false,
-    // );
-    // register_taxonomy( 'region', array( 'case_study', 'post' ), $args );
 }
 add_action( 'init', 'cb_register_taxes' );

@@ -245,6 +245,8 @@ if ( $text_class ) {
 									$qa_rows = $module['qa_rows'] ?? array();
 
 									if ( ! empty( $qa_rows ) && is_array( $qa_rows ) ) {
+										$first_q = $module['lead_first'] ? 'cb-content-grid__qa-question--first' : '';
+										$first_a = $module['lead_first'] ? 'cb-content-grid__qa-answer--first' : '';
 										?>
 										<div class="cb-content-grid__qa">
 											<?php foreach ( $qa_rows as $qa_row ) : ?>
@@ -257,18 +259,21 @@ if ( $text_class ) {
 												}
 												?>
 												<div class="cb-content-grid__qa-row row g-4 pb-5 align-items-start">
-													<div class="col-lg-4">
+													<div class="col-lg-6">
 														<?php if ( $qa_question ) : ?>
-															<h3 class="cb-content-grid__qa-question"><?= wp_kses_post( $qa_question ); ?></h3>
+															<h3 class="cb-content-grid__qa-question <?= esc_attr( $first_q ); ?>"><?= wp_kses_post( $qa_question ); ?></h3>
 														<?php endif; ?>
 													</div>
-													<div class="col-lg-8">
+													<div class="col-lg-6">
 														<?php if ( $qa_answer ) : ?>
-															<div class="cb-content-grid__qa-answer"><?= wp_kses_post( $qa_answer ); ?></div>
+															<div class="cb-content-grid__qa-answer <?= esc_attr( $first_a ); ?>"><?= wp_kses_post( $qa_answer ); ?></div>
 														<?php endif; ?>
 													</div>
 												</div>
-											<?php endforeach; ?>
+											<?php 
+												$first_q = $first_a = '';
+											endforeach;
+											?>
 										</div>
 										<?php
 									}

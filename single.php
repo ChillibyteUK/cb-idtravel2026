@@ -106,6 +106,7 @@ switch ( $post_style ) {
 	<?php
 	$cta = null;
 	$btype = $category_slug;
+	$person = null;
 
 	switch ( $category_slug ) {
 		case 'news':
@@ -116,6 +117,13 @@ switch ( $post_style ) {
 			break;
 		case 'people':
 			$cta = get_field( 'press_cta', 'option' );
+			$person = get_the_terms( get_the_ID(), 'person' );
+				if ( $person && ! is_wp_error( $person ) ) {
+					$person = $person[0];
+				} else {
+					$person = null;
+				}
+			$btype = 'people';
 			break;
 		case 'tmc':
 			$cta = get_field( 'press_cta', 'option' );
@@ -127,6 +135,7 @@ switch ( $post_style ) {
 
 	set_query_var( 'cta_choice', $cta );
 	set_query_var( 'blog_type', $btype );
+	set_query_var( 'person', $person );
 	?>
 	<section class="recent-news">
 		<?php

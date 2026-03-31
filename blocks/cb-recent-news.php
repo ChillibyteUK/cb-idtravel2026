@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Block ID.
 $block_id   = $block['id'] ?? '';
 $blog_type  = get_query_var( 'blog_type', '' );
+$person     = get_query_var( 'person', '' );
 $blog_types = array();
 
 if ( ! empty( $blog_type ) ) {
@@ -51,6 +52,11 @@ switch ( $primary_blog_type ) {
 		$background    = 'has-ink-background-color';
 		$section_title = 'has-neutral-800-background-color';
 		break;
+	case 'people':
+		$block_title   = 'MORE FROM OUR PEOPLE';
+		$background    = 'has-raspberry-background-color';
+		$section_title = 'has-raspberry-450-background-color';
+		break;
 	default:
 		$block_title   = 'PRESS';
 		$background    = 'has-primary-black-background-color';
@@ -81,6 +87,17 @@ switch ( $primary_blog_type ) {
 
 			if ( ! empty( $blog_types ) ) {
 				$args['category_name'] = implode( ',', $blog_types );
+			}
+			if ( ! empty( $person ) ) {
+				// tax_query for person taxonomy
+				$args['tax_query'] = array(
+					array(
+						'taxonomy' => 'person',
+						'field'    => 'slug',
+						'terms'    => $person->slug,
+					),
+				);
+				$args['category_name'] = null; // Ensure category filter is not applied when person is specified.
 			}
 			$q    = new WP_Query( $args );
 

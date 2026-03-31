@@ -19,6 +19,23 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb-logo-slider',
+				'title'           => __( 'CB Logo Slider' ),
+				'category'        => 'layout',
+				'icon'            => 'images-alt2',
+				'render_template' => 'blocks/cb-logo-slider.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_tmc_post_index',
 				'title'           => __( 'CB TMC Post Index' ),
 				'category'        => 'layout',

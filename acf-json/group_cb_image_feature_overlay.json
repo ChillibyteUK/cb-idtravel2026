@@ -1,6 +1,6 @@
 {
     "key": "group_cb_image_feature_overlay",
-    "title": "CB Image Feature Overlay",
+    "title": "CB Image Feature Overlay\/Hero",
     "fields": [
         {
             "key": "field_69ca7da4ad885",
@@ -204,5 +204,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774884481
+    "modified": 1774966173
 }

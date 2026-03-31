@@ -1,8 +1,6 @@
 .cb-pushthrough {
   position: relative;
   isolation: isolate;
-  background-color: var(--col-ink);
-  color: var(--col-white);
   border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.4);
 
   &--has-bg {
@@ -63,7 +61,7 @@
 
     &:hover,
     &:focus-visible {
-      color: var(--col-lime-300);
+      color: var(--col-white);
     }
   }
 

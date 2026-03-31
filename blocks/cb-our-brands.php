@@ -11,12 +11,18 @@ $block_id   = $block['anchor'] ?? $block['id'] ?? wp_unique_id( 'cb-our-brands-'
 $intro_text = get_field( 'intro_text' );
 $brands     = get_field( 'brands' ) ?: array();
 
+$section_style = '';
+
 $section_classes = array( 'cb-our-brands' );
 
 // Support Gutenberg color picker.
 $bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
 $fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
 $section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg ) ) );
+
+if ( ! empty( $block['backgroundColor'] ) ) {
+	$section_style = '--cb-our-brands-card-bg: var(--col-' . sanitize_html_class( $block['backgroundColor'] ) . ');';
+}
 
 if ( ! empty( $block['className'] ) ) {
 	$section_classes[] = $block['className'];
@@ -37,7 +43,7 @@ $last_col_xl  = 0 === $xl_rem ? 12 : ( 3 - $xl_rem ) * 4;
 $last_col_md  = 0 === $md_rem ? 12 : 6;
 ?>
 <a id="brands" class="anchor"></a>
-<section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
+<section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
 	<?php if ( $intro_text ) : ?>
 		<div class="id-container px-4 px-md-5">
 			<div class="cb-our-brands__intro mb-5">
@@ -46,7 +52,7 @@ $last_col_md  = 0 === $md_rem ? 12 : 6;
 		</div>
 	<?php endif; ?>
 
-	<div class="cb-our-brands__brands id-container px-4 px-md-5 mb-5">
+	<div class="cb-our-brands__brands id-container px-4 px-md-5 pb-5">
 		<div class="row g-5">
 			<?php if ( have_rows( 'brands' ) ) : ?>
 				<?php while ( have_rows( 'brands' ) ) : the_row(); ?>

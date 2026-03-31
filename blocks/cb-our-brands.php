@@ -39,13 +39,9 @@ $last_col_md  = 0 === $md_rem ? 12 : 6;
 <a id="brands" class="anchor"></a>
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
 	<?php if ( $intro_text ) : ?>
-		<div class="cb-our-brands__intro mb-5">
-			<div class="id-container px-4 px-md-5">
-				<div class="row">
-					<div class="col-md-9">
-						<?= wp_kses_post( $intro_text ); ?>
-					</div>
-				</div>
+		<div class="id-container px-4 px-md-5">
+			<div class="cb-our-brands__intro mb-5">
+				<div class="cb-our-brands__title"><?= wp_kses_post( $intro_text ); ?></div>
 			</div>
 		</div>
 	<?php endif; ?>

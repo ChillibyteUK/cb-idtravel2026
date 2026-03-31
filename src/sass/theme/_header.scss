@@ -131,6 +131,42 @@ header {
     margin-block: 0;
   }
 
+  .menu-divider-label {
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid hsl(var(--hsl-neutral-400) / 0.35);
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+
+  .dropdown-divider-label {
+    display: block;
+    padding: 0.25rem 1rem 0.35rem;
+    color: hsl(var(--hsl-neutral-800) / 0.72);
+    font-size: var(--fs-50);
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .dropdown-menu .dropdown-item {
+    font-weight: var(--fw-regular);
+    transition: color var(--transition);
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      font-weight: var(--fw-regular);
+    }
+  }
+
   .navbar-toggler {
     color: var(--col-white);
   }

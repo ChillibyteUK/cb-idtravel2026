@@ -254,3 +254,25 @@ function cb_add_primary_nav_submenu_indicator( $title, $item, $args, $depth ) {
 	return $title . '<span class="nav-submenu-indicator" aria-hidden="true"></span>';
 }
 add_filter( 'nav_menu_item_title', 'cb_add_primary_nav_submenu_indicator', 10, 4 );
+
+/**
+ * Render menu divider items as non-clickable labels.
+ *
+ * @param string   $item_output The menu item's starting HTML output.
+ * @param WP_Post  $item        Menu item data object.
+ * @param int      $depth       Depth of menu item.
+ * @param stdClass $args        An object of wp_nav_menu() arguments.
+ * @return string
+ */
+function cb_render_primary_nav_menu_divider( $item_output, $item, $depth, $args ) {
+	if ( ! isset( $args->theme_location ) || 'primary_nav' !== $args->theme_location ) {
+		return $item_output;
+	}
+
+	if ( empty( $item->classes ) || ! in_array( 'menu-divider-label', $item->classes, true ) ) {
+		return $item_output;
+	}
+
+	return '<span class="dropdown-divider-label">' . esc_html( $item->title ) . '</span>';
+}
+add_filter( 'walker_nav_menu_start_el', 'cb_render_primary_nav_menu_divider', 10, 4 );

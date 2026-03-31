@@ -22169,6 +22169,36 @@ header .navbar-nav .nav-submenu-indicator {
 header .navbar-nav {
   margin-block: 0;
 }
+header .menu-divider-label {
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid hsl(var(--hsl-neutral-400)/0.35);
+}
+header .menu-divider-label:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+header .dropdown-divider-label {
+  display: block;
+  padding: 0.25rem 1rem 0.35rem;
+  color: hsl(var(--hsl-neutral-800)/0.72);
+  font-size: var(--fs-50);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+  pointer-events: none;
+}
+header .dropdown-menu .dropdown-item {
+  font-weight: var(--fw-regular);
+  transition: color var(--transition);
+}
+header .dropdown-menu .dropdown-item:hover, header .dropdown-menu .dropdown-item:focus, header .dropdown-menu .dropdown-item:focus-visible {
+  font-weight: var(--fw-regular);
+}
 header .navbar-toggler {
   color: var(--col-white);
 }

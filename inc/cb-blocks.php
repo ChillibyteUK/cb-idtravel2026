@@ -19,6 +19,23 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb-pushthrough',
+				'title'           => __( 'CB Pushthrough' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-pushthrough.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_about_hero',
 				'title'           => __( 'CB About Hero' ),
 				'category'        => 'layout',

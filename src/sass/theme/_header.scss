@@ -2,7 +2,7 @@ header {
   background-color: var(--col-ink) !important;
   transition: background-color 0.3s ease;
   &.scrolled {
-    background-color: hsla( 250, 48%, 10%, 0.6 ) !important;
+    background-color: hsla(250, 48%, 10%, 0.6) !important;
   }
 
   a,
@@ -39,6 +39,11 @@ header {
     display: inline-grid;
     place-items: center;
     text-align: center;
+  }
+
+  .navbar-nav .dropdown-toggle {
+    position: relative;
+    padding-right: 1rem;
   }
 
   .navbar-nav .nav-link::after {
@@ -109,15 +114,17 @@ header {
     }
   }
 
-  // Override Bootstrap dropdown arrow with Font Awesome icon
-  .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    content: "\f107"; // Font Awesome angle-down icon
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    border: none;
+  .navbar-nav .nav-submenu-indicator {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    line-height: 1;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-60%) rotate(45deg);
+    pointer-events: none;
   }
 
   .navbar-nav {

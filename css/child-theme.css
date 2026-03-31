@@ -22089,6 +22089,10 @@ header .navbar-nav .nav-link {
   place-items: center;
   text-align: center;
 }
+header .navbar-nav .dropdown-toggle {
+  position: relative;
+  padding-right: 1rem;
+}
 header .navbar-nav .nav-link::after {
   content: attr(data-text);
   font-weight: var(--fw-semibold);
@@ -22150,14 +22154,17 @@ header .dropdown.current-menu-item > .nav-link {
     font-size: var(--fs-600);
   }
 }
-header .dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-  content: "\f107";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  border: none;
+header .navbar-nav .nav-submenu-indicator {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  line-height: 1;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-60%) rotate(45deg);
+  pointer-events: none;
 }
 header .navbar-nav {
   margin-block: 0;

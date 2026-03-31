@@ -197,8 +197,11 @@ if ( $section_style_attr ) {
 								case 'image':
 									$image_id     = $module['image'] ?? null;
 									$aspect       = $module['image_aspect_ratio'] ?? '16x9';
-									$caption      = $module['image_caption'] ?? '';
+									$image_mode   = $module['image_size'] ?? '';
+									$image_size   = 'contain' === $image_mode ? 'cb-content-grid__image-contain' : '';
+									$native_class = ( 'native' === $aspect && 'contain' === $image_mode ) ? 'cb-content-grid__image-native' : '';
 									$aspect_class = '';
+									$wrap_style   = '';
 
 									switch ( $aspect ) {
 										case 'native':
@@ -219,18 +222,20 @@ if ( $section_style_attr ) {
 									}
 
 									if ( $image_id ) {
+										if ( $native_class ) {
+											$image_src = wp_get_attachment_image_src( $image_id, 'full' );
+
+											if ( ! empty( $image_src[1] ) ) {
+												$wrap_style = sprintf( 'style="width:min(100%%, %dpx);"', (int) $image_src[1] );
+											}
+										}
 										?>
-										<div class="cb-content-grid__image-wrap <?= esc_attr( $aspect_class ); ?>">
+										<div class="cb-content-grid__image-wrap <?= esc_attr( $aspect_class ); ?> <?= esc_attr( $image_size ); ?> <?= esc_attr( $native_class ); ?>" <?= $wrap_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 											<?= wp_get_attachment_image( $image_id, 'full', false, array( 'class' => 'img-fluid cb-content-grid__image' ) ); ?>
 										</div>
 										<?php
 									}
 
-									if ( $caption ) {
-										?>
-										<p class="cb-content-grid__caption small"><?= esc_html( $caption ); ?></p>
-										<?php
-									}
 									break;
 
 								case 'video':

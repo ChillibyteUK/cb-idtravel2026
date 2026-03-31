@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$section_id    = $block['anchor'] ?? null;
+$section_id    = $block['anchor'] ?? $block['id'] ?? wp_unique_id( 'cb-image-feature-overlay-' );
 $extra_classes = $block['className'] ?? '';
 $image_id      = get_field( 'image' );
 $content       = get_field( 'content' );
@@ -30,6 +30,7 @@ if ( $image_id ) {
 
 	if ( $image_url ) {
 		$section_style = sprintf( '--_bg-url: url(%s);', esc_url_raw( $image_url ) );
+		$section_classes[] = 'cb-image-feature-overlay--has-background-image';
 	}
 }
 
@@ -69,3 +70,39 @@ if ( $image_id ) {
 		</div>
 	</div>
 </section>
+
+<?php if ( $section_style ) : ?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var section = document.getElementById(<?= wp_json_encode( $section_id ); ?>);
+	if (!section) return;
+
+	var ticking = false;
+
+	function update() {
+		var rect = section.getBoundingClientRect();
+		var windowHeight = window.innerHeight;
+
+		if (rect.bottom > 0 && rect.top < windowHeight) {
+			var percent = (windowHeight - rect.top) / (windowHeight + rect.height);
+			percent = Math.max(0, Math.min(1, percent));
+			var translateY = (percent - 0.5) * 140; // Adjust the multiplier for more/less parallax
+			section.style.setProperty('--cb-image-feature-overlay-parallax-y', translateY.toFixed(1) + 'px');
+		}
+
+		ticking = false;
+	}
+
+	function onScroll() {
+		if (!ticking) {
+			window.requestAnimationFrame(update);
+			ticking = true;
+		}
+	}
+
+	window.addEventListener('scroll', onScroll, { passive: true });
+	window.addEventListener('resize', onScroll);
+	onScroll();
+});
+</script>
+<?php endif; ?>

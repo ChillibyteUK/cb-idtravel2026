@@ -4,22 +4,35 @@
   align-items: flex-end;
   min-height: 70vh;
   background-color: var(--col-ink);
-  background-image: var(--_bg-url);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: var(--col-white);
+
+  &--has-background-image {
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -3rem 0;
+      z-index: 0;
+      background-image: var(--_bg-url);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translateY(var(--cb-image-feature-overlay-parallax-y, 0));
+      will-change: transform;
+    }
+  }
 
   &__overlay {
     position: relative;
+    z-index: 1;
     width: 100%;
     isolation: isolate;
     margin-top: 15rem;
   }
 
-
   &--hero {
-    min-height: calc( 100vh - var(--h-top) );
+    min-height: calc(100vh - var(--h-top));
 
     h1 {
       font-size: var(--fs-900);

@@ -23408,14 +23408,26 @@ span a {
   align-items: flex-end;
   min-height: 70vh;
   background-color: var(--col-ink);
+  color: var(--col-white);
+}
+.cb-image-feature-overlay--has-background-image {
+  overflow: hidden;
+}
+.cb-image-feature-overlay--has-background-image::before {
+  content: "";
+  position: absolute;
+  inset: -3rem 0;
+  z-index: 0;
   background-image: var(--_bg-url);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--col-white);
+  transform: translateY(var(--cb-image-feature-overlay-parallax-y, 0));
+  will-change: transform;
 }
 .cb-image-feature-overlay__overlay {
   position: relative;
+  z-index: 1;
   width: 100%;
   isolation: isolate;
   margin-top: 15rem;

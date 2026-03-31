@@ -31,7 +31,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
         href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/SuisseIntl-Regular.woff2' ); ?>"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/SuisseIntl-SemiBold.woff2' ); ?>"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/SuisseIntl-Semibold.woff2' ); ?>"
         as="font" type="font/woff2" crossorigin="anonymous">
 
 	

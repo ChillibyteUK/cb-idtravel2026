@@ -1,4 +1,29 @@
 .cb-content-grid {
+  position: relative;
+  isolation: isolate;
+
+  > .id-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.cb-content-grid--has-background-image {
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -3rem 0;
+      z-index: 0;
+      background-image: var(--cb-content-grid-bg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translateY(var(--cb-content-grid-parallax-y, 0));
+      will-change: transform;
+    }
+  }
+
   .cb-content-grid__row {
     &--has-line {
       border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
@@ -40,10 +65,10 @@
     letter-spacing: var(--ls--5);
     padding-top: 3.5rem;
     &::before {
-      content: '"';
+      content: "“";
       position: absolute;
       top: -0.5rem;
-      left: -.25rem;
+      left: -0.25rem;
       font-size: 8rem;
       color: var(--col-white);
       line-height: 1;

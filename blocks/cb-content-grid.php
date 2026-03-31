@@ -9,10 +9,20 @@ defined( 'ABSPATH' ) || exit;
 
 $block_id = $block['id'] ?? wp_unique_id( 'cb-content-grid-' );
 
-$rows = get_field( 'rows' );
+$rows               = get_field( 'rows' );
+$background_image   = get_field( 'background_image' );
+$section_style_attr = '';
 
 if ( empty( $rows ) ) {
 	return;
+}
+
+if ( $background_image ) {
+	$background_image_url = wp_get_attachment_image_url( $background_image, 'full' );
+
+	if ( $background_image_url ) {
+		$section_style_attr = sprintf( '--cb-content-grid-bg: url(%s);', esc_url_raw( $background_image_url ) );
+	}
 }
 
 $bg_class = '';
@@ -38,8 +48,11 @@ if ( $bg_class ) {
 if ( $text_class ) {
 	$section_classes[] = $text_class;
 }
+if ( $section_style_attr ) {
+	$section_classes[] = 'cb-content-grid--has-background-image';
+}
 ?>
-<section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
+<section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style_attr ? ' style="' . esc_attr( $section_style_attr ) . '"' : ''; ?>>
 	<div class="id-container py-5 px-4 px-md-5">
 		<?php
 		foreach ( $rows as $row_index => $row ) {
@@ -295,6 +308,42 @@ if ( $text_class ) {
 		?>
 	</div>
 </section>
+
+<?php if ( $section_style_attr ) : ?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var section = document.getElementById(<?= wp_json_encode( $block_id ); ?>);
+	if (!section) return;
+
+	var ticking = false;
+
+	function update() {
+		var rect = section.getBoundingClientRect();
+		var windowHeight = window.innerHeight;
+
+		if (rect.bottom > 0 && rect.top < windowHeight) {
+			var percent = (windowHeight - rect.top) / (windowHeight + rect.height);
+			percent = Math.max(0, Math.min(1, percent));
+			var translateY = (percent - 0.5) * 280;
+			section.style.setProperty('--cb-content-grid-parallax-y', translateY.toFixed(1) + 'px');
+		}
+
+		ticking = false;
+	}
+
+	function onScroll() {
+		if (!ticking) {
+			window.requestAnimationFrame(update);
+			ticking = true;
+		}
+	}
+
+	window.addEventListener('scroll', onScroll, { passive: true });
+	window.addEventListener('resize', onScroll);
+	onScroll();
+});
+</script>
+<?php endif; ?>
 
 <script>
 (function() {

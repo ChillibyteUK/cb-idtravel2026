@@ -24059,6 +24059,56 @@ span a {
   }
 }
 
+.cb-careers-page {
+  position: relative;
+  background-image: var(--_bg-url);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@supports (-webkit-touch-callout: none) {
+  .cb-careers-page {
+    /* iOS-specific styles */
+    background-attachment: scroll;
+  }
+}
+.cb-careers-page .overlay {
+  inset: 0;
+  position: absolute;
+  background-color: rgba(13, 13, 12, 0.75);
+}
+.cb-careers-page .id-container {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  color: var(--col-white);
+}
+.cb-careers-page__background {
+  grid-area: 1/1;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.cb-careers-page__inner {
+  grid-area: 1/1;
+}
+.cb-careers-page__title {
+  margin-block: 6rem 4rem;
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/0.4);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-semi);
+}
+.cb-careers-page__content {
+  font-size: var(--fs-800);
+  line-height: 1.5;
+  padding-bottom: 6rem;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

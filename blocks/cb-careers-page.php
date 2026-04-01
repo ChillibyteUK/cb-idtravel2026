@@ -18,13 +18,15 @@ $block_id = $block['id'] ?? '';
 </style>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-careers-page">
 	<div class="overlay"></div>
+	<h1 class="cb-careers-page__title pt-1">
+		<div class="id-container px-4 px-md-5">
+			<?= esc_html( get_field( 'title' ) ); ?>
+		</div>
+	</h1>
 	<div class="id-container">
 		<div class="cb-careers-page__inner px-4 px-md-5">
-			<h1 class="cb-careers-page__title pt-1">
-				<?= esc_html( get_field( 'title' ) ); ?>
-			</h1>
 			<div class="row">
-				<div class="col-md-9 cb-careers-page__content">
+				<div class="col-md-9 offset-md-3 cb-careers-page__content">
 					<?= wp_kses_post( get_field( 'content' ) ); ?>
 					<?php
 					if ( get_field( 'link' ) ) {

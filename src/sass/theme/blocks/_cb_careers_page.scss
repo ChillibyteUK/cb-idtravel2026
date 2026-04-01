@@ -34,12 +34,15 @@
         margin-block: 6rem 4rem;
         border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
         border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
-        font-size: var(--fs-900);
-        font-weight: var(--fw-semi);
+        font-size: var(--fs-850);
+        font-weight: var(--fw-book);
     }
     &__content {
-        font-size: var(--fs-800);
+        font-size: var(--fs-400);
         line-height: 1.5;
         padding-bottom: 6rem;
+        p:first-child {
+            font-size: var(--fs-600);
+        }
     }
 }

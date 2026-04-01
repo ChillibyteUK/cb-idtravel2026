@@ -219,6 +219,43 @@ if ( $section_style_attr ) {
 									}
 									break;
 
+								case 'logo_grid':
+									$logo_grid_rows = $module['logo_grid_rows'] ?? array();
+
+									if ( ! empty( $logo_grid_rows ) && is_array( $logo_grid_rows ) ) {
+										?>
+										<div class="cb-content-grid__logo-grid">
+											<?php foreach ( $logo_grid_rows as $logo_grid_row ) : ?>
+												<?php
+												$row_title = $logo_grid_row['title'] ?? '';
+												$row_logos = $logo_grid_row['logo'] ?? array();
+
+												if ( empty( $row_logos ) || ! is_array( $row_logos ) ) {
+													continue;
+												}
+												?>
+												<div class="cb-content-grid__logo-grid-row row g-4 align-items-start">
+													<div class="col-lg-3">
+														<?php if ( $row_title ) : ?>
+															<h3 class="cb-content-grid__logo-grid-title"><?= esc_html( $row_title ); ?></h3>
+														<?php endif; ?>
+													</div>
+													<div class="col-lg-9">
+														<div class="cb-content-grid__logo-grid-gallery">
+															<?php foreach ( $row_logos as $logo_id ) : ?>
+																<div class="cb-content-grid__logo-grid-item">
+																	<?= wp_get_attachment_image( $logo_id, 'full', false, array( 'class' => 'cb-content-grid__logo-grid-image', 'alt' => get_post_meta( $logo_id, '_wp_attachment_image_alt', true ) ) ); ?>
+																</div>
+															<?php endforeach; ?>
+														</div>
+													</div>
+												</div>
+											<?php endforeach; ?>
+										</div>
+										<?php
+									}
+									break;
+
 								case 'image':
 									$image_id     = $module['image'] ?? null;
 									$aspect       = $module['image_aspect_ratio'] ?? '16x9';

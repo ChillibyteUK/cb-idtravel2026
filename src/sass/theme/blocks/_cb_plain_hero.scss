@@ -1,0 +1,21 @@
+.cb-plain-hero {
+    background-color: var(--col-ink);
+    color: var(--col-white);
+    padding-block-start: 4rem;
+    padding-block-end: 10rem;
+    &__title {
+        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+        border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    }
+    &__intro {
+        font-size: var(--fs-400);
+        font-weight: var(--fw-book);
+        letter-spacing: var(--ls--5);
+        line-height: 1.5;
+        p:first-of-type {
+            font-size: var(--fs-600);
+            font-weight: var(--fw-light);
+            letter-spacing: var(--ls--10);
+        }
+    }
+}

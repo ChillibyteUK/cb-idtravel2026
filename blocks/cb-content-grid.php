@@ -194,6 +194,31 @@ if ( $section_style_attr ) {
 									}
 									break;
 
+								case 'links':
+									$links_rows = $module['links_rows'] ?? array();
+
+									if ( ! empty( $links_rows ) && is_array( $links_rows ) ) {
+										?>
+										<div class="cb-content-grid__links">
+											<?php foreach ( $links_rows as $links_row ) : ?>
+												<?php
+												$link_title = $links_row['title'] ?? '';
+												$file_url   = $links_row['file'] ?? '';
+
+												if ( ! $file_url ) {
+													continue;
+												}
+												?>
+												<a class="cb-content-grid__links-link" href="<?= esc_url( $file_url ); ?>" target="_blank" rel="noopener noreferrer">
+													<?= esc_html( $link_title ? $link_title : wp_basename( $file_url ) ); ?>
+													<?= cb_sanitise_svg( get_stylesheet_directory() . '/img/arrow-n600.svg', '', 38, 29 ); ?>
+												</a>
+											<?php endforeach; ?>
+										</div>
+										<?php
+									}
+									break;
+
 								case 'image':
 									$image_id     = $module['image'] ?? null;
 									$aspect       = $module['image_aspect_ratio'] ?? '16x9';

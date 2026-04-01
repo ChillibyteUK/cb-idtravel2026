@@ -168,6 +168,7 @@
                 "h3": "H3 Heading",
                 "text": "Text",
                 "quote": "Quote",
+                "links": "Links",
                 "qa": "Q&A",
                 "list": "List",
                 "image": "Image",
@@ -522,6 +523,83 @@
               ]
             },
             {
+              "key": "field_cb_content_grid_links_rows",
+              "label": "Links",
+              "name": "links_rows",
+              "aria-label": "",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": [
+                [
+                  {
+                    "field": "field_cb_content_grid_module_type",
+                    "operator": "==",
+                    "value": "links"
+                  }
+                ]
+              ],
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "layout": "block",
+              "pagination": 0,
+              "min": 0,
+              "max": 0,
+              "collapsed": "field_cb_content_grid_links_title",
+              "button_label": "Add Link",
+              "rows_per_page": 20,
+              "parent_repeater": "field_cb_content_grid_modules",
+              "sub_fields": [
+                {
+                  "key": "field_cb_content_grid_links_title",
+                  "label": "Title",
+                  "name": "title",
+                  "aria-label": "",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": "",
+                  "allow_in_bindings": 0,
+                  "placeholder": "",
+                  "prepend": "",
+                  "append": "",
+                  "parent_repeater": "field_cb_content_grid_links_rows"
+                },
+                {
+                  "key": "field_cb_content_grid_links_file",
+                  "label": "File",
+                  "name": "file",
+                  "aria-label": "",
+                  "type": "file",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "return_format": "url",
+                  "library": "all",
+                  "min_size": "",
+                  "max_size": "",
+                  "mime_types": "pdf,docx",
+                  "allow_in_bindings": 0,
+                  "parent_repeater": "field_cb_content_grid_links_rows"
+                }
+              ]
+            },
+            {
               "key": "field_cb_content_grid_image",
               "label": "Image",
               "name": "image",
@@ -786,5 +864,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1774960800
+  "modified": 1774965200
 }

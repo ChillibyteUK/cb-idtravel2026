@@ -19,6 +19,42 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'content_grid_links',
+				'title'           => __( 'content grid links' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/content-grid-links.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_plain_hero',
+				'title'           => __( 'CB Plain Hero' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-plain-hero.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_contact_form',
 				'title'           => __( 'CB Contact Form' ),
 				'category'        => 'layout',

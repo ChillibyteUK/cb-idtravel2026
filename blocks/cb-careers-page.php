@@ -18,7 +18,7 @@ $block_id = $block['id'] ?? '';
 </style>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-careers-page">
 	<div class="overlay"></div>
-	<h1 class="cb-careers-page__title pt-1">
+	<h1 class="cb-careers-page__title">
 		<div class="id-container px-4 px-md-5">
 			<?= esc_html( get_field( 'title' ) ); ?>
 		</div>

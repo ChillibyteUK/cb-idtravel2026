@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top: 3rem;
     @supports (-webkit-touch-callout: none) {
         /* iOS-specific styles */
         background-attachment: scroll;
@@ -31,7 +32,7 @@
         grid-area: 1 / 1;
     }
     &__title {
-        margin-block: 6rem 4rem;
+        margin-bottom: 4rem;
         border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
         border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
         font-size: var(--fs-850);
@@ -40,7 +41,7 @@
     &__content {
         font-size: var(--fs-400);
         line-height: 1.5;
-        padding-bottom: 6rem;
+        padding-bottom: 10rem;
         p:first-child {
             font-size: var(--fs-600);
         }

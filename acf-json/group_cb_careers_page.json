@@ -111,7 +111,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "cb\/cb-careers-page"
+                "value": "acf\/cb-careers-page"
             }
         ]
     ],
@@ -125,5 +125,5 @@
     "description": "Fields for the CB Careers Page block",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774974315
+    "modified": 1775030614
 }

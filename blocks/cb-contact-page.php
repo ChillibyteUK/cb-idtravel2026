@@ -14,11 +14,11 @@ $l = get_field( 'contact_link' );
 
 ?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-contact-page">
-	<h1 class="cb-contact-page__title">
-		<div class="id-container px-4 px-md-5">
+	<div class="cb-contact-page__title">
+		<h1 class="id-container px-4 px-md-5">
 			Contact
-		</div>
-	</h1>
+		</h1>
+	</div>
     <div class="id-container px-4 px-md-5">
         <div class="row cb-contact-page__intro-content">
             <div class="col-md-6">

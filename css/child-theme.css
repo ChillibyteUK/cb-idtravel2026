@@ -24196,6 +24196,61 @@ span a {
   font-weight: var(--fw-regular);
 }
 
+.cb-contact-form {
+  padding-block-start: 4rem;
+}
+.cb-contact-form h1, .cb-contact-form .h1 {
+  border-top: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/1);
+  font-size: var(--fs-850);
+  font-weight: var(--fw-book);
+  line-height: 1;
+  padding-top: 0.25rem;
+}
+.cb-contact-form__intro-content {
+  padding-block-end: 6rem;
+}
+.cb-contact-form__intro-text {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-light);
+  letter-spacing: var(--ls--10);
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.cb-contact-form-spacer {
+  display: block;
+  height: 6rem;
+  border-bottom: 1px solid hsl(var(--hsl-raspberry-100)/1);
+}
+
+p.gform_required_legend,
+label .gform_required {
+  display: none !important;
+}
+
+.gform_wrapper.gravity-theme .gfield_required {
+  display: none !important;
+}
+
+form .gform-field-label.gform-field-label--type-inline.gfield_consent_label,
+form .gfield_label {
+  color: var(--col-primary-black);
+  font-weight: var(--fw-light) !important;
+}
+form .ginput_container input[type=text],
+form .ginput_container input[type=email],
+form .ginput_container textarea {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--col-primary-black);
+  border: none;
+  border-radius: 0;
+}
+form .gform_confirmation_message_1.gform_confirmation_message {
+  color: var(--col-green-400);
+  font-size: var(--fs-500);
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

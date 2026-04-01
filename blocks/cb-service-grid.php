@@ -10,6 +10,13 @@ defined( 'ABSPATH' ) || exit;
 $block_id        = $block['anchor'] ?? $block['id'] ?? wp_unique_id( 'cb-service-grid-' );
 $extra_classes   = trim( (string) ( $block['className'] ?? '' ) );
 $section_classes = array( 'cb-service-grid' );
+$start_row       = (int) get_field( 'start_row' );
+
+if ( $start_row < 1 || $start_row > 3 ) {
+	$start_row = 1;
+}
+
+$pattern_offset = ( $start_row - 1 ) * 2;
 
 // Support Gutenberg color picker.
 $bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
@@ -30,8 +37,9 @@ if ( $extra_classes ) {
 				$item_index = 0;
 				while ( have_rows( 'content' ) ) {
 					the_row();
-					$pattern_index = $item_index % 6;
-					$cycle_index   = (int) floor( $item_index / 6 );
+					$layout_index  = $item_index + $pattern_offset;
+					$pattern_index = $layout_index % 6;
+					$cycle_index   = (int) floor( $layout_index / 6 );
 					$base_row      = ( $cycle_index * 5 ) + 1;
 
 						switch ( $pattern_index ) {

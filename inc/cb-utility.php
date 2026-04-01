@@ -16,7 +16,7 @@ function parse_phone( $phone ) {
     $phone = preg_replace( '/\(0\)/', '', $phone );
     $phone = preg_replace( '/[\(\)\.]/', '', $phone );
     $phone = preg_replace( '/-/', '', $phone );
-    $phone = preg_replace( '/^0/', '+44', $phone );
+    // $phone = preg_replace( '/^0/', '+44', $phone );
     return $phone;
 }
 

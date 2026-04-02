@@ -167,15 +167,15 @@
           "origin": "theme"
         },
         {
-          "name": "raspberry-450",
-          "slug": "raspberry-450",
-          "color": "#ec4a67",
-          "origin": "theme"
-        },
-        {
           "name": "raspberry-400",
           "slug": "raspberry-400",
           "color": "#f66f88",
+          "origin": "theme"
+        },
+        {
+          "name": "raspberry-450",
+          "slug": "raspberry-450",
+          "color": "#ec4a67",
           "origin": "theme"
         },
         {

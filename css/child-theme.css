@@ -22,6 +22,7 @@
   --col-neutral-700: #55506b;
   --col-neutral-750: #47425e;
   --col-neutral-800: #3b3652;
+  --hsl-neutral-800: 251 21% 27%;
   --col-neutral-850: #2d2843;
   --col-neutral-900: #1d1933;
   --hsl-ink: 250 48% 10%;
@@ -31,9 +32,11 @@
   --hsl-raspberry-100: 347 100% 93%;
   --col-raspberry-100: #ffdbe3;
   --col-raspberry-200: #ffb8c6;
+  --hsl-raspberry-300: 349 100% 80%;
   --col-raspberry-300: #ff9bae;
-  --col-raspberry-450: #ec4a67;
+  --hsl-raspberry-400: 349 88% 70%;
   --col-raspberry-400: #f66f88;
+  --col-raspberry-450: #ec4a67;
   --hsl-raspberry: 349 77% 52%;
   --col-raspberry: #e32447;
   --hsl-raspberry-600: 349 78% 45%;
@@ -23258,10 +23261,10 @@ span a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, hsl(var(--hsl-raspberry-600)/0.18) 0%, hsl(var(--hsl-raspberry-600)/0.72) 38%, hsl(var(--hsl-raspberry-600)/0.96) 100%);
+  background: linear-gradient(180deg, hsl(var(--hsl-raspberry-400)/0) 0%, hsl(var(--hsl-raspberry-400)/0.18) 38%, hsl(var(--hsl-raspberry-400)/0.72) 72%, hsl(var(--hsl-raspberry-400)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--transition);
 }
 .cb-business-travel-nav__card-image {
@@ -23309,8 +23312,8 @@ span a {
   transform-origin: center;
   transition: transform 180ms ease;
 }
-.cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::before {
-  opacity: 1;
+.cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::after {
+  opacity: 0;
 }
 .cb-business-travel-nav__card:hover .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
@@ -23828,10 +23831,10 @@ span a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, hsl(var(--hsl-ink)/0.18) 0%, hsl(var(--hsl-ink)/0.72) 38%, hsl(var(--hsl-ink)/0.96) 100%);
+  background: linear-gradient(180deg, hsl(var(--hsl-neutral-800)/0) 0%, hsl(var(--hsl-neutral-800)/0.18) 38%, hsl(var(--hsl-neutral-800)/0.72) 72%, hsl(var(--hsl-neutral-800)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--transition);
 }
 .cb-specialist-travel-nav__card-media::after {
@@ -23887,8 +23890,8 @@ span a {
   transform-origin: center;
   transition: transform 180ms ease;
 }
-.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::before {
-  opacity: 1;
+.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::after {
+  opacity: 0;
 }
 .cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
@@ -23970,10 +23973,10 @@ span a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, hsl(var(--hsl-ink)/0.18) 0%, hsl(var(--hsl-ink)/0.72) 38%, hsl(var(--hsl-ink)/0.96) 100%);
+  background: linear-gradient(180deg, hsl(var(--hsl-neutral-800)/0) 0%, hsl(var(--hsl-neutral-800)/0.18) 38%, hsl(var(--hsl-neutral-800)/0.72) 72%, hsl(var(--hsl-neutral-800)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity var(--transition);
 }
 .cb-solutions-nav__card-media::after {
@@ -24031,8 +24034,8 @@ span a {
   transform-origin: center;
   transition: transform 180ms ease;
 }
-.cb-solutions-nav__card:hover .cb-solutions-nav__card-media::before, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::before, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::before {
-  opacity: 1;
+.cb-solutions-nav__card:hover .cb-solutions-nav__card-media::after, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::after, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::after {
+  opacity: 0;
 }
 .cb-solutions-nav__card:hover .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-arrow-icon {
   transform: rotate(0deg);

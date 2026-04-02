@@ -22,6 +22,7 @@
   --col-neutral-700: #55506b;
   --col-neutral-750: #47425e;
   --col-neutral-800: #3b3652;
+  --hsl-neutral-800: 251 21% 27%;
   --col-neutral-850: #2d2843;
   --col-neutral-900: #1d1933;
   --hsl-ink: 250 48% 10%;
@@ -31,9 +32,11 @@
   --hsl-raspberry-100: 347 100% 93%;
   --col-raspberry-100: #ffdbe3;
   --col-raspberry-200: #ffb8c6;
+  --hsl-raspberry-300: 349 100% 80%;
   --col-raspberry-300: #ff9bae;
-  --col-raspberry-450: #ec4a67;
+  --hsl-raspberry-400: 349 88% 70%;
   --col-raspberry-400: #f66f88;
+  --col-raspberry-450: #ec4a67;
   --hsl-raspberry: 349 77% 52%;
   --col-raspberry: #e32447;
   --hsl-raspberry-600: 349 78% 45%;
@@ -146,6 +149,7 @@
   --col-neutral-700: #55506b;
   --col-neutral-750: #47425e;
   --col-neutral-800: #3b3652;
+  --hsl-neutral-800: 251 21% 27%;
   --col-neutral-850: #2d2843;
   --col-neutral-900: #1d1933;
   --hsl-ink: 250 48% 10%;
@@ -155,9 +159,11 @@
   --hsl-raspberry-100: 347 100% 93%;
   --col-raspberry-100: #ffdbe3;
   --col-raspberry-200: #ffb8c6;
+  --hsl-raspberry-300: 349 100% 80%;
   --col-raspberry-300: #ff9bae;
-  --col-raspberry-450: #ec4a67;
+  --hsl-raspberry-400: 349 88% 70%;
   --col-raspberry-400: #f66f88;
+  --col-raspberry-450: #ec4a67;
   --hsl-raspberry: 349 77% 52%;
   --col-raspberry: #e32447;
   --hsl-raspberry-600: 349 78% 45%;

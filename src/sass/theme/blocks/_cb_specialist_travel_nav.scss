@@ -95,13 +95,14 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        hsl(var(--hsl-ink) / 0.18) 0%,
-        hsl(var(--hsl-ink) / 0.72) 38%,
-        hsl(var(--hsl-ink) / 0.96) 100%
+        hsl(var(--hsl-neutral-800) / 0) 0%,
+        hsl(var(--hsl-neutral-800) / 0.18) 38%,
+        hsl(var(--hsl-neutral-800) / 0.72) 72%,
+        hsl(var(--hsl-neutral-800) / 0.96) 100%
       );
       z-index: 1;
       pointer-events: none;
-      opacity: 0;
+      opacity: 1;
       transition: opacity var(--transition);
     }
     &::after {
@@ -172,8 +173,11 @@
   &__card:hover,
   &__card:focus-visible,
   &__card.is-active {
-    .cb-specialist-travel-nav__card-media::before {
-      opacity: 1;
+    // .cb-specialist-travel-nav__card-media::before {
+    //   opacity: 1;
+    // }
+    .cb-specialist-travel-nav__card-media::after {
+      opacity: 0;
     }
     .cb-specialist-travel-nav__card-arrow-icon {
       transform: rotate(0deg);

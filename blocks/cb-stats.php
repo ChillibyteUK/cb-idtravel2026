@@ -65,3 +65,39 @@ if ( ! array_reduce(
 		</div>
 	</div>
 </section>
+
+<?php if ( $section_style ) : ?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var section = document.getElementById(<?= wp_json_encode( $block_id ); ?>);
+	if (!section) return;
+
+	var ticking = false;
+
+	function update() {
+		var rect = section.getBoundingClientRect();
+		var windowHeight = window.innerHeight;
+
+		if (rect.bottom > 0 && rect.top < windowHeight) {
+			var percent = (windowHeight - rect.top) / (windowHeight + rect.height);
+			percent = Math.max(0, Math.min(1, percent));
+			var translateY = (percent - 0.5) * 240; // Adjust the multiplier for more/less parallax
+			section.style.setProperty('--cb-stats-parallax-y', translateY.toFixed(1) + 'px');
+		}
+
+		ticking = false;
+	}
+
+	function onScroll() {
+		if (!ticking) {
+			window.requestAnimationFrame(update);
+			ticking = true;
+		}
+	}
+
+	window.addEventListener('scroll', onScroll, { passive: true });
+	window.addEventListener('resize', onScroll);
+	onScroll();
+});
+</script>
+<?php endif; ?>

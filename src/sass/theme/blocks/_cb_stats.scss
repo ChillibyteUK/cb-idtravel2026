@@ -21,6 +21,8 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      transform: translateY(var(--cb-stats-parallax-y, 0));
+      will-change: transform;
     }
   }
 

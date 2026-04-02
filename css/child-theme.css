@@ -24085,6 +24085,8 @@ span a {
 .cb-about-hero {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   color: var(--col-white);
   background-color: var(--col-ink);
   isolation: isolate;
@@ -24107,7 +24109,8 @@ span a {
 .cb-about-hero__top {
   position: relative;
   z-index: 1;
-  min-height: 68vh;
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -24163,6 +24166,7 @@ span a {
   background-color: hsl(var(--hsl-purple-1100)/0.8);
   position: relative;
   z-index: 1;
+  margin-top: auto;
 }
 .cb-about-hero__content {
   max-width: 72rem;

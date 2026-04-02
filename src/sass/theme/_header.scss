@@ -27,8 +27,8 @@ header {
     }
   }
 
-  .fw-semi a.dropdown-item,
-  .fw-semibold a.dropdown-item {
+  .dropdown-menu li.fw-semi a.dropdown-item,
+  .dropdown-menu li.fw-semibold a.dropdown-item {
     font-weight: var(--fw-semibold);
   }
 

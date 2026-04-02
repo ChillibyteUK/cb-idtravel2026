@@ -22083,8 +22083,8 @@ header a.nav-link:focus-visible {
   text-decoration: none;
   font-weight: var(--fw-semibold);
 }
-header .fw-semi a.dropdown-item,
-header .fw-semibold a.dropdown-item {
+header .dropdown-menu li.fw-semi a.dropdown-item,
+header .dropdown-menu li.fw-semibold a.dropdown-item {
   font-weight: var(--fw-semibold);
 }
 header li.raspberry a {

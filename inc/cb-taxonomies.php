@@ -35,5 +35,24 @@ function cb_register_taxes() {
 	);
     register_taxonomy( 'person', array( 'post' ), $args );
 
+	$args = array(
+		'labels'             => array(
+			'name'          => 'Themes',
+			'singular_name' => 'Theme',
+		),
+        'public'             => false,
+        'publicly_queryable' => false,
+        'hierarchical'       => true,
+        'show_ui'            => true,
+		'show_in_nav_menus'  => true,
+		'show_tagcloud'      => false,
+		'show_in_quick_edit' => true,
+		'show_admin_column'  => true,
+		'show_in_rest'       => true,
+		'rewrite'            => false,
+		'query_var'          => false,
+	);
+    register_taxonomy( 'theme', array( 'post' ), $args );
+
 }
 add_action( 'init', 'cb_register_taxes' );

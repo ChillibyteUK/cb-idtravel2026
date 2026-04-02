@@ -1,7 +1,7 @@
 .cb-pushthrough {
   position: relative;
   isolation: isolate;
-  border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.4);
+  border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
 
   &--has-bg {
     background-image: var(--_bg-url);
@@ -49,7 +49,7 @@
     display: block;
     align-items: center;
     gap: 0.5rem;
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
     padding-top: 1rem;
     margin-top: 2rem;
     color: var(--col-purple-400);

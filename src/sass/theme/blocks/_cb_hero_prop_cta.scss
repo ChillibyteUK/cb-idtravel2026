@@ -86,8 +86,8 @@
     line-height: 1;
     font-weight: var(--fw-book);
     padding-block: 0.15em 0.1em;
-    border-top: 1px solid hsl( var(--hsl-raspberry-100) / 0.4 );
-    border-bottom: 1px solid hsl( var(--hsl-raspberry-100) / 0.4 );
+    border-top: 1px solid hsl( var(--hsl-neutral-050) / 0.5 );
+    border-bottom: 1px solid hsl( var(--hsl-neutral-050) / 0.5 );
   }
   &__content {
     font-size: var(--fs-500);

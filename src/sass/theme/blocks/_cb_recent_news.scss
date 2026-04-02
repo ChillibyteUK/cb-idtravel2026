@@ -10,8 +10,8 @@
 
     &__pre-title {
         background-color: var(--col-raspberry-450);
-        border-top: 1px solid var(--col-raspberry-400);
-        border-bottom: 1px solid var(--col-raspberry-400);
+        border-top: 1px solid hsl( var(--hsl-neutral-050) / 0.5);
+        border-bottom: 1px solid hsl( var(--hsl-neutral-050) / 0.5);
         padding-block: 0.75rem;
         color: var(--col-white);
         font-weight: var(--fw-regular);

@@ -1,6 +1,6 @@
 .cb-our-brands {
   &__intro {
-    border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
     padding-block: 6rem 2rem;
   }
 
@@ -59,7 +59,7 @@
       text-transform: uppercase;
       font-weight: var(--fw-light);
       font-size: var(--fs-50);
-      border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+      border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
       margin-bottom: 1rem;
     }
 
@@ -84,7 +84,7 @@
     }
 
     &__last {
-      border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+      border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
       padding-top: 1.5rem;
       font-size: var(--fs-400);
       font-weight: var(--fw-regular);

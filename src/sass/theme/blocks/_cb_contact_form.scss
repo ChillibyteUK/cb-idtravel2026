@@ -1,8 +1,8 @@
 .cb-contact-form {
     padding-block-start: 4rem;
     h1 {
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
-        border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+        border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
+        border-bottom: 1px solid hsl(var(--hsl-ink) / 0.25);
         font-size: var(--fs-850);
         font-weight: var(--fw-book);
         line-height: 1;
@@ -23,7 +23,7 @@
 .cb-contact-form-spacer {
   display: block;
   height: 6rem;
-  border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+  border-bottom: 1px solid hsl(var(--hsl-ink) / 0.25);
 }
 
 p.gform_required_legend,

@@ -64,6 +64,37 @@ switch ( $primary_blog_type ) {
 		break;
 }
 
+$args = array(
+	'post_type'      => 'post',
+	'post_status'    => array( 'publish' ),
+	'orderby'        => 'date',
+	'order'          => 'DESC',
+	'posts_per_page' => 3,
+	'post__not_in'   => array( get_the_ID() ),
+);
+
+if ( ! empty( $blog_types ) ) {
+	$args['category_name'] = implode( ',', $blog_types );
+}
+
+if ( ! empty( $person ) ) {
+	$args['tax_query'] = array(
+		array(
+			'taxonomy' => 'person',
+			'field'    => 'slug',
+			'terms'    => $person->slug,
+		),
+	);
+	$args['category_name'] = null;
+}
+
+$q = new WP_Query( $args );
+
+if ( ! $q->have_posts() ) {
+	wp_reset_postdata();
+	return;
+}
+
 
 ?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-recent-news <?= esc_attr( $background ); ?>">
@@ -76,31 +107,6 @@ switch ( $primary_blog_type ) {
 		<div class="insight-type-grid grid-type-1 id-container px-4 px-md-5 py-5">
 			<div class="row g-5">
 			<?php
-			$args = array(
-                'post_type'      => 'post',
-                'post_status'    => array( 'publish' ),
-				'orderby'        => 'date',
-				'order'          => 'DESC', // Descending order.
-				'posts_per_page' => 3,    // Get all posts.
-				'post__not_in'   => array( get_the_ID() ), // exclude current post.
-			);
-
-			if ( ! empty( $blog_types ) ) {
-				$args['category_name'] = implode( ',', $blog_types );
-			}
-			if ( ! empty( $person ) ) {
-				// tax_query for person taxonomy
-				$args['tax_query'] = array(
-					array(
-						'taxonomy' => 'person',
-						'field'    => 'slug',
-						'terms'    => $person->slug,
-					),
-				);
-				$args['category_name'] = null; // Ensure category filter is not applied when person is specified.
-			}
-			$q    = new WP_Query( $args );
-
 			$counter = 0;
 			while ( $q->have_posts() ) {
 				$q->the_post();

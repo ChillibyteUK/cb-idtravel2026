@@ -1,6 +1,6 @@
 .cb-solutions-nav {
   .hr {
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+    border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
     margin-top: 0;
     padding-bottom: 1rem;
   }
@@ -25,7 +25,7 @@
         margin-bottom: 0.5rem;
 
         &:not(:first-of-type) {
-          border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+          border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
           padding-top: 0.5rem;
         }
 

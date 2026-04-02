@@ -3,7 +3,7 @@
   color: var(--col-white);
 
   .hr {
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+    border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
     margin-top: 0;
     padding-bottom: 1rem;
   }
@@ -28,7 +28,7 @@
         margin-bottom: 0.5rem;
 
         &:not(:first-of-type) {
-          border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+          border-color: hsl(var(--hsl-neutral-050) / 0.5);
           padding-top: 0.5rem;
         }
 
@@ -52,7 +52,7 @@
     max-width: 34rem;
     font-size: var(--fs-200);
     line-height: var(--lh-500);
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+    border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
     p:last-child {
       margin-bottom: 0;
     }

@@ -48,14 +48,14 @@
         margin-bottom: 0.25rem;
 
         // &:not(:first-of-type) {
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+        border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
         padding-top: 0.25rem;
         // }
           
         &:last-child {
           margin-bottom: 0;
           padding-bottom: 0.25rem;
-          border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+          border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
         }
       }
     }

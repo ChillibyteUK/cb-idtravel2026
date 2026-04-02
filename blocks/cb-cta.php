@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (rect.bottom > 0 && rect.top < windowHeight) {
 			var percent = (windowHeight - rect.top) / (windowHeight + rect.height);
 			percent = Math.max(0, Math.min(1, percent));
-			var translateY = (percent - 0.5) * 80;
+			var translateY = (percent - 0.5) * 240;
 			img.style.transform = 'translateY(' + translateY.toFixed(1) + 'px)';
 		}
 

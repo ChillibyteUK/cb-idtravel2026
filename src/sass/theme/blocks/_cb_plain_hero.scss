@@ -29,8 +29,8 @@
   }
 
   &__title {
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
-    border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+    border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
+    border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
   }
 
   &__intro {
@@ -54,7 +54,7 @@
       padding-top: 4rem;
       h1 span {
         display: block;
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 0.4);
+        border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
         font-size: var(--fs-900);
         font-weight: var(--fw-book);
       }

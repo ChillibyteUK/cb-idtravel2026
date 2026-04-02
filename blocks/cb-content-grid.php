@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (rect.bottom > 0 && rect.top < windowHeight) {
 			var percent = (windowHeight - rect.top) / (windowHeight + rect.height);
 			percent = Math.max(0, Math.min(1, percent));
-			var translateY = (percent - 0.5) * 140; // Adjust the multiplier for more/less parallax
+			var translateY = (percent - 0.5) * 240; // Adjust the multiplier for more/less parallax
 			section.style.setProperty('--cb-content-grid-parallax-y', translateY.toFixed(1) + 'px');
 		}
 

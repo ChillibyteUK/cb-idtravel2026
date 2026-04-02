@@ -1,8 +1,8 @@
 .cb-contact-page {
     padding-block-start: 4rem;
     h1 {
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
-        border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+        border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
+        border-bottom: 1px solid hsl(var(--hsl-ink) / 0.25);
         font-size: var(--fs-850);
         font-weight: var(--fw-book);
         line-height: 1;
@@ -20,7 +20,7 @@
     }
 
     &__emails {
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+        border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
         padding-block: 0.5rem 3rem;
         h2 {
             font-weight: var(--fw-book);
@@ -41,8 +41,8 @@
 
 .cb-contact-addresses__title {
     background-color: var(--col-neutral-050);
-    border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
-    border-bottom: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+    border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
+    border-bottom: 1px solid hsl(var(--hsl-ink) / 0.25);
     color: var(--col-purple);
     font-weight: var(--fw-regular);
     font-size: var(--fs-200);
@@ -60,7 +60,7 @@
         margin-bottom: 1rem;
     }
     &__office {
-        border-top: 1px solid hsl(var(--hsl-raspberry-100) / 1);
+        border-top: 1px solid hsl(var(--hsl-ink) / 0.25);
         padding-block: 0.5rem 0;
     }
     a {
@@ -73,7 +73,7 @@
         }
     }
     .is-group {
-        color: var(--col-purple-1100);
+        color: var(--col-purple);
     }
     &__caveat {
         font-size: var(--fs-50);

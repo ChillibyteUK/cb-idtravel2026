@@ -22083,6 +22083,10 @@ header a.nav-link:focus-visible {
   text-decoration: none;
   font-weight: var(--fw-semibold);
 }
+header .fw-semi a.dropdown-item,
+header .fw-semibold a.dropdown-item {
+  font-weight: var(--fw-semibold);
+}
 header li.raspberry a {
   background-color: var(--col-raspberry);
   padding-inline: 1rem !important;

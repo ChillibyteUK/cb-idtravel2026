@@ -27,6 +27,11 @@ header {
     }
   }
 
+  .fw-semi a.dropdown-item,
+  .fw-semibold a.dropdown-item {
+    font-weight: var(--fw-semibold);
+  }
+
   li.raspberry a {
     background-color: var(--col-raspberry);
     padding-inline: 1rem !important;

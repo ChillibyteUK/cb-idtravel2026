@@ -160,10 +160,21 @@
     transition: transform 180ms ease;
   }
 
-  &__card:hover &__card-arrow-icon,
-  &__card:focus-visible &__card-arrow-icon,
-  &__card.is-active &__card-arrow-icon {
-    transform: rotate(0deg);
+  &__card:hover,
+  &__card:focus-visible,
+  &__card.is-active {
+    .cb-business-travel-nav__card-media::after {
+      background: linear-gradient(
+        180deg,
+        hsl(var(--hsl-raspberry-600) / 0) 0%,
+        hsl(var(--hsl-raspberry-600) / 0.2) 38%,
+        hsl(var(--hsl-raspberry-600) / 0.6) 72%,
+        hsl(var(--hsl-raspberry-600) / 0.8) 100%
+      );
+    }
+    .cb-business-travel-nav__card-arrow-icon {
+      transform: rotate(0deg);
+    }
   }
 
   @media (max-width: 991.98px) {

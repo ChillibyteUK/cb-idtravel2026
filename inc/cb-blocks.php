@@ -94,6 +94,24 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_video_hero',
+				'title'           => __( 'CB Video Hero' ),
+				'description'     => 'A simple Vimeo hero section with a large embedded video.',
+				'category'        => 'layout',
+				'icon'            => 'video-alt3',
+				'render_template' => 'blocks/cb-video-hero.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_contact_form',
 				'title'           => __( 'CB Contact Form' ),
 				'category'        => 'layout',

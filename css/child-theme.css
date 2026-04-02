@@ -23299,9 +23299,6 @@ span a {
 .cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::before {
   opacity: 1;
 }
-.cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::after {
-  opacity: 0;
-}
 .cb-business-travel-nav__card:hover .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
 }
@@ -23880,9 +23877,6 @@ span a {
 .cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::before {
   opacity: 1;
 }
-.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::after {
-  opacity: 0;
-}
 .cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
 }
@@ -24026,9 +24020,6 @@ span a {
 }
 .cb-solutions-nav__card:hover .cb-solutions-nav__card-media::before, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::before, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::before {
   opacity: 1;
-}
-.cb-solutions-nav__card:hover .cb-solutions-nav__card-media::after, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::after, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::after {
-  opacity: 0;
 }
 .cb-solutions-nav__card:hover .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-arrow-icon {
   transform: rotate(0deg);

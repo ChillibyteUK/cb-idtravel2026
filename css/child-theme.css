@@ -24706,6 +24706,36 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   font-weight: var(--fw-light);
 }
 
+.cb-decision-gate__left, .cb-decision-gate__right {
+  padding: 4rem 2rem;
+}
+.cb-decision-gate__left a, .cb-decision-gate__right a {
+  text-decoration: none;
+}
+@media (min-width: 992px) {
+  .cb-decision-gate__left {
+    text-align: right;
+  }
+  .cb-decision-gate__right {
+    text-align: left;
+  }
+}
+.cb-decision-gate__title {
+  position: relative;
+  z-index: 1;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-book);
+  margin-bottom: 0.5rem;
+}
+.cb-decision-gate__content {
+  position: relative;
+  z-index: 1;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-light);
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

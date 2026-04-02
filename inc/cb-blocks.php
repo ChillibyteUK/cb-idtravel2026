@@ -19,6 +19,27 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_decision_gate',
+				'title'           => __( 'CB Decision Gate' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-decision-gate.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'background' => true,
+						'text'       => true,
+					),
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_hero_prop_cta',
 				'title'           => __( 'CB Hero Prop CTA' ),
 				'category'        => 'layout',

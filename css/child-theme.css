@@ -23093,7 +23093,7 @@ span a {
   transition: color 0.3s ease;
 }
 .cb-pushthrough__link:hover, .cb-pushthrough__link:focus-visible {
-  color: var(--col-white);
+  color: var(--col-purple-400);
 }
 .cb-pushthrough__link-arrow, .cb-pushthrough__link-arrow-icon {
   width: 38px;

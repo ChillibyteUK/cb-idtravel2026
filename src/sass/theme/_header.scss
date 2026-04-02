@@ -30,6 +30,7 @@ header {
   li.raspberry a {
     background-color: var(--col-raspberry);
     padding-inline: 1rem !important;
+    color: var(--col-white);
     &:hover {
       color: var(--col-white);
     }
@@ -89,6 +90,16 @@ header {
   .dropdown.current-menu-item > .nav-link {
     color: var(--col-purple-500);
     font-weight: var(--fw-semibold);
+  }
+
+  li.raspberry.current_page_item > .nav-link,
+  li.raspberry.current_page_parent > .nav-link,
+  li.raspberry.current-page-ancestor > .nav-link,
+  li.raspberry.current-menu-parent > .nav-link,
+  li.raspberry.current-menu-ancestor > .nav-link,
+  li.raspberry.dropdown.current-page-ancestor > .nav-link,
+  li.raspberry.dropdown.current-menu-item > .nav-link {
+    color: var(--col-white);
   }
 
   @media (max-width: 991px) {

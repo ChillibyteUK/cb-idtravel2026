@@ -21812,7 +21812,8 @@ button,
   font-weight: var(--fw-book);
 }
 
-.fw-semi {
+.fw-semi,
+.fw-semibold {
   font-weight: var(--fw-semibold);
 }
 
@@ -22082,6 +22083,7 @@ header a.nav-link:focus-visible {
 header li.raspberry a {
   background-color: var(--col-raspberry);
   padding-inline: 1rem !important;
+  color: var(--col-white);
 }
 header li.raspberry a:hover {
   color: var(--col-white);
@@ -22134,6 +22136,15 @@ header .dropdown.current-page-ancestor > .nav-link,
 header .dropdown.current-menu-item > .nav-link {
   color: var(--col-purple-500);
   font-weight: var(--fw-semibold);
+}
+header li.raspberry.current_page_item > .nav-link,
+header li.raspberry.current_page_parent > .nav-link,
+header li.raspberry.current-page-ancestor > .nav-link,
+header li.raspberry.current-menu-parent > .nav-link,
+header li.raspberry.current-menu-ancestor > .nav-link,
+header li.raspberry.dropdown.current-page-ancestor > .nav-link,
+header li.raspberry.dropdown.current-menu-item > .nav-link {
+  color: var(--col-white);
 }
 @media (max-width: 991px) {
   header .navbar-collapse {
@@ -22249,7 +22260,7 @@ header:has(.navbar-collapse.collapse.show) {
   transition: color 0.3s ease;
 }
 .footer a:hover {
-  color: var(--col-primary-250);
+  color: var(--col-purple-400);
 }
 .footer__logo {
   border-top: 1px solid rgba(255, 255, 255, 0.4);

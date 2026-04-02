@@ -249,7 +249,7 @@ AOS.init({
 
 // Count up stat hero values when they enter view.
 (function () {
-  const statHeroes = document.querySelectorAll(".stat-hero");
+  const statHeroes = document.querySelectorAll(".stat-hero, .cb-stats");
 
   if (!statHeroes.length) return;
 
@@ -291,7 +291,7 @@ AOS.init({
         if (!entry.isIntersecting) return;
 
         entry.target
-          .querySelectorAll(".stat-hero__stat-value")
+          .querySelectorAll(".stat-hero__stat-value, .cb-stats__stat-value")
           .forEach(animateValue);
 
         obs.unobserve(entry.target);

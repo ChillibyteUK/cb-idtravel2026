@@ -23773,6 +23773,50 @@ span a {
   display: inline-block;
 }
 
+.cb-stats {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--col-ink);
+  color: var(--col-white);
+}
+.cb-stats > .id-container {
+  position: relative;
+  z-index: 1;
+}
+.cb-stats--has-background-image {
+  overflow: hidden;
+}
+.cb-stats--has-background-image::before {
+  content: "";
+  position: absolute;
+  inset: -3rem 0;
+  z-index: 0;
+  background-image: var(--cb-stats-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cb-stats__intro {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-regular);
+  margin-bottom: 1.5rem;
+}
+.cb-stats__stat {
+  border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
+  border-bottom: 1px solid hsl(var(--hsl-neutral-050)/0.5);
+  display: flex;
+  align-items: baseline;
+  gap: 0.1em;
+  font-weight: var(--fw-book);
+  font-size: var(--fs-900);
+  letter-spacing: var(--ls--30);
+  line-height: 1;
+  padding-block: 0.25rem;
+}
+.cb-stats__stat-value, .cb-stats__stat-prefix, .cb-stats__stat-suffix {
+  display: inline-block;
+}
+
 .cb-specialist-travel-nav {
   background-color: var(--col-neutral-050);
   color: var(--col-ink);

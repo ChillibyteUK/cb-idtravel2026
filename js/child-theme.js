@@ -7099,7 +7099,7 @@
 
 		// Count up stat hero values when they enter view.
 		(function () {
-		  const statHeroes = document.querySelectorAll(".stat-hero");
+		  const statHeroes = document.querySelectorAll(".stat-hero, .cb-stats");
 		  if (!statHeroes.length) return;
 		  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		  const animateValue = element => {
@@ -7126,7 +7126,7 @@
 		  const observer = new IntersectionObserver((entries, obs) => {
 		    entries.forEach(entry => {
 		      if (!entry.isIntersecting) return;
-		      entry.target.querySelectorAll(".stat-hero__stat-value").forEach(animateValue);
+		      entry.target.querySelectorAll(".stat-hero__stat-value, .cb-stats__stat-value").forEach(animateValue);
 		      obs.unobserve(entry.target);
 		    });
 		  }, {

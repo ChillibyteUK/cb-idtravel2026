@@ -370,6 +370,24 @@ function acf_blocks() {
 			)
 		);
 
+		acf_register_block_type(
+			array(
+				'name'            => 'cb_stats',
+				'title'           => __( 'CB Stats' ),
+				'description'     => 'Stat counters with an optional background image.',
+				'category'        => 'layout',
+				'icon'            => 'chart-bar',
+				'render_template' => 'blocks/cb-stats.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
 
 		acf_register_block_type(
 			array(

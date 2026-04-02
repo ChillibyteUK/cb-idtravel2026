@@ -23238,6 +23238,18 @@ span a {
   background: linear-gradient(180deg, hsl(var(--hsl-raspberry-600)/0) 0%, hsl(var(--hsl-raspberry-600)/0.18) 38%, hsl(var(--hsl-raspberry-600)/0.72) 72%, hsl(var(--hsl-raspberry-600)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity var(--transition);
+}
+.cb-business-travel-nav__card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(var(--hsl-raspberry-600)/0.18) 0%, hsl(var(--hsl-raspberry-600)/0.72) 38%, hsl(var(--hsl-raspberry-600)/0.96) 100%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 .cb-business-travel-nav__card-image {
   width: 100%;
@@ -23284,8 +23296,11 @@ span a {
   transform-origin: center;
   transition: transform 180ms ease;
 }
+.cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::before, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::before {
+  opacity: 1;
+}
 .cb-business-travel-nav__card:hover .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-media::after, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-media::after {
-  background: linear-gradient(180deg, hsl(var(--hsl-raspberry-600)/0) 0%, hsl(var(--hsl-raspberry-600)/0.2) 38%, hsl(var(--hsl-raspberry-600)/0.6) 72%, hsl(var(--hsl-raspberry-600)/0.8) 100%);
+  opacity: 0;
 }
 .cb-business-travel-nav__card:hover .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card:focus-visible .cb-business-travel-nav__card-arrow-icon, .cb-business-travel-nav__card.is-active .cb-business-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
@@ -23799,6 +23814,16 @@ span a {
   z-index: 0;
   background: linear-gradient(160deg, var(--col-raspberry-400), var(--col-ink));
 }
+.cb-specialist-travel-nav__card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(var(--hsl-ink)/0.18) 0%, hsl(var(--hsl-ink)/0.72) 38%, hsl(var(--hsl-ink)/0.96) 100%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
 .cb-specialist-travel-nav__card-media::after {
   content: "";
   position: absolute;
@@ -23806,6 +23831,8 @@ span a {
   background: linear-gradient(180deg, hsl(var(--hsl-ink)/0) 0%, hsl(var(--hsl-ink)/0.18) 38%, hsl(var(--hsl-ink)/0.72) 72%, hsl(var(--hsl-ink)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity var(--transition);
 }
 .cb-specialist-travel-nav__card-image {
   width: 100%;
@@ -23849,6 +23876,12 @@ span a {
   transform: rotate(45deg);
   transform-origin: center;
   transition: transform 180ms ease;
+}
+.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::before, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::before {
+  opacity: 1;
+}
+.cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-media::after, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-media::after {
+  opacity: 0;
 }
 .cb-specialist-travel-nav__card:hover .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card:focus-visible .cb-specialist-travel-nav__card-arrow-icon, .cb-specialist-travel-nav__card.is-active .cb-specialist-travel-nav__card-arrow-icon {
   transform: rotate(0deg);
@@ -23926,6 +23959,16 @@ span a {
   z-index: 0;
   background: linear-gradient(160deg, var(--col-raspberry-400), var(--col-ink));
 }
+.cb-solutions-nav__card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsl(var(--hsl-ink)/0.18) 0%, hsl(var(--hsl-ink)/0.72) 38%, hsl(var(--hsl-ink)/0.96) 100%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
 .cb-solutions-nav__card-media::after {
   content: "";
   position: absolute;
@@ -23933,6 +23976,8 @@ span a {
   background: linear-gradient(180deg, hsl(var(--hsl-ink)/0) 0%, hsl(var(--hsl-ink)/0.18) 38%, hsl(var(--hsl-ink)/0.72) 72%, hsl(var(--hsl-ink)/0.96) 100%);
   z-index: 1;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity var(--transition);
 }
 .cb-solutions-nav__card-image {
   width: 100%;
@@ -23978,6 +24023,12 @@ span a {
   transform: rotate(45deg);
   transform-origin: center;
   transition: transform 180ms ease;
+}
+.cb-solutions-nav__card:hover .cb-solutions-nav__card-media::before, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::before, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::before {
+  opacity: 1;
+}
+.cb-solutions-nav__card:hover .cb-solutions-nav__card-media::after, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-media::after, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-media::after {
+  opacity: 0;
 }
 .cb-solutions-nav__card:hover .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card:focus-visible .cb-solutions-nav__card-arrow-icon, .cb-solutions-nav__card.is-active .cb-solutions-nav__card-arrow-icon {
   transform: rotate(0deg);

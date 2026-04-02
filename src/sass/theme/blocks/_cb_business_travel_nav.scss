@@ -108,6 +108,23 @@
       );
       z-index: 1;
       pointer-events: none;
+      opacity: 1;
+      transition: opacity var(--transition);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        hsl(var(--hsl-raspberry-600) / 0.18) 0%,
+        hsl(var(--hsl-raspberry-600) / 0.72) 38%,
+        hsl(var(--hsl-raspberry-600) / 0.96) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--transition);
     }
   }
 
@@ -163,14 +180,11 @@
   &__card:hover,
   &__card:focus-visible,
   &__card.is-active {
+    .cb-business-travel-nav__card-media::before {
+      opacity: 1;
+    }
     .cb-business-travel-nav__card-media::after {
-      background: linear-gradient(
-        180deg,
-        hsl(var(--hsl-raspberry-600) / 0) 0%,
-        hsl(var(--hsl-raspberry-600) / 0.2) 38%,
-        hsl(var(--hsl-raspberry-600) / 0.6) 72%,
-        hsl(var(--hsl-raspberry-600) / 0.8) 100%
-      );
+      opacity: 0;
     }
     .cb-business-travel-nav__card-arrow-icon {
       transform: rotate(0deg);

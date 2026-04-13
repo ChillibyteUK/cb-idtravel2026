@@ -23690,6 +23690,7 @@ span a {
   line-height: 1;
   letter-spacing: var(--ls--40);
   font-weight: var(--fw-book);
+  text-wrap: balance;
 }
 .cb-image-feature-overlay--hero .cb-image-feature-overlay__overlay {
   margin-top: 0;

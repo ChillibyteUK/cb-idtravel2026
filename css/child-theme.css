@@ -22072,7 +22072,7 @@ header a.nav-link {
   transition: color var(--transition), font-weight var(--transition);
   display: inline-block;
   text-decoration: none;
-  padding: 0.2rem 0 0 0;
+  padding: 0 0 0 0;
   position: relative;
 }
 header a:hover, header a:focus, header a:focus-visible,
@@ -22116,14 +22116,9 @@ header .navbar-nav .nav-link::after {
 header .logo-clip {
   overflow: hidden;
   display: inline-block;
-  height: 30px;
+  height: 18px;
   margin-right: 1rem;
   vertical-align: middle;
-}
-@media (min-width: 992px) {
-  header .logo-clip {
-    min-width: 240px;
-  }
 }
 header .logo-inner {
   display: inline-block;
@@ -22131,7 +22126,7 @@ header .logo-inner {
 }
 header .logo-inner svg {
   display: block;
-  height: 25px;
+  height: 18px;
   width: auto;
 }
 header .current_page_item > .nav-link,
@@ -22175,16 +22170,7 @@ header li.raspberry.dropdown.current-menu-item > .nav-link {
   }
 }
 header .navbar-nav .nav-submenu-indicator {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 0.5rem;
-  height: 0.5rem;
-  line-height: 1;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-60%) rotate(45deg);
-  pointer-events: none;
+  display: none;
 }
 header .navbar-nav {
   margin-block: 0;
@@ -23163,7 +23149,7 @@ span a {
   background-color: var(--col-raspberry-450);
   border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
   border-bottom: 1px solid hsl(var(--hsl-neutral-050)/0.5);
-  padding-block: 0.75rem;
+  padding-block: 1rem 0.75rem;
   color: var(--col-white);
   font-weight: var(--fw-regular);
   font-size: var(--fs-300);
@@ -24274,7 +24260,7 @@ span a {
 .cb-careers-page .overlay {
   inset: 0;
   position: absolute;
-  background-color: rgba(13, 13, 12, 0.75);
+  background-color: hsl(var(--hsl-ink)/0.75);
 }
 .cb-careers-page .id-container {
   position: relative;

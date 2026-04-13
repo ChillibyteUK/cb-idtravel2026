@@ -58,7 +58,7 @@ switch ( $primary_blog_type ) {
 		$section_title = 'has-raspberry-450-background-color';
 		break;
 	default:
-		$block_title   = 'PRESS';
+		$block_title   = 'LATEST NEWS AND INSIGHTS';
 		$background    = 'has-primary-black-background-color';
 		$section_title = 'has-primary-black-background-color';
 		break;
@@ -99,10 +99,11 @@ if ( ! $q->have_posts() ) {
 ?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-recent-news <?= esc_attr( $background ); ?>">
 	<div class="cb-recent-news__pre-title <?= esc_attr( $section_title ); ?>">
-		<div class="id-container pt-2 pb-1 px-4 px-md-5">
+		<div class="id-container px-4 px-md-5">
 			<?= esc_html( $block_title ); ?>
 		</div>
 	</div>
+
 	<div class="id-container">
 		<div class="insight-type-grid grid-type-1 id-container px-4 px-md-5 py-5">
 			<div class="row g-5">

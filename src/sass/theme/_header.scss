@@ -16,7 +16,7 @@ header {
       font-weight var(--transition);
     display: inline-block;
     text-decoration: none;
-    padding: 0.2rem 0 0 0;
+    padding: 0 0 0 0;
     position: relative;
     &:hover,
     &:focus,
@@ -65,23 +65,23 @@ header {
   .logo-clip {
     overflow: hidden;
     display: inline-block;
-    height: 30px;
+    height: 18px;
     margin-right: 1rem;
     vertical-align: middle;
   }
 
   // Keep a reasonable min-width on larger screens but allow smaller viewports to shrink.
-  @media (min-width: 992px) {
-    .logo-clip {
-      min-width: 240px;
-    }
-  }
+  // @media (min-width: 992px) {
+  //   .logo-clip {
+  //     min-width: 240px;
+  //   }
+  // }
   .logo-inner {
     display: inline-block;
     transform: translateX(0);
-    svg {
+    svg { 
       display: block;
-      height: 25px;
+      height: 18px;
       width: auto;
     }
   }
@@ -131,16 +131,17 @@ header {
   }
 
   .navbar-nav .nav-submenu-indicator {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 0.5rem;
-    height: 0.5rem;
-    line-height: 1;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: translateY(-60%) rotate(45deg);
-    pointer-events: none;
+    display: none;
+    // position: absolute;
+    // top: 50%;
+    // right: 0;
+    // width: 0.5rem;
+    // height: 0.5rem;
+    // line-height: 1;
+    // border-right: 1.5px solid currentColor;
+    // border-bottom: 1.5px solid currentColor;
+    // transform: translateY(-60%) rotate(45deg);
+    // pointer-events: none;
   }
 
   .navbar-nav {

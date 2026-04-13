@@ -50,6 +50,11 @@
   }
 }
 
+.id-button--sm {
+  font-size: var(--fs-400);
+  padding: 4px 16px;
+}
+
 /* Base button */
 .btn,
 .btn a {

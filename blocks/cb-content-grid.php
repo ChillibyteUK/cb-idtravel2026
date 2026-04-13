@@ -185,7 +185,7 @@ if ( $section_style_attr ) {
 										<div class="cb-content-grid__quote-wrap">
 											<blockquote class="cb-content-grid__quote mb-4"><?= wp_kses_post( $quote_text ); ?></blockquote>
 											<?php if ( ! empty( $quote_link['url'] ) && ! empty( $quote_link['title'] ) ) : ?>
-												<a class="id-button" href="<?= esc_url( $quote_link['url'] ); ?>" target="<?= esc_attr( $quote_link['target'] ?: '_self' ); ?>">
+												<a class="id-button id-button--sm mt-4" href="<?= esc_url( $quote_link['url'] ); ?>" target="<?= esc_attr( $quote_link['target'] ?: '_self' ); ?>">
 													<?= esc_html( $quote_link['title'] ); ?>
 												</a>
 											<?php endif; ?>

@@ -116,7 +116,7 @@ switch ( $post_style ) {
 			$cta = get_field( 'insight_cta', 'option' );
 			break;
 		case 'people':
-			$cta = get_field( 'press_cta', 'option' );
+			$cta = get_field( 'people_cta', 'option' );
 			$person = get_the_terms( get_the_ID(), 'person' );
 				if ( $person && ! is_wp_error( $person ) ) {
 					$person = $person[0];

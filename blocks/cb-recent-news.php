@@ -14,7 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 $block_id   = $block['id'] ?? '';
 $blog_type  = get_query_var( 'blog_type', '' );
 $person     = get_query_var( 'person', '' );
+$theme      = get_query_var( 'theme', '' );
 $blog_types = array();
+
+if ( is_object( $theme ) && ! empty( $theme->slug ) ) {
+	$theme = $theme->slug;
+}
 
 if ( ! empty( $blog_type ) ) {
 	$blog_types = is_array( $blog_type ) ? $blog_type : array( $blog_type );
@@ -73,22 +78,72 @@ $args = array(
 	'post__not_in'   => array( get_the_ID() ),
 );
 
+$tax_query = array();
+
 if ( ! empty( $blog_types ) ) {
 	$args['category_name'] = implode( ',', $blog_types );
 }
 
 if ( ! empty( $person ) ) {
-	$args['tax_query'] = array(
-		array(
-			'taxonomy' => 'person',
-			'field'    => 'slug',
-			'terms'    => $person->slug,
-		),
+	$tax_query[] = array(
+		'taxonomy' => 'person',
+		'field'    => 'slug',
+		'terms'    => $person->slug,
 	);
 	$args['category_name'] = null;
 }
 
-$q = new WP_Query( $args );
+if ( ! empty( $tax_query ) ) {
+	$args['tax_query'] = $tax_query;
+}
+
+$posts = array();
+
+if ( ! empty( $theme ) ) {
+	$priority_args = $args;
+	$priority_tax_query = $priority_args['tax_query'] ?? array();
+	$priority_tax_query[] = array(
+		'taxonomy' => 'theme',
+		'field'    => 'slug',
+		'terms'    => $theme,
+	);
+	if ( count( $priority_tax_query ) > 1 ) {
+		$priority_tax_query['relation'] = 'AND';
+	}
+	$priority_args['tax_query'] = $priority_tax_query;
+
+	$priority_query = new WP_Query( $priority_args );
+	if ( $priority_query->have_posts() ) {
+		$posts = $priority_query->posts;
+	}
+	wp_reset_postdata();
+
+	if ( count( $posts ) < 3 ) {
+		$fallback_args = $args;
+		$fallback_args['posts_per_page'] = 3 - count( $posts );
+		$fallback_args['post__not_in'] = array_merge(
+			$fallback_args['post__not_in'],
+			wp_list_pluck( $posts, 'ID' )
+		);
+
+		$fallback_query = new WP_Query( $fallback_args );
+		if ( $fallback_query->have_posts() ) {
+			$posts = array_merge( $posts, $fallback_query->posts );
+		}
+		wp_reset_postdata();
+	}
+
+	$q = new WP_Query(
+		array(
+			'post_type'      => 'post',
+			'post__in'       => wp_list_pluck( $posts, 'ID' ),
+			'orderby'        => 'post__in',
+			'posts_per_page' => 3,
+		)
+	);
+} else {
+	$q = new WP_Query( $args );
+}
 
 if ( ! $q->have_posts() ) {
 	wp_reset_postdata();

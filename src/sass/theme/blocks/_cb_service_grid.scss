@@ -1,7 +1,7 @@
 .cb-service-grid {
   &__grid {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   &__item {
@@ -37,6 +37,8 @@
     font-size: var(--fs-100);
     font-weight: var(--fw-regular);
     line-height: var(--lh-100);
+    text-wrap: balance;
+    text-wrap: pretty;
 
     p:last-child {
       margin-bottom: 0;
@@ -128,9 +130,7 @@
       grid-row: var(--sg-row-start) / span var(--sg-row-span);
     }
 
-    .cb-service-grid__item:nth-child(6n + 3) .cb-service-grid__body,
-    .cb-service-grid__item:nth-child(6n + 4) .cb-service-grid__body,
-    .cb-service-grid__item:nth-child(6n + 5) .cb-service-grid__body {
+    .cb-service-grid__body--align-end {
       text-align: right;
       align-items: flex-end;
     }

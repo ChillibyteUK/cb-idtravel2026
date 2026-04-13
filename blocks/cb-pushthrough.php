@@ -35,11 +35,13 @@ $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( 
 ?>
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
 	<?php
+	/*
 	if ( $background_url ) {
 		?>
 		<div class="cb-pushthrough__overlay<?= $left_content ? ' cb-pushthrough__overlay--dark' : ''; ?>"></div>
 		<?php
 	}
+	*/
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
@@ -59,10 +61,17 @@ $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( 
 						<?php
 					}
 				} else {
-					$logo = get_attached_file( get_field( 'logo' ), 'full' ) ?: get_stylesheet_directory() . '/img/identity-logo.svg';
-					?>
+					// rm san if svg is used as left content type.
+					if ( get_field( 'logo' ) ) {
+						?>
+						<div class="cb-pushthrough__logo mb-3 pt-3"><?= wp_get_attachment_image( get_field( 'logo' ), 'full' ); ?></div>
+						<?php
+					} else {
+						$logo = get_attached_file( get_field( 'logo' ), 'full' ) ?: get_stylesheet_directory() . '/img/identity-logo.svg';
+						?>
 					<div class="cb-pushthrough__logo"><?= cb_sanitise_svg( $logo, '', '570px' ); ?></div>
-					<?php
+						<?php
+					}
 				}
 				?>
 			</div>

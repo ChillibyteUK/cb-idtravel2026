@@ -136,6 +136,8 @@ switch ( $post_style ) {
 	set_query_var( 'cta_choice', $cta );
 	set_query_var( 'blog_type', $btype );
 	set_query_var( 'person', $person );
+	$themes = get_the_terms( get_the_ID(), 'theme' );
+	set_query_var( 'theme', ( $themes && ! is_wp_error( $themes ) ) ? $themes[0] : null );
 	?>
 	<section class="recent-news">
 		<?php

@@ -24493,7 +24493,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 
 .cb-service-grid__grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 .cb-service-grid__item {
   display: grid;
@@ -24523,6 +24523,8 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   font-size: var(--fs-100);
   font-weight: var(--fw-regular);
   line-height: var(--lh-100);
+  text-wrap: balance;
+  text-wrap: pretty;
 }
 .cb-service-grid__content p:last-child {
   margin-bottom: 0;
@@ -24594,9 +24596,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
     grid-column: var(--sg-col-start)/var(--sg-col-end);
     grid-row: var(--sg-row-start)/span var(--sg-row-span);
   }
-  .cb-service-grid .cb-service-grid__item:nth-child(6n+3) .cb-service-grid__body,
-  .cb-service-grid .cb-service-grid__item:nth-child(6n+4) .cb-service-grid__body,
-  .cb-service-grid .cb-service-grid__item:nth-child(6n+5) .cb-service-grid__body {
+  .cb-service-grid .cb-service-grid__body--align-end {
     text-align: right;
     align-items: flex-end;
   }

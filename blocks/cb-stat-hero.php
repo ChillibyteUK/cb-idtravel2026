@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$block_title = get_field( 'title' ) ? get_field( 'title' ) : get_the_title();
+$block_title = get_field( 'title' ) ? get_field( 'title' ) : '';
 
 $block_link = get_field( 'cta_link' );
 $stats      = array();

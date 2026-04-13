@@ -34,39 +34,57 @@ $section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg 
 $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( $background_url ) ) : '';
 ?>
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
-	<?php if ( $background_url ) : ?>
+	<?php
+	if ( $background_url ) {
+		?>
 		<div class="cb-pushthrough__overlay<?= $left_content ? ' cb-pushthrough__overlay--dark' : ''; ?>"></div>
-	<?php endif; ?>
-
+		<?php
+	}
+	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
 			<div class="col-md-6">
-				<?php if ( 'Text' === $left_type ) : ?>
-					<?php if ( $title ) : ?>
+				<?php
+				if ( 'Text' === $left_type ) {
+					if ( $title ) {
+						?>
 						<h2 class="cb-pushthrough__title w-constrained" style="--width:25ch"><?= esc_html( $title ); ?></h2>
-					<?php endif; ?>
-					<?php if ( $left_content ) : ?>
+						<?php
+					}
+					if ( $left_content ) {
+						?>
 						<div class="cb-pushthrough__left-content mb-3 pt-3">
 							<?= wp_kses_post( nl2br( esc_html( $left_content ) ) ); ?>
 						</div>
-					<?php endif; ?>
-				<?php else : ?>
-					<div class="cb-pushthrough__logo"><?= cb_sanitise_svg( get_stylesheet_directory() . '/img/identity-logo.svg', '', '570px' ); ?></div>
-				<?php endif; ?>
+						<?php
+					}
+				} else {
+					$logo = get_attached_file( get_field( 'logo' ), 'full' ) ?: get_stylesheet_directory() . '/img/identity-logo.svg';
+					?>
+					<div class="cb-pushthrough__logo"><?= cb_sanitise_svg( $logo, '', '570px' ); ?></div>
+					<?php
+				}
+				?>
 			</div>
 
 			<div class="col-md-6">
-				<?php if ( $description ) : ?>
+				<?php
+				if ( $description ) {
+					?>
 					<div class="cb-pushthrough__desc fw-regular">
 						<?= wp_kses_post( $description ); ?>
 					</div>
-				<?php endif; ?>
-				<?php if ( $link && isset( $link['url'], $link['title'] ) ) : ?>
+					<?php
+				}
+				if ( $link && isset( $link['url'], $link['title'] ) ) {
+					?>
 					<a href="<?= esc_url( $link['url'] ); ?>" class="cb-pushthrough__link" target="<?= esc_attr( $link['target'] ?: '_self' ); ?>">
 						<?= esc_html( $link['title'] ); ?>
 						<span class="cb-pushthrough__link-arrow"><?= cb_sanitise_svg( get_stylesheet_directory() . '/img/arrow-n600.svg', 'cb-pushthrough__link-arrow-icon', 16, 16 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 					</a>
-				<?php endif; ?>
+					<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>

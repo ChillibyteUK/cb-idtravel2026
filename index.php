@@ -69,6 +69,18 @@ get_header();
 					case 3:
 						$col_class = 'col-md-3 insight-type-grid__card-3';
 						break;
+					case 4:
+						$col_class = 'col-md-6 insight-type-grid__card-4';
+						break;
+					case 5:
+						$col_class = 'col-md-3 insight-type-grid__card-5';
+						break;
+					case 6:
+						$col_class = 'col-md-3 insight-type-grid__card-6';
+						break;
+					case 7:
+						$col_class = 'col-md-12 insight-type-grid__card-7';
+						break;
 					default:
 						$col_class = 'col-md-6';
 						break;

@@ -190,7 +190,7 @@ header {
 }
 
 .navbar-collapse.collapse.show {
-  background-color: var(--col-white);
+  background-color: var(--col-ink);
   border-color: var(--col-neutral-50);
   ul {
     padding-block-start: 3rem;
@@ -199,7 +199,7 @@ header {
 }
 
 header:has(.navbar-collapse.collapse.show) {
-  background-color: var(--col-white) !important;
+  background-color: var(--col-ink) !important;
 }
 .collapse,
 .collapsing {

@@ -23657,7 +23657,7 @@ span a {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 70vh;
+  min-height: var(--_height, 70vh);
   background-color: var(--col-ink);
   color: var(--col-white);
 }
@@ -23681,7 +23681,6 @@ span a {
   z-index: 1;
   width: 100%;
   isolation: isolate;
-  margin-top: 15rem;
 }
 .cb-image-feature-overlay--hero {
   min-height: calc(100vh - var(--h-top));

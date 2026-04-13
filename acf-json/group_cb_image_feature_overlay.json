@@ -47,6 +47,36 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_69dcdc8d7a598",
+            "label": "Block Height (VH)",
+            "name": "block_height",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69ca7db9ad886",
+                        "operator": "==",
+                        "value": "Inline"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 70,
+            "min": 0,
+            "max": 100,
+            "allow_in_bindings": 0,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_cb_image_feature_overlay_image",
             "label": "Image",
             "name": "image",
@@ -204,5 +234,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774966173
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776082118
 }

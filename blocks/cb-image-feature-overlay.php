@@ -14,25 +14,31 @@ $content       = get_field( 'content' );
 
 $section_classes = array( 'cb-image-feature-overlay' );
 
-$pres = get_field( 'presentation' );
-if ( 'Hero' === $pres ) {
+$presentation = get_field( 'presentation' );
+if ( 'Hero' === $presentation ) {
 	$section_classes[] = 'cb-image-feature-overlay--hero';
+}
+
+$section_style_declarations = array();
+$height = get_field( 'block_height' );
+
+if ( '' !== (string) $height ) {
+	$section_style_declarations[] = sprintf( '--_height: %svh;', esc_attr( $height ) );
 }
 
 if ( $extra_classes ) {
 	$section_classes[] = $extra_classes;
 }
-
-$section_style = '';
-
 if ( $image_id ) {
 	$image_url = wp_get_attachment_image_url( $image_id, 'full' );
 
 	if ( $image_url ) {
-		$section_style = sprintf( '--_bg-url: url(%s);', esc_url_raw( $image_url ) );
+		$section_style_declarations[] = sprintf( '--_bg-url: url(%s);', esc_url_raw( $image_url ) );
 		$section_classes[] = 'cb-image-feature-overlay--has-background-image';
 	}
 }
+
+$section_style = implode( ' ', $section_style_declarations );
 
 ?>
 <section

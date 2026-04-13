@@ -22349,7 +22349,7 @@ header:has(.navbar-collapse.collapse.show) {
   aspect-ratio: 16/9;
 }
 .insight-type-grid.grid-type-1 .insight-type-grid__date, .insight-type-grid.grid-type-full .insight-type-grid__date {
-  color: var(--col-raspberry-100);
+  color: var(--col-neutral-100);
 }
 .insight-type-grid__image-wrapper {
   overflow: hidden;
@@ -22364,7 +22364,7 @@ header:has(.navbar-collapse.collapse.show) {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .insight-type-grid__category {
-  border-bottom: 1px solid var(--col-raspberry-100) !important;
+  border-bottom: 1px solid var(--col-neutral-100) !important;
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: var(--fs-50);

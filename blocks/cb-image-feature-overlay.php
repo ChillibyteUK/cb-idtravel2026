@@ -59,7 +59,7 @@ $section_style = implode( ' ', $section_style_declarations );
 				$block_link = get_field( 'cta_link' );
 				?>
 			<hr>
-			<div class="row g-4 pt-4">
+			<div class="row g-5 pt-4">
 				<div class="col-lg-8">
 					<h1><?= wp_kses_post( get_field( 'title' ) ); ?></h1>
 				</div>

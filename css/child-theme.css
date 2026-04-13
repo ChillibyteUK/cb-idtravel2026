@@ -23717,9 +23717,10 @@ span a {
 .stat-hero {
   background-color: var(--col-ink);
   color: var(--col-white);
-  padding-block: 8rem 5rem;
+  padding-bottom: 5rem;
 }
 .stat-hero .h1-wrapper {
+  padding-top: 8rem;
   border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
 }
 .stat-hero h1, .stat-hero .h1 {

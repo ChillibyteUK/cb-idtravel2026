@@ -184,7 +184,8 @@ if ( ! $q->have_posts() ) {
 
 				?>
 			<div class="<?php echo esc_attr( $col_class ); ?>">			
-				<a href="<?php echo esc_url( get_permalink() ); ?>" class="insight-type-grid__card">
+				<?php $card_themes = wp_get_post_terms( get_the_ID(), 'theme', array( 'fields' => 'slugs' ) ); ?>
+				<a href="<?php echo esc_url( get_permalink() ); ?>" class="insight-type-grid__card" data-theme="<?php echo esc_attr( implode( ' ', $card_themes ) ); ?>">
 					<div class="insight-type-grid__image-wrapper">
 						<?php
 						if ( get_the_post_thumbnail( get_the_ID() ) ) {

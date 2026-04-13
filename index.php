@@ -118,6 +118,9 @@ get_header();
 				</a>	
 			</div>
 				<?php
+				if ( $counter >= 7 ) {
+					$counter = 0;
+				}
 			}
 			wp_reset_postdata();
 			?>

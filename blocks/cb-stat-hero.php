@@ -24,9 +24,15 @@ for ( $index = 1; $index <= 4; $index++ ) {
 ?>
 <section class="stat-hero">
 	<div class="id-container pt-2 pb-1 px-4 px-md-5">
+		<?php
+		if ( $block_title ) {
+			?>
 		<div class="h1-wrapper">
 			<h1><?= esc_html( $block_title ); ?></h1>
 		</div>
+			<?php
+		}
+		?>
 		<div class="row g-4">
 			<div class="col-lg-4">
 				<?php if ( ! empty( $block_link['url'] ) && ! empty( $block_link['title'] ) ) : ?>

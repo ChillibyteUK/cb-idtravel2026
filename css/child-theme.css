@@ -22066,7 +22066,7 @@ header {
   transition: background-color 0.3s ease;
 }
 header.scrolled {
-  background-color: hsla(250, 48%, 10%, 0.6) !important;
+  background-color: hsla(250, 48%, 10%, 0.8) !important;
 }
 header a,
 header a.nav-link {
@@ -22183,7 +22183,6 @@ header .navbar-nav {
 header .menu-divider-label {
   padding-top: 0.75rem;
   margin-top: 0.5rem;
-  border-top: 1px solid hsl(var(--hsl-neutral-400)/0.35);
 }
 header .menu-divider-label:first-child {
   margin-top: 0;
@@ -22193,7 +22192,7 @@ header .menu-divider-label:first-child {
 header .dropdown-divider-label {
   display: block;
   padding: 0.25rem 1rem 0.35rem;
-  color: hsl(var(--hsl-neutral-800)/0.72);
+  color: var(--col-neutral-300);
   font-size: var(--fs-50);
   font-weight: var(--fw-semibold);
   line-height: 1.2;
@@ -22203,12 +22202,23 @@ header .dropdown-divider-label {
   cursor: default;
   pointer-events: none;
 }
+header .dropdown-menu {
+  background-color: hsla(var(--hsl-ink)/0.8);
+  border-radius: 0;
+  --bs-dropdown-spacer: 15px;
+}
+header .dropdown-menu li:not(:last-of-type) .dropdown-item {
+  border-bottom: 1px solid hsl(var(--hsl-neutral-400)/0.35);
+}
 header .dropdown-menu .dropdown-item {
   font-weight: var(--fw-regular);
   transition: color var(--transition);
+  color: var(--col-white);
 }
 header .dropdown-menu .dropdown-item:hover, header .dropdown-menu .dropdown-item:focus, header .dropdown-menu .dropdown-item:focus-visible {
   font-weight: var(--fw-regular);
+  background-color: var(--col-ink);
+  color: var(--col-raspberry-400);
 }
 header .navbar-toggler {
   color: var(--col-white);

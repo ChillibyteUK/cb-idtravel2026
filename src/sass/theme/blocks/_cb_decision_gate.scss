@@ -1,4 +1,55 @@
 .cb-decision-gate {
+  position: relative;
+  isolation: isolate;
+
+  &__second {
+    background-color: hsl( 255 255 255 / 0.1 );
+  }
+
+
+  &__first > .id-container,
+  &__second > .id-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--has-background-image {
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -3rem 0;
+      z-index: 0;
+      background-image: var(--cb-decision-gate-bg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translateY(var(--cb-decision-gate-parallax-y, 0));
+      will-change: transform;
+      z-index: -1;
+    }
+  }
+
+  &__section-title {
+    font-size: var(--fs-875);
+    font-weight: var(--fw-book);
+    letter-spacing: var(--ls--30);
+    line-height: var(--lh-900);
+    margin-bottom: 1rem;
+    text-wrap: balance;
+    // text-wrap: pretty;
+  }
+  &__section-content {
+    font-size: var(--fs-600);
+    font-weight: var(--fw-light);
+    letter-spacing: var(--ls--10);
+    line-height: var(--lh-600);
+    margin-bottom: 2rem;
+    text-wrap: balance;
+    // text-wrap: pretty;
+  }
+
   &__left,
   &__right {
     padding: 4rem 2rem;
@@ -16,7 +67,6 @@
   }
 
   @media (min-width: 992px) {
-
     &__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -31,15 +81,13 @@
       border-right: 1px solid rgba(255, 255, 255, 0.4);
       border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
-    
+
     &__right {
       text-align: left;
       border-left: 1px solid rgba(255, 255, 255, 0.4);
       border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
-}
-
-
+  }
 
   &__title {
     position: relative;
@@ -48,7 +96,7 @@
     font-weight: var(--fw-book);
     margin-bottom: 0.5rem;
     text-wrap: balance;
-    text-wrap: pretty;
+    // text-wrap: pretty;
   }
 
   &__content {
@@ -58,6 +106,6 @@
     font-weight: var(--fw-light);
     margin-bottom: 1rem;
     text-wrap: balance;
-    text-wrap: pretty;
+    // text-wrap: pretty;
   }
 }

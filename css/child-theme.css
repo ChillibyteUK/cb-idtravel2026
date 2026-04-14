@@ -24695,12 +24695,28 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 .cb-decision-gate__left a, .cb-decision-gate__right a {
   text-decoration: none;
 }
+.cb-decision-gate__left a:not(.id-button):hover, .cb-decision-gate__right a:not(.id-button):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--col-purple-400);
+}
 @media (min-width: 992px) {
+  .cb-decision-gate__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cb-decision-gate .id-button {
+    display: none;
+  }
   .cb-decision-gate__left {
     text-align: right;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   }
   .cb-decision-gate__right {
     text-align: left;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   }
 }
 .cb-decision-gate__title {
@@ -24709,6 +24725,8 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   font-size: var(--fs-600);
   font-weight: var(--fw-book);
   margin-bottom: 0.5rem;
+  text-wrap: balance;
+  text-wrap: pretty;
 }
 .cb-decision-gate__content {
   position: relative;
@@ -24717,6 +24735,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   font-weight: var(--fw-light);
   margin-bottom: 1rem;
   text-wrap: balance;
+  text-wrap: pretty;
 }
 
 body {

@@ -9,27 +9,6 @@
       "type": "message"
     },
     {
-      "key": "field_68f0def7a33ab",
-      "label": "Title",
-      "name": "title",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "allow_in_bindings": 0,
-      "rows": 3,
-      "placeholder": "",
-      "new_lines": "br"
-    },
-    {
       "key": "field_68f0defca33ac",
       "label": "Content Heading",
       "name": "content_heading",

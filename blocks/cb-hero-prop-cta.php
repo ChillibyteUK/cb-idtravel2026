@@ -44,7 +44,7 @@ if ( ! empty( $block_id ) ) {
 				);
 				?>
 				<div class="row">
-					<div class="col-md-7 mb-5 d-flex justify-content-center align-items-center">
+					<div class="col-md-8 mb-5 d-flex justify-content-center align-items-center">
 						<div class="cb-hero-prop-cta__title ps-5 ps-md-0">
 							<?= wp_kses_post( implode( '', $wrapped ) ); ?>
 						</div>
@@ -69,13 +69,6 @@ if ( ! empty( $block_id ) ) {
 				<div class="row">
 					<div class="col-md-6 offset-md-6">
 						<?php
-						if ( ! empty( $content_heading ) ) {
-							?>
-							<div class="cb-hero-prop-cta__content-heading mb-4" data-aos="fade-up">
-								<?= wp_kses_post( $content_heading ); ?>
-							</div>
-							<?php
-						}
 						if ( ! empty( $content ) ) {
 							?>
 							<div class="cb-hero-prop-cta__content text-balance pb-4" data-aos="fade-up" data-aos-delay="100">

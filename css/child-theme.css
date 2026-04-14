@@ -24810,7 +24810,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 .leadership__name {
   color: var(--col-ink);
   font-size: var(--fs-500);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-book);
   border-top: 1px solid hsl(var(--hsl-ink)/0.25) !important;
   border-bottom: 1px solid hsl(var(--hsl-ink)/0.25) !important;
   padding-block: 0.25rem 0;
@@ -24818,7 +24818,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 .leadership__role {
   color: var(--col-neutral-900);
   font-size: var(--fs-300);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
   border-bottom: 1px solid hsl(var(--hsl-ink)/0.25) !important;
   padding-block: 0.25rem 0;
   margin-bottom: 1.5rem;
@@ -24826,6 +24826,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 .leadership__bio {
   color: var(--col-ink);
   font-size: var(--fs-400);
+  line-height: var(--lh-400);
   font-weight: var(--fw-regular);
   margin-bottom: 3rem;
 }

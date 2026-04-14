@@ -17,6 +17,7 @@ $person     = get_query_var( 'person', '' );
 $theme      = get_query_var( 'theme', '' );
 $theme_field = get_field( 'theme' );
 $blog_types = array();
+$post_limit = is_front_page() ? 6 : 3;
 
 if ( ! empty( $theme_field ) ) {
 	$theme_term = get_term( $theme_field, 'theme' );
@@ -82,7 +83,7 @@ $args = array(
 	'post_status'    => array( 'publish' ),
 	'orderby'        => 'date',
 	'order'          => 'DESC',
-	'posts_per_page' => 3,
+	'posts_per_page' => $post_limit,
 	'post__not_in'   => array( get_the_ID() ),
 );
 
@@ -126,9 +127,9 @@ if ( ! empty( $theme ) ) {
 	}
 	wp_reset_postdata();
 
-	if ( count( $posts ) < 3 ) {
+	if ( count( $posts ) < $post_limit ) {
 		$fallback_args = $args;
-		$fallback_args['posts_per_page'] = 3 - count( $posts );
+		$fallback_args['posts_per_page'] = $post_limit - count( $posts );
 		$fallback_args['post__not_in'] = array_merge(
 			$fallback_args['post__not_in'],
 			wp_list_pluck( $posts, 'ID' )
@@ -146,7 +147,7 @@ if ( ! empty( $theme ) ) {
 			'post_type'      => 'post',
 			'post__in'       => wp_list_pluck( $posts, 'ID' ),
 			'orderby'        => 'post__in',
-			'posts_per_page' => 3,
+			'posts_per_page' => $post_limit,
 		)
 	);
 } else {
@@ -175,19 +176,28 @@ if ( ! $q->have_posts() ) {
 			while ( $q->have_posts() ) {
 				$q->the_post();
 				++$counter;
-				switch ( $counter ) {
-					case 1:
-						$col_class = 'col-md-3 insight-type-grid__card-1';
-						break;
-					case 2:
-						$col_class = 'col-md-6 insight-type-grid__card-2';
-						break;
-					case 3:
-						$col_class = 'col-md-3 insight-type-grid__card-3';
-						break;
-					default:
-						$col_class = 'col-md-6';
-						break;
+					switch ( $counter ) {
+						case 1:
+							$col_class = 'col-md-3 insight-type-grid__card-1';
+							break;
+						case 2:
+							$col_class = 'col-md-6 insight-type-grid__card-2';
+							break;
+						case 3:
+							$col_class = 'col-md-3 insight-type-grid__card-3';
+							break;
+						case 4:
+							$col_class = 'col-md-6 insight-type-grid__card-4';
+							break;
+						case 5:
+							$col_class = 'col-md-3 insight-type-grid__card-5';
+							break;
+						case 6:
+							$col_class = 'col-md-3 insight-type-grid__card-6';
+							break;
+						default:
+							$col_class = 'col-md-6';
+							break;
 				}
 
 				?>

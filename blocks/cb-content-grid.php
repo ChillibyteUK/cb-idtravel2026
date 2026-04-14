@@ -335,6 +335,7 @@ if ( $section_style_attr ) {
 									if ( ! empty( $qa_rows ) && is_array( $qa_rows ) ) {
 										$first_q = $module['lead_first'] ? 'cb-content-grid__qa-question--first' : '';
 										$first_a = $module['lead_first'] ? 'cb-content-grid__qa-answer--first' : '';
+										$large_q = ! empty( $module['large_left'] ) ? 'cb-content-grid__qa-question--large' : '';
 										?>
 										<div class="cb-content-grid__qa">
 											<?php foreach ( $qa_rows as $qa_row ) : ?>
@@ -349,7 +350,7 @@ if ( $section_style_attr ) {
 												<div class="cb-content-grid__qa-row row g-4 pb-5 align-items-start">
 													<div class="col-lg-6">
 														<?php if ( $qa_question ) : ?>
-															<h3 class="cb-content-grid__qa-question <?= esc_attr( $first_q ); ?>"><?= wp_kses_post( $qa_question ); ?></h3>
+															<h3 class="cb-content-grid__qa-question <?= esc_attr( trim( $first_q . ' ' . $large_q ) ); ?>"><?= wp_kses_post( $qa_question ); ?></h3>
 														<?php endif; ?>
 													</div>
 													<div class="col-lg-6">

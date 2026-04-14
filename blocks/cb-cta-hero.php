@@ -20,7 +20,7 @@ $has_block_link = ! empty( $block_link['url'] ) && ! empty( $block_link['title']
 		</div>
 	</div>
 	<div class="id-container pt-2 pb-1 px-4 px-md-5">
-		<div class="row g-4">
+		<div class="row g-5">
 			<?php if ( $has_block_link ) : ?>
 				<div class="col-lg-8 cta-hero__content">
 					<?= wp_kses_post( get_field( 'content' ) ); ?>

@@ -37,7 +37,7 @@ $link_right = get_field( 'right_link' );
 
 ?>
 <section class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>" id="<?= esc_attr( $section_id ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
-	<div class="cb-decision-gate__first">
+	<div class="cb-decision-gate__first py-5">
 		<div class="id-container px-4 px-md-5 py-5">
 			<div class="row">
 				<div class="col-md-6">
@@ -53,7 +53,7 @@ $link_right = get_field( 'right_link' );
 		</div>
 	</div>
 	<div class="cb-decision-gate__second">
-		<div class="id-container px-4 px-md-5 py-5">
+		<div class="id-container px-4 px-md-5 pb-5">
 			<div class="cb-decision-gate__grid">
 				<div class="cb-decision-gate__left">
 					<a href="<?= esc_url( $link_left['url'] ); ?>" aria-label="<?= esc_attr( $link_left['title'] ); ?>">

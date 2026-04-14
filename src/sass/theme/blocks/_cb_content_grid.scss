@@ -38,6 +38,18 @@
     }
   }
 
+  &.dark-lines {
+    .cb-content-grid__row--has-line {
+      border-top-color: hsl(var(--hsl-ink) / 0.25);
+    }
+  }
+
+  &.light-lines {
+    .cb-content-grid__row--has-line {
+      border-top-color: hsl(var(--hsl-neutral-050) / 0.5);
+    }
+  }
+
   .cb-content-grid__h2 {
     text-wrap: balance;
     width: 50%;

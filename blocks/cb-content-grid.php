@@ -26,10 +26,17 @@ if ( $background_image ) {
 }
 
 $bg_class = '';
+$line_class = 'dark-lines';
 if ( isset( $block['supports']['color']['background'] ) && $block['supports']['color']['background'] ) {
 	$bg_color = $block['backgroundColor'] ?? '';
 	if ( $bg_color ) {
 		$bg_class = 'has-' . esc_attr( $bg_color ) . '-background-color';
+
+		if ( preg_match( '/(\d+)(?!.*\d)/', $bg_color, $matches ) ) {
+			$line_class = (int) $matches[1] >= 600 ? 'light-lines' : 'dark-lines';
+		} else {
+			$line_class = 'light-lines';
+		}
 	}
 }
 
@@ -42,6 +49,7 @@ if ( isset( $block['supports']['color']['text'] ) && $block['supports']['color']
 }
 
 $section_classes = array( 'cb-content-grid' );
+$section_classes[] = $line_class;
 if ( $bg_class ) {
 	$section_classes[] = $bg_class;
 }

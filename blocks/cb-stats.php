@@ -47,6 +47,25 @@ if ( ! array_reduce(
 	<div class="id-container px-4 px-md-5 py-5">
 		<div class="row g-4 py-5 justify-content-center">
 			<?php
+			if ( get_field( 'cta_message' ) || get_field( 'cta_link' ) ) {
+				$l = get_field( 'cta_link' );
+				?>
+				<div class="col-12 col-lg-4">
+				<?php
+				if ( get_field( 'cta_message' ) ) {
+					?>
+					<div class="cb-stats__cta-message fs-500 mb-4"><?= esc_html( get_field( 'cta_message' ) ); ?></div>
+					<?php
+				}
+				if ( $l ) {
+					?>
+					<a href="<?= esc_url( $l['url'] ); ?>" class="id-button id-button--primary"><?= esc_html( $l['title'] ); ?></a>
+					<?php
+				}
+				?>
+				</div>
+				<?php
+			}
 			foreach ( $stats as $stat ) {
 				?>
 				<div class="col-md-6 col-lg-2">
@@ -64,25 +83,6 @@ if ( ! array_reduce(
 							<?php endif; ?>
 						</div>
 					</div>
-				</div>
-				<?php
-			}
-			if ( get_field( 'cta_message' ) || get_field( 'cta_link' ) ) {
-				$l = get_field( 'cta_link' );
-				?>
-				<div class="col-12 col-lg-4">
-				<?php
-				if ( get_field( 'cta_message' ) ) {
-					?>
-					<div class="cb-stats__cta-message fs-500 mb-4"><?= esc_html( get_field( 'cta_message' ) ); ?></div>
-					<?php
-				}
-				if ( $l ) {
-					?>
-					<a href="<?= esc_url( $l['url'] ); ?>" class="id-button id-button--primary"><?= esc_html( $l['title'] ); ?></a>
-					<?php
-				}
-				?>
 				</div>
 				<?php
 			}

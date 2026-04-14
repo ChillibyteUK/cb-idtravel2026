@@ -15,7 +15,15 @@ $block_id   = $block['id'] ?? '';
 $blog_type  = get_query_var( 'blog_type', '' );
 $person     = get_query_var( 'person', '' );
 $theme      = get_query_var( 'theme', '' );
+$theme_field = get_field( 'theme' );
 $blog_types = array();
+
+if ( ! empty( $theme_field ) ) {
+	$theme_term = get_term( $theme_field, 'theme' );
+	if ( $theme_term && ! is_wp_error( $theme_term ) ) {
+		$theme = $theme_term->slug;
+	}
+}
 
 if ( is_object( $theme ) && ! empty( $theme->slug ) ) {
 	$theme = $theme->slug;

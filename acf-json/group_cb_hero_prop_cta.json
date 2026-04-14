@@ -9,6 +9,27 @@
       "type": "message"
     },
     {
+      "key": "field_68f0def7a33ab",
+      "label": "Title",
+      "name": "title",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 3,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
       "key": "field_68f0df08a33ad",
       "label": "Content",
       "name": "content",
@@ -58,5 +79,5 @@
   ],
   "active": 1,
   "description": "",
-  "modified": 1776163477
+  "modified": 1776163617
 }

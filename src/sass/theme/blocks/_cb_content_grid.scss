@@ -104,12 +104,14 @@
 
   .cb-content-grid__qa-question {
     margin-bottom: 0;
-    font-size: var(--fs-500);
-    font-weight: var(--fw-light);
+    font-size: var(--fs-900);
+    font-weight: var(--fw-book);
+    letter-spacing: var(--ls--20);
     &--first {
       font-size: var(--fs-600);
       color: var(--col-purple);
       font-weight: var(--fw-book);
+      letter-spacing: 0;
     }
   }
 

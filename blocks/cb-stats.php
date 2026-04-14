@@ -48,17 +48,19 @@ if ( ! array_reduce(
 		<div class="row g-4 py-5 justify-content-center">
 			<?php foreach ( $stats as $stat ) : ?>
 				<div class="col-md-6 col-lg-2">
-					<?php if ( ! empty( $stat['intro'] ) ) : ?>
-						<div class="cb-stats__intro"><?= esc_html( $stat['intro'] ); ?></div>
-					<?php endif; ?>
-					<div class="cb-stats__stat">
-						<?php if ( '' !== (string) $stat['prefix'] ) : ?>
-							<span class="cb-stats__stat-prefix"><?= esc_html( $stat['prefix'] ); ?></span>
+					<div class="cb-stats__item">
+						<?php if ( ! empty( $stat['intro'] ) ) : ?>
+							<div class="cb-stats__intro"><?= esc_html( $stat['intro'] ); ?></div>
 						<?php endif; ?>
-						<span class="cb-stats__stat-value" data-stat-target="<?= esc_attr( is_numeric( $stat['value'] ) ? $stat['value'] : 0 ); ?>">0</span>
-						<?php if ( '' !== (string) $stat['suffix'] ) : ?>
-							<span class="cb-stats__stat-suffix"><?= esc_html( $stat['suffix'] ); ?></span>
-						<?php endif; ?>
+						<div class="cb-stats__stat">
+							<?php if ( '' !== (string) $stat['prefix'] ) : ?>
+								<span class="cb-stats__stat-prefix"><?= esc_html( $stat['prefix'] ); ?></span>
+							<?php endif; ?>
+							<span class="cb-stats__stat-value" data-stat-target="<?= esc_attr( is_numeric( $stat['value'] ) ? $stat['value'] : 0 ); ?>">0</span>
+							<?php if ( '' !== (string) $stat['suffix'] ) : ?>
+								<span class="cb-stats__stat-suffix"><?= esc_html( $stat['suffix'] ); ?></span>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>

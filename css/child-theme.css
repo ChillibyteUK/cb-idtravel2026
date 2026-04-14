@@ -23800,7 +23800,18 @@ span a {
   font-weight: var(--fw-regular);
   margin-bottom: 1.5rem;
 }
+.cb-stats .col-md-6,
+.cb-stats .col-lg-2 {
+  display: flex;
+}
+.cb-stats__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
 .cb-stats__stat {
+  margin-top: auto;
   border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
   border-bottom: 1px solid hsl(var(--hsl-neutral-050)/0.5);
   display: flex;

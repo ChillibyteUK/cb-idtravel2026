@@ -23648,17 +23648,20 @@ span a {
 }
 
 .cb-signpost-header {
-  border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
-  border-bottom: 1px solid hsl(var(--hsl-neutral-050)/0.5);
+  --cb-signpost-header-line-color: hsl(var(--hsl-ink) / 0.25);
+  border-top: 1px solid var(--cb-signpost-header-line-color);
+  border-bottom: 1px solid var(--cb-signpost-header-line-color);
   text-transform: uppercase;
   font-size: var(--fs-200);
   font-weight: var(--fw-regular);
   padding-block: 1rem 0.75rem;
   line-height: 1;
 }
-.cb-signpost-header.has-raspberry-background-color {
-  border-top-color: hsl(var(--hsl-neutral-050)/0.5);
-  border-bottom-color: hsl(var(--hsl-neutral-050)/0.5);
+.cb-signpost-header.light-lines {
+  --cb-signpost-header-line-color: hsl(var(--hsl-neutral-050) / 0.5);
+}
+.cb-signpost-header.dark-lines {
+  --cb-signpost-header-line-color: hsl(var(--hsl-ink) / 0.25);
 }
 
 .cb-image-feature-overlay {

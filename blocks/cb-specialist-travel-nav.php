@@ -77,8 +77,8 @@ foreach ( $specialist_pages as $page ) {
 $hide_heading_column = ! $is_specialist_page && 3 === count( $cards );
 
 if ( $hide_heading_column ) {
-	$summary_column_class = 'col-lg-3';
-	$card_column_class    = 'col-md-6 col-lg-3';
+	$summary_column_class = 'col-lg-6';
+	$card_column_class    = 'col-md-6 col-lg-2';
 }
 
 $active_card = $cards[0];

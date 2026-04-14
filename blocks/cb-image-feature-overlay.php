@@ -65,7 +65,7 @@ $section_style = implode( ' ', $section_style_declarations );
 				</div>
 				<div class="col-lg-4">
 					<?php if ( ! empty( $block_link['url'] ) && ! empty( $block_link['title'] ) ) : ?>
-						<a class="id-button mb-5" href="<?= esc_url( $block_link['url'] ); ?>" target="<?= esc_attr( $block_link['target'] ?: '_self' ); ?>"><?= esc_html( $block_link['title'] ); ?></a>
+						<a class="id-button mb-5 mt-3" href="<?= esc_url( $block_link['url'] ); ?>" target="<?= esc_attr( $block_link['target'] ?: '_self' ); ?>"><?= esc_html( $block_link['title'] ); ?></a>
 					<?php endif; ?>
 					<div class="cta-hero__cta-title"><?= esc_html( get_field( 'cta_intro' ) ); ?></div>
 				</div>

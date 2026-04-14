@@ -46,7 +46,9 @@ if ( ! array_reduce(
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
 	<div class="id-container px-4 px-md-5 py-5">
 		<div class="row g-4 py-5 justify-content-center">
-			<?php foreach ( $stats as $stat ) : ?>
+			<?php
+			foreach ( $stats as $stat ) {
+				?>
 				<div class="col-md-6 col-lg-2">
 					<div class="cb-stats__item">
 						<?php if ( ! empty( $stat['intro'] ) ) : ?>
@@ -63,7 +65,28 @@ if ( ! array_reduce(
 						</div>
 					</div>
 				</div>
-			<?php endforeach; ?>
+				<?php
+			}
+			if ( get_field( 'cta_message' ) || get_field( 'cta_link' ) ) {
+				$l = get_field( 'cta_link' );
+				?>
+				<div class="col-12 col-lg-4">
+				<?php
+				if ( get_field( 'cta_message' ) ) {
+					?>
+					<div class="cb-stats__cta-message mb-4"><?= esc_html( get_field( 'cta_message' ) ); ?></div>
+					<?php
+				}
+				if ( $l ) {
+					?>
+					<a href="<?= esc_url( $l['url'] ); ?>" class="id-button id-button--primary"><?= esc_html( $l['title'] ); ?></a>
+					<?php
+				}
+				?>
+				</div>
+				<?php
+			}
+			?>
 		</div>
 	</div>
 </section>

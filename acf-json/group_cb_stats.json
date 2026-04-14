@@ -53,15 +53,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "40",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -76,7 +77,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -97,7 +98,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -120,7 +121,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -141,7 +142,7 @@
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "40",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -158,15 +159,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -178,18 +180,19 @@
             "aria-label": "",
             "type": "number",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "min": "",
             "max": "",
-            "step": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -200,15 +203,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -223,7 +227,7 @@
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "40",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -240,15 +244,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -260,18 +265,19 @@
             "aria-label": "",
             "type": "number",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "min": "",
             "max": "",
-            "step": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -282,15 +288,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -305,7 +312,7 @@
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "40",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -322,15 +329,16 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -342,18 +350,19 @@
             "aria-label": "",
             "type": "number",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "32",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "min": "",
             "max": "",
-            "step": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -364,18 +373,57 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_69de3e0fc05fa",
+            "label": "CTA Message",
+            "name": "cta_message",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69de3e1bc05fb",
+            "label": "CTA Link",
+            "name": "cta_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -397,5 +445,7 @@
     "description": "Fields for the CB Stats block",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1775142427
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776172687
 }

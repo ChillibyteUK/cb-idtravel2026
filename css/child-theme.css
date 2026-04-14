@@ -22153,27 +22153,6 @@ header li.raspberry.dropdown.current-page-ancestor > .nav-link,
 header li.raspberry.dropdown.current-menu-item > .nav-link {
   color: var(--col-white);
 }
-@media (max-width: 991px) {
-  header .navbar-collapse {
-    min-height: 100svh;
-    /* Do not set display:flex or height, let Bootstrap animate */
-  }
-  header .navbar-nav {
-    width: 100%;
-    padding-bottom: 2rem;
-  }
-  header .nav-link,
-  header .navbar-nav .nav-link {
-    font-size: var(--fs-600);
-    padding: 1rem 0;
-  }
-  header .dropdown-item {
-    font-size: var(--fs-600);
-  }
-  header .fs-subtle a {
-    font-size: var(--fs-600);
-  }
-}
 header .navbar-nav .nav-submenu-indicator {
   display: none;
 }
@@ -22223,6 +22202,37 @@ header .dropdown-menu .dropdown-item:hover, header .dropdown-menu .dropdown-item
 header .navbar-toggler {
   color: var(--col-white);
 }
+@media (max-width: 991px) {
+  header {
+    --bs-dropdown-spacer: 0;
+  }
+  header .navbar-collapse {
+    min-height: 100svh;
+    /* Do not set display:flex or height, let Bootstrap animate */
+  }
+  header .navbar-nav {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+  header .nav-link,
+  header .navbar-nav .nav-link {
+    font-size: var(--fs-400);
+    padding: 1rem 0;
+  }
+  header .nav-link::after,
+  header .navbar-nav .nav-link::after {
+    display: none;
+  }
+  header .dropdown-item {
+    font-size: var(--fs-400);
+  }
+  header .fs-subtle a {
+    font-size: var(--fs-400);
+  }
+  header .navbar-collapse.collapse.show {
+    padding-inline-start: 0;
+  }
+}
 
 .navbar-collapse.collapse.show {
   background-color: var(--col-ink);
@@ -22231,6 +22241,12 @@ header .navbar-toggler {
 .navbar-collapse.collapse.show ul {
   padding-block-start: 3rem;
   padding-inline-start: 1.5rem;
+}
+.navbar-collapse.collapse.show ul ul.dropdown-menu {
+  --bs-dropdown-item-padding-x: 0;
+  padding-inline-start: 0;
+  padding-block-start: 0;
+  max-width: 90vw;
 }
 
 header:has(.navbar-collapse.collapse.show) {

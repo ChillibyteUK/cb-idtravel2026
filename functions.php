@@ -253,7 +253,7 @@ function cb_add_primary_nav_submenu_indicator( $title, $item, $args, $depth ) {
 
 	return $title . '<span class="nav-submenu-indicator" aria-hidden="true"></span>';
 }
-add_filter( 'nav_menu_item_title', 'cb_add_primary_nav_submenu_indicator', 10, 4 );
+// add_filter( 'nav_menu_item_title', 'cb_add_primary_nav_submenu_indicator', 10, 4 );
 
 /**
  * Render menu divider items as non-clickable labels.

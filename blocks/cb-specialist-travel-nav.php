@@ -74,6 +74,13 @@ foreach ( $specialist_pages as $page ) {
 	);
 }
 
+$hide_heading_column = ! $is_specialist_page && 3 === count( $cards );
+
+if ( $hide_heading_column ) {
+	$summary_column_class = 'col-lg-3';
+	$card_column_class    = 'col-md-6 col-lg-3';
+}
+
 $active_card = $cards[0];
 
 if ( empty( $active_card['title'] ) ) {
@@ -83,11 +90,13 @@ if ( empty( $active_card['title'] ) ) {
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
 	<div class="id-container px-4 px-md-5 py-5">
 		<div class="row gx-4 gy-4 align-items-start">
-			<div class="<?= esc_attr( $heading_column_class ); ?>">
-				<?php if ( get_field( 'title' ) ) : ?>
-					<h2 class="cb-specialist-travel-nav__heading"><?= esc_html( get_field( 'title' ) ); ?></h2>
-				<?php endif; ?>
-			</div>
+			<?php if ( ! $hide_heading_column ) : ?>
+				<div class="<?= esc_attr( $heading_column_class ); ?>">
+					<?php if ( get_field( 'title' ) ) : ?>
+						<h2 class="cb-specialist-travel-nav__heading"><?= esc_html( get_field( 'title' ) ); ?></h2>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
 			<div class="<?= esc_attr( $summary_column_class ); ?>">
 				<div class="cb-specialist-travel-nav__intro" data-solutions-nav-panel>

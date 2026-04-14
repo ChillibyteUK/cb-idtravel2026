@@ -74,7 +74,7 @@ if ( ! array_reduce(
 				<?php
 				if ( get_field( 'cta_message' ) ) {
 					?>
-					<div class="cb-stats__cta-message mb-4"><?= esc_html( get_field( 'cta_message' ) ); ?></div>
+					<div class="cb-stats__cta-message fs-500 mb-4"><?= esc_html( get_field( 'cta_message' ) ); ?></div>
 					<?php
 				}
 				if ( $l ) {

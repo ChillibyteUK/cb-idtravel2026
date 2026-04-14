@@ -107,7 +107,6 @@ function widgets_init() {
             'footer_menu_specialist' => 'Footer Specialist',
             'footer_menu_resources'  => 'Footer Resources',
             'footer_menu_identity'   => 'Footer Identity',
-            'footer_menu_locations'  => 'Footer Locations',
             'footer_menu_legal'      => 'Footer Legal & Info',
         )
     );

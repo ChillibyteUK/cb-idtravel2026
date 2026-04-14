@@ -16,7 +16,7 @@ $line_class = 'dark-lines';
 
 if ( ! empty( $block['backgroundColor'] ) ) {
 	if ( preg_match( '/(\d+)(?!.*\d)/', $block['backgroundColor'], $matches ) ) {
-		$line_class = (int) $matches[1] >= 600 ? 'light-lines' : 'dark-lines';
+		$line_class = (int) $matches[1] >= 600 ? 'dark-lines' : 'light-lines';
 	} else {
 		$line_class = 'light-lines';
 	}

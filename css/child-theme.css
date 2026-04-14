@@ -23846,13 +23846,13 @@ span a {
 }
 .cb-specialist-travel-nav__intro ul li {
   margin-bottom: 0.25rem;
-  border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
+  border-top: 1px solid hsl(var(--hsl-ink)/0.25);
   padding-top: 0.25rem;
 }
 .cb-specialist-travel-nav__intro ul li:last-child {
   margin-bottom: 0;
   padding-bottom: 0.25rem;
-  border-bottom: 1px solid hsl(var(--hsl-neutral-050)/0.5);
+  border-bottom: 1px solid hsl(var(--hsl-ink)/0.25);
 }
 .cb-specialist-travel-nav__card {
   position: relative;

@@ -22393,7 +22393,7 @@ header:has(.navbar-collapse.collapse.show) {
 }
 .insight-type-grid.tmc-index .insight-type-grid__title {
   padding-top: 0.75rem;
-  border-top: 1px solid var(--col-raspberry-100) !important;
+  border-top: 1px solid hsl(var(--hsl-ink)/0.25) !important;
 }
 .insight-type-grid.tmc-index .insight-type-grid__date {
   color: var(--col-ink);

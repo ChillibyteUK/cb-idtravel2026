@@ -30,7 +30,8 @@
     font-size: var(--fs-500);
     font-weight: var(--fw-light);
     line-height: var(--lh-500);
-    letter-spacing: var(--lh--10);
+    letter-spacing: var(--ls--10);
+    text-wrap: balance;
   }
 
   &__content {
@@ -38,7 +39,6 @@
     font-weight: var(--fw-regular);
     line-height: var(--lh-100);
     text-wrap: balance;
-    text-wrap: pretty;
 
     p:last-child {
       margin-bottom: 0;

@@ -7,8 +7,25 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Support Gutenberg color picker.
+$bg              = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg              = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+$line_class      = 'dark-lines';
+$section_classes = array( 'leadership' );
+
+if ( ! empty( $block['backgroundColor'] ) ) {
+	if ( preg_match( '/(\d+)(?!.*\d)/', $block['backgroundColor'], $matches ) ) {
+		$line_class = (int) $matches[1] >= 600 ? 'light-lines' : 'dark-lines';
+	} else {
+		$line_class = 'light-lines';
+	}
+}
+
+$section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg, $line_class ) ) );
+
+
 ?>
-<section class="leadership has-neutral-300-background-color">
+<section class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
 	<div class="id-container px-4 px-md-5">
 		<div class="w-constrained py-5 fw-regular fs-500" style="--width:60ch;"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
 		<div class="row g-5">

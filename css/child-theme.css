@@ -24698,10 +24698,11 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 }
 .cb-hero-prop-cta__content {
   border-top: 1px solid hsl(var(--hsl-neutral-050)/0.5);
-  font-size: var(--fs-850);
-  line-height: var(--lh-850);
+  font-size: var(--fs-700);
+  line-height: var(--lh-700);
   letter-spacing: var(--ls--15);
   font-weight: var(--fw-light);
+  padding-top: 1rem;
 }
 
 .cb-decision-gate {

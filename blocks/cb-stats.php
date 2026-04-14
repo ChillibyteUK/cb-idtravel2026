@@ -45,9 +45,9 @@ if ( ! array_reduce(
 ?>
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
 	<div class="id-container px-4 px-md-5 py-5">
-		<div class="row g-4 py-5">
+		<div class="row g-4 py-5 justify-content-center">
 			<?php foreach ( $stats as $stat ) : ?>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-2">
 					<?php if ( ! empty( $stat['intro'] ) ) : ?>
 						<div class="cb-stats__intro"><?= esc_html( $stat['intro'] ); ?></div>
 					<?php endif; ?>

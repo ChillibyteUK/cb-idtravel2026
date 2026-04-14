@@ -19,6 +19,24 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_leadership',
+				'title'           => __( 'CB Leadership' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-leadership.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+          
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_decision_gate',
 				'title'           => __( 'CB Decision Gate' ),
 				'category'        => 'layout',

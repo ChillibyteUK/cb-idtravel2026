@@ -24836,6 +24836,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 }
 .leadership__role {
   font-size: var(--fs-300);
+  opacity: 0.75;
   font-weight: var(--fw-regular);
   border-bottom: 1px solid var(--cb-leadership-line-color) !important;
   padding-block: 0.25rem 0;

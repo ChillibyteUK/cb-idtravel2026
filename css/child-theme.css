@@ -23855,6 +23855,9 @@ span a {
 .cb-stats__stat-value, .cb-stats__stat-prefix, .cb-stats__stat-suffix {
   display: inline-block;
 }
+.cb-stats__cta-message {
+  text-wrap: balance;
+}
 
 .cb-specialist-travel-nav {
   background-color: var(--col-neutral-050);

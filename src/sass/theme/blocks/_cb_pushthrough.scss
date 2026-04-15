@@ -1,7 +1,16 @@
 .cb-pushthrough {
   position: relative;
   isolation: isolate;
-  border-bottom: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
+  --cb-pushthrough-line-color: hsl(var(--hsl-ink) / 0.25);
+  border-bottom: 1px solid var(--cb-pushthrough-line-color);
+
+  &.light-lines {
+    --cb-pushthrough-line-color: hsl(var(--hsl-neutral-050) / 0.5);
+  }
+
+  &.dark-lines {
+    --cb-pushthrough-line-color: hsl(var(--hsl-ink) / 0.25);
+  }
 
   &--has-bg {
     background-image: var(--_bg-url);
@@ -52,7 +61,7 @@
     display: block;
     align-items: center;
     gap: 0.5rem;
-    border-top: 1px solid hsl(var(--hsl-neutral-050) / 0.5);
+    border-top: 1px solid var(--cb-pushthrough-line-color);
     padding-top: 1rem;
     margin-top: 2rem;
     color: var(--col-purple-400);

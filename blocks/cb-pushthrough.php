@@ -17,6 +17,7 @@ $title           = get_field( 'title' );
 $description     = get_field( 'description' );
 $background_url  = $background ? wp_get_attachment_image_url( $background, 'full' ) : '';
 $section_classes = array( 'cb-pushthrough' );
+$line_class      = 'dark-lines';
 
 if ( $background_url ) {
 	$section_classes[] = 'cb-pushthrough--has-bg';
@@ -29,7 +30,16 @@ if ( ! empty( $block['className'] ) ) {
 // Support Gutenberg color picker.
 $bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
 $fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
-$section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg ) ) );
+
+if ( ! empty( $block['backgroundColor'] ) ) {
+	if ( preg_match( '/(\d+)(?!.*\d)/', $block['backgroundColor'], $matches ) ) {
+		$line_class = (int) $matches[1] >= 600 ? 'light-lines' : 'dark-lines';
+	} else {
+		$line_class = 'light-lines';
+	}
+}
+
+$section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg, $line_class ) ) );
 
 $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( $background_url ) ) : '';
 ?>

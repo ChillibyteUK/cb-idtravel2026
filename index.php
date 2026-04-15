@@ -49,7 +49,7 @@ get_header();
 					array(
 						'taxonomy' => 'category',
 						'field'    => 'slug',
-						'terms'    => array( 'insights', 'perspectives' ),
+						'terms'    => array( 'insights', 'news' ),
 					),
 				),
             );

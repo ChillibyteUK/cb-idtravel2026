@@ -308,6 +308,21 @@ if ( $section_style_attr ) {
 
 									break;
 
+								case 'button':
+									$button_link = $module['button_link'] ?? array();
+									$cta_text    = $module['cta_text'] ?? '';
+									if ( ! empty( $button_link['url'] ) && ! empty( $button_link['title'] ) ) {
+										?>
+										<a class="id-button mb-5 mt-3" href="<?= esc_url( $button_link['url'] ); ?>" target="<?= esc_attr( $button_link['target'] ?: '_self' ); ?>"><?= esc_html( $button_link['title'] ); ?></a>
+										<?php
+									}
+									if ( $cta_text ) {
+										?>
+										<div class="cta-hero__cta-title"><?= esc_html( $cta_text ); ?></div>
+										<?php
+									}
+									break;
+
 								case 'video':
 									$video_url = $module['video_url'] ?? '';
 

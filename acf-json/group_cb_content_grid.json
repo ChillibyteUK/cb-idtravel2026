@@ -176,12 +176,14 @@
                                 "list": "List",
                                 "image": "Image",
                                 "video": "Video",
-                                "empty": "Empty"
+                                "empty": "Empty",
+                                "button": "Button\/CTA"
                             },
                             "default_value": "text",
                             "return_format": "value",
-                            "allow_null": 0,
                             "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 1,
                             "ui": 0,
                             "ajax": 0,
                             "placeholder": "",
@@ -961,6 +963,62 @@
                             "create_options": 0,
                             "save_options": 0,
                             "parent_repeater": "field_cb_content_grid_modules"
+                        },
+                        {
+                            "key": "field_69e107d3af859",
+                            "label": "Button Link",
+                            "name": "button_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_cb_content_grid_module_type",
+                                        "operator": "==",
+                                        "value": "button"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_cb_content_grid_modules"
+                        },
+                        {
+                            "key": "field_69e107eeaf85a",
+                            "label": "CTA Text",
+                            "name": "cta_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_cb_content_grid_module_type",
+                                        "operator": "==",
+                                        "value": "button"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_cb_content_grid_modules"
                         }
                     ]
                 }
@@ -985,5 +1043,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1776188030
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776355381
 }

@@ -28,7 +28,7 @@ $section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg,
 <section class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
 	<div class="id-container px-4 px-md-5">
 		<div class="w-constrained py-5 fw-regular fs-500" style="--width:60ch;"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
-		<div class="row g-5">
+		<div class="row g-5" data-aos-stagger-group>
 			<?php
 			while ( have_rows( 'team' ) ) {
 				the_row();
@@ -36,7 +36,7 @@ $section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg,
 				$lrole = get_sub_field( 'role' );
 				$bio   = get_sub_field( 'bio' );
 				?>
-			<div class="col-md-4">
+			<div class="col-md-4" data-aos="fade-up">
 				<div class="leadership__item">
 					<div class="leadership__image">
 						<?= wp_get_attachment_image( get_sub_field( 'image' ), 'large' ); ?>

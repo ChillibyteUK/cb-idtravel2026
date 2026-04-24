@@ -170,7 +170,7 @@ if ( ! $q->have_posts() ) {
 
 	<div class="id-container">
 		<div class="insight-type-grid grid-type-1 id-container px-4 px-md-5 py-5">
-			<div class="row g-5">
+			<div class="row g-5" data-aos-stagger-group>
 			<?php
 			$counter = 0;
 			while ( $q->have_posts() ) {
@@ -201,7 +201,7 @@ if ( ! $q->have_posts() ) {
 				}
 
 				?>
-			<div class="<?php echo esc_attr( $col_class ); ?>">			
+			<div class="<?php echo esc_attr( $col_class ); ?>" data-aos="fade-up">			
 				<?php $card_themes = wp_get_post_terms( get_the_ID(), 'theme', array( 'fields' => 'slugs' ) ); ?>
 				<a href="<?php echo esc_url( get_permalink() ); ?>" class="insight-type-grid__card" data-theme="<?php echo esc_attr( implode( ' ', $card_themes ) ); ?>">
 					<div class="insight-type-grid__image-wrapper">

@@ -32,7 +32,7 @@ if ( $extra_classes ) {
 ?>
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>">
 	<div class="id-container px-4 px-md-5 py-5">
-		<div class="cb-service-grid__grid">
+		<div class="cb-service-grid__grid" data-aos-stagger-group>
 			<?php
 			if ( have_rows( 'content' ) ) {
 				$item_index = 0;
@@ -75,7 +75,7 @@ if ( $extra_classes ) {
 							break;
 					}
 					?>
-			<div class="cb-service-grid__item">
+			<div class="cb-service-grid__item" data-aos="fade-up">
 				<?= wp_get_attachment_image( get_sub_field( 'image' ), 'large', false, array( 'class' => 'cb-service-grid__image', 'style' => $image_style ) ); ?>
 				<div class="<?= esc_attr( implode( ' ', $body_classes ) ); ?>" style="<?= esc_attr( $body_style ); ?>">
 					<div class="cb-service-grid__title"><?= esc_html( get_sub_field( 'title' ) ); ?></div>

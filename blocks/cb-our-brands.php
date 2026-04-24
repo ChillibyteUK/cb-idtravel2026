@@ -53,7 +53,7 @@ $last_col_md  = 0 === $md_rem ? 12 : 6;
 	<?php endif; ?>
 
 	<div class="cb-our-brands__brands id-container px-4 px-md-5 pb-5">
-		<div class="row g-5">
+		<div class="row g-5" data-aos-stagger-group>
 			<?php if ( have_rows( 'brands' ) ) : ?>
 				<?php while ( have_rows( 'brands' ) ) : the_row(); ?>
 					<?php
@@ -65,7 +65,7 @@ $last_col_md  = 0 === $md_rem ? 12 : 6;
 						continue;
 					}
 					?>
-					<div class="col-md-6 col-xl-4 col-xxl-3">
+					<div class="col-md-6 col-xl-4 col-xxl-3" data-aos="fade-up">
 						<?php if ( '#' !== $brand_link['url'] && '' !== $brand_link['url'] ) : ?>
 							<a href="<?= esc_url( $brand_link['url'] ); ?>" target="_blank" rel="noopener noreferrer" class="brand-card">
 								<div class="brand-card__front">

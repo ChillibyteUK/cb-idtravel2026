@@ -47,18 +47,18 @@ if ( ! $title && ! $intro && ! $content && ! $overlay_image ) {
 			<div class="cb-about-hero__top-inner">
 				<?php if ( $title ) : ?>
 					<hr class="cb-about-hero__rule">
-					<h1 class="cb-about-hero__title"><?= esc_html( $title ); ?></h1>
+					<h1 class="cb-about-hero__title hero-animate"><?= esc_html( $title ); ?></h1>
 					<hr class="cb-about-hero__rule">
 				<?php endif; ?>
 				<?php if ( $intro ) : ?>
-					<div class="cb-about-hero__intro"><?= wpautop( esc_html( $intro ) ); ?></div>
+					<div class="cb-about-hero__intro hero-animate hero-animate--delay-1"><?= wpautop( esc_html( $intro ) ); ?></div>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
 
 	<?php if ( $content ) : ?>
-		<div class="cb-about-hero__content-wrap">
+		<div class="cb-about-hero__content-wrap" data-aos="fade-up">
 			<div class="id-container px-4 px-md-5 py-5">
 				<div class="cb-about-hero__content">
 					<?= wp_kses_post( $content ); ?>

@@ -32,13 +32,13 @@ if ( $background_image ) {
 <section id="<?= esc_attr( $block_id ); ?>" class="<?= esc_attr( implode( ' ', $section_classes ) ); ?>"<?= $section_style ? ' style="' . esc_attr( $section_style ) . '"' : ''; ?>>
 	<div class="cb-plain-hero__title">
 		<h1 class="id-container px-4 px-md-5">
-			<span><?= esc_html( $title ); ?></span>
+			<span class="hero-animate"><?= esc_html( $title ); ?></span>
 		</h1>
 	</div>
 	<div class="id-container px-4 px-md-5 pt-5">
 		<div class="row">
 			<div class="col-md-8">
-				<div class="cb-plain-hero__intro pb-5">
+				<div class="cb-plain-hero__intro pb-5 hero-animate hero-animate--delay-1">
 					<?= wp_kses_post( $intro ); ?>
 				</div>
 			</div>

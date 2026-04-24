@@ -109,7 +109,7 @@ if ( $section_style_attr ) {
 			}
 			?>
 			<div class="<?= esc_attr( implode( ' ', $row_classes ) ); ?>" data-row-index="<?= esc_attr( $row_index ); ?>">
-				<div class="<?= esc_attr( implode( ' ', $grid_classes ) ); ?>">
+				<div class="<?= esc_attr( implode( ' ', $grid_classes ) ); ?>" data-aos-stagger-group>
 					<?php
 					foreach ( $modules as $module_index => $module ) {
 						$module_type = $module['module_type'] ?? 'empty';
@@ -139,7 +139,7 @@ if ( $section_style_attr ) {
 
 						$col_classes[] = 'cb-content-grid__module--' . esc_attr( $module_type );
 						?>
-						<div class="<?= esc_attr( implode( ' ', $col_classes ) ); ?>" data-module-index="<?= esc_attr( $module_index ); ?>">
+						<div class="<?= esc_attr( implode( ' ', $col_classes ) ); ?>" data-module-index="<?= esc_attr( $module_index ); ?>" data-aos="fade-up">
 							<?php
 							switch ( $module_type ) {
 								case 'h2':

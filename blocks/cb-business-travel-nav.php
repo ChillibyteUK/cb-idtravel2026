@@ -91,7 +91,7 @@ if ( empty( $active_card['title'] ) ) {
 		<div class="hr"></div>
 		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
-				<div class="cb-business-travel-nav__intro" data-solutions-nav-panel>
+				<div class="cb-business-travel-nav__intro" data-solutions-nav-panel data-aos="fade-up">
 					<h3 class="cb-business-travel-nav__title" data-solutions-nav-title><?= esc_html( $active_card['title'] ); ?></h3>
 					<div class="cb-business-travel-nav__summary" data-solutions-nav-summary>
 						<?= wp_kses_post( $active_card['summary'] ); ?>
@@ -100,13 +100,14 @@ if ( empty( $active_card['title'] ) ) {
 			</div>
 
 			<div class="<?= esc_attr( $cards_column_class ); ?> pb-5">
-				<div class="cb-business-travel-nav__cards" style="--cb-business-travel-columns: <?= esc_attr( $cards_columns_desktop ); ?>;">
+				<div class="cb-business-travel-nav__cards" style="--cb-business-travel-columns: <?= esc_attr( $cards_columns_desktop ); ?>;" data-aos-stagger-group>
 					<?php foreach ( $cards as $index => $card ) : ?>
 						<a
 							class="cb-business-travel-nav__card<?= 0 === $index ? ' is-active' : ''; ?>"
 							href="<?= esc_url( $card['url'] ); ?>"
 							data-solutions-nav-card
 							data-card-title="<?= esc_attr( $card['title'] ); ?>"
+							data-aos="fade-up"
 							<?= $current_page_id === (int) $card['id'] ? 'aria-current="page"' : ''; ?>
 						>
 							<div class="cb-business-travel-nav__card-media">

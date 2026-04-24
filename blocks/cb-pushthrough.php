@@ -54,8 +54,8 @@ $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( 
 	*/
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
-		<div class="row g-5 py-4" data-aos="fade-up">
-			<div class="col-md-6">
+		<div class="row g-5 py-4">
+			<div class="col-md-6" data-aos="fade-up">
 				<?php
 				if ( 'Text' === $left_type ) {
 					if ( $title ) {
@@ -86,7 +86,7 @@ $section_style = $background_url ? sprintf( '--_bg-url: url(%s);', esc_url_raw( 
 				?>
 			</div>
 
-			<div class="col-md-6">
+			<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
 				<?php
 				if ( $description ) {
 					?>

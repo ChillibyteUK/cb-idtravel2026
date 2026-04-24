@@ -1,27 +1,16 @@
 // Add your custom JS here.
 
-// Viewport-aware AOS stagger.
-// Assigns data-aos-delay based on how many siblings are already visible,
-// so only on-screen cards stagger — cards that scroll into view later
-// all start at 0ms delay and animate in promptly.
+// AOS stagger: assign delay by DOM index so cards always cascade in sequence.
 (function () {
-  var STEP = 100; // ms between each visible sibling
+  var STEP = 150; // ms between each sibling
 
   document
     .querySelectorAll("[data-aos-stagger-group]")
     .forEach(function (group) {
       var children = Array.from(group.querySelectorAll("[data-aos]"));
-      var vh = window.innerHeight;
-      var visibleIndex = 0;
 
-      children.forEach(function (el) {
-        var top = el.getBoundingClientRect().top;
-        if (top < vh) {
-          el.setAttribute("data-aos-delay", visibleIndex * STEP);
-          visibleIndex++;
-        } else {
-          el.setAttribute("data-aos-delay", 0);
-        }
+      children.forEach(function (el, index) {
+        el.setAttribute("data-aos-delay", index * STEP);
       });
     });
 })();

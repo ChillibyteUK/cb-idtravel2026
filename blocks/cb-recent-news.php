@@ -201,7 +201,7 @@ if ( ! $q->have_posts() ) {
 				}
 
 				?>
-			<div class="<?php echo esc_attr( $col_class ); ?>" data-aos="fade-up">			
+			<div class="<?php echo esc_attr( $col_class ); ?>" data-aos="fade">			
 				<?php $card_themes = wp_get_post_terms( get_the_ID(), 'theme', array( 'fields' => 'slugs' ) ); ?>
 				<a href="<?php echo esc_url( get_permalink() ); ?>" class="insight-type-grid__card" data-theme="<?php echo esc_attr( implode( ' ', $card_themes ) ); ?>">
 					<div class="insight-type-grid__image-wrapper">

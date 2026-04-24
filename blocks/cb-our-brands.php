@@ -65,7 +65,7 @@ $last_col_md  = 0 === $md_rem ? 12 : 6;
 						continue;
 					}
 					?>
-					<div class="col-md-6 col-xl-4 col-xxl-3" data-aos="fade-up">
+					<div class="col-md-6 col-xl-4 col-xxl-3" data-aos="fade">
 						<?php if ( '#' !== $brand_link['url'] && '' !== $brand_link['url'] ) : ?>
 							<a href="<?= esc_url( $brand_link['url'] ); ?>" target="_blank" rel="noopener noreferrer" class="brand-card">
 								<div class="brand-card__front">

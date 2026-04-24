@@ -75,7 +75,7 @@ if ( $extra_classes ) {
 							break;
 					}
 					?>
-			<div class="cb-service-grid__item" data-aos="fade-up">
+			<div class="cb-service-grid__item" data-aos="fade">
 				<?= wp_get_attachment_image( get_sub_field( 'image' ), 'large', false, array( 'class' => 'cb-service-grid__image', 'style' => $image_style ) ); ?>
 				<div class="<?= esc_attr( implode( ' ', $body_classes ) ); ?>" style="<?= esc_attr( $body_style ); ?>">
 					<div class="cb-service-grid__title"><?= esc_html( get_sub_field( 'title' ) ); ?></div>

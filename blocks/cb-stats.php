@@ -50,7 +50,7 @@ if ( ! array_reduce(
 			if ( get_field( 'cta_message' ) || get_field( 'cta_link' ) ) {
 				$l = get_field( 'cta_link' );
 				?>
-				<div class="col-12 col-lg-4" data-aos="fade-up">
+				<div class="col-12 col-lg-4" data-aos="fade">
 				<?php
 				if ( get_field( 'cta_message' ) ) {
 					?>
@@ -68,7 +68,7 @@ if ( ! array_reduce(
 			}
 			foreach ( $stats as $stat ) {
 				?>
-				<div class="col-md-6 col-lg-2" data-aos="fade-up">
+				<div class="col-md-6 col-lg-2" data-aos="fade">
 					<div class="cb-stats__item">
 						<?php if ( ! empty( $stat['intro'] ) ) : ?>
 							<div class="cb-stats__intro"><?= esc_html( $stat['intro'] ); ?></div>

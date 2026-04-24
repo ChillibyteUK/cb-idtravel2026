@@ -139,7 +139,7 @@ if ( $section_style_attr ) {
 
 						$col_classes[] = 'cb-content-grid__module--' . esc_attr( $module_type );
 						?>
-						<div class="<?= esc_attr( implode( ' ', $col_classes ) ); ?>" data-module-index="<?= esc_attr( $module_index ); ?>" data-aos="fade-up">
+						<div class="<?= esc_attr( implode( ' ', $col_classes ) ); ?>" data-module-index="<?= esc_attr( $module_index ); ?>" data-aos="fade">
 							<?php
 							switch ( $module_type ) {
 								case 'h2':

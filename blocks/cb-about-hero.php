@@ -58,7 +58,7 @@ if ( ! $title && ! $intro && ! $content && ! $overlay_image ) {
 	</div>
 
 	<?php if ( $content ) : ?>
-		<div class="cb-about-hero__content-wrap" data-aos="fade-up">
+		<div class="cb-about-hero__content-wrap" data-aos="fade">
 			<div class="id-container px-4 px-md-5 py-5">
 				<div class="cb-about-hero__content">
 					<?= wp_kses_post( $content ); ?>

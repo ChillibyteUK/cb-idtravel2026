@@ -91,7 +91,7 @@ if ( empty( $active_card['title'] ) ) {
 		<div class="hr"></div>
 		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
-				<div class="cb-solutions-nav__intro" data-solutions-nav-panel data-aos="fade-up">
+				<div class="cb-solutions-nav__intro" data-solutions-nav-panel data-aos="fade">
 					<h3 class="cb-solutions-nav__title" data-solutions-nav-title><?= esc_html( $active_card['title'] ); ?></h3>
 					<div class="cb-solutions-nav__summary" data-solutions-nav-summary>
 						<?= wp_kses_post( $active_card['summary'] ); ?>
@@ -102,7 +102,7 @@ if ( empty( $active_card['title'] ) ) {
 			<div class="<?= esc_attr( $cards_column_class ); ?> pb-5">
 				<div class="row gx-4 gy-4" data-aos-stagger-group>
 					<?php foreach ( $cards as $index => $card ) : ?>
-						<div class="<?= esc_attr( $card_column_class ); ?>" data-aos="fade-up">
+						<div class="<?= esc_attr( $card_column_class ); ?>" data-aos="fade">
 							<a
 								class="cb-solutions-nav__card<?= 0 === $index ? ' is-active' : ''; ?>"
 								href="<?= esc_url( $card['url'] ); ?>"

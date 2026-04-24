@@ -36,7 +36,7 @@ $section_classes = array_merge( $section_classes, array_filter( array( $bg, $fg,
 				$lrole = get_sub_field( 'role' );
 				$bio   = get_sub_field( 'bio' );
 				?>
-			<div class="col-md-4" data-aos="fade-up">
+			<div class="col-md-4" data-aos="fade">
 				<div class="leadership__item">
 					<div class="leadership__image">
 						<?= wp_get_attachment_image( get_sub_field( 'image' ), 'large' ); ?>

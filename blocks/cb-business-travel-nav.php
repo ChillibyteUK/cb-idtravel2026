@@ -91,7 +91,7 @@ if ( empty( $active_card['title'] ) ) {
 		<div class="hr"></div>
 		<div class="row gx-4 gy-4 align-items-start">
 			<div class="<?= esc_attr( $intro_column_class ); ?>">
-				<div class="cb-business-travel-nav__intro" data-solutions-nav-panel data-aos="fade-up">
+				<div class="cb-business-travel-nav__intro" data-solutions-nav-panel data-aos="fade">
 					<h3 class="cb-business-travel-nav__title" data-solutions-nav-title><?= esc_html( $active_card['title'] ); ?></h3>
 					<div class="cb-business-travel-nav__summary" data-solutions-nav-summary>
 						<?= wp_kses_post( $active_card['summary'] ); ?>
@@ -107,7 +107,7 @@ if ( empty( $active_card['title'] ) ) {
 							href="<?= esc_url( $card['url'] ); ?>"
 							data-solutions-nav-card
 							data-card-title="<?= esc_attr( $card['title'] ); ?>"
-							data-aos="fade-up"
+							data-aos="fade"
 							<?= $current_page_id === (int) $card['id'] ? 'aria-current="page"' : ''; ?>
 						>
 							<div class="cb-business-travel-nav__card-media">

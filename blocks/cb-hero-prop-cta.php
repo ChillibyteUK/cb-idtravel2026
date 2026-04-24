@@ -71,14 +71,14 @@ if ( ! empty( $block_id ) ) {
 						<?php
 						if ( ! empty( $content ) ) {
 							?>
-							<div class="cb-hero-prop-cta__content text-balance pb-4" data-aos="fade-up" data-aos-delay="100">
+							<div class="cb-hero-prop-cta__content text-balance pb-4" data-aos="fade" data-aos-delay="100">
 								<?= wp_kses_post( $content ); ?>
 							</div>
 							<?php
 						}
 						if ( $link_url && $link_title ) {
 							?>
-							<div class="cb-hero-prop-cta__link mt-4" data-aos="fade-up" data-aos-delay="200">
+							<div class="cb-hero-prop-cta__link mt-4" data-aos="fade" data-aos-delay="200">
 								<a href="<?= esc_url( $link_url ); ?>"<?= wp_kses_post( $link_target_attr ); ?> class="id-button">
 									<?= esc_html( $link_title ); ?>
 								</a>

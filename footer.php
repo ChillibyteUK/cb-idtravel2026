@@ -51,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
 					)
 				);
 				?>
-				<div class="footer-title mt-4"><a href="/specialist-travel/">Specialist Travel</a></div>
+				<div class="footer-title mt-4">Specialist Travel</div>
 				<?=
 				wp_nav_menu(
 					array(
@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<!-- 5. Legal -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-2 order-6 order-md-7 order-lg-4">
-				<div class="footer-title"><a href="/insights/">Resources</a></div>
+				<div class="footer-title">Resources</div>
 				<?=
 				wp_nav_menu(
 					array(

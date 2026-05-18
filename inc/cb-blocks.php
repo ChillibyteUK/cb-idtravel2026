@@ -19,6 +19,27 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'cb_slido_embed',
+				'title'           => __( 'CB Slido Embed' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/cb-slido-embed.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'background' => true,
+						'text'       => true,
+					),
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'cb_leadership',
 				'title'           => __( 'CB Leadership' ),
 				'category'        => 'layout',
@@ -72,7 +93,6 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
 				),
 			)
 		);
@@ -111,7 +131,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -129,7 +149,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -165,7 +185,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -183,7 +203,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -201,7 +221,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -261,7 +281,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -407,7 +427,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);
@@ -430,7 +450,6 @@ function acf_blocks() {
 			)
 		);
 
-
 		acf_register_block_type(
 			array(
 				'name'            => 'cb_image_feature_overlay',
@@ -444,7 +463,7 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
-          
+
 				),
 			)
 		);

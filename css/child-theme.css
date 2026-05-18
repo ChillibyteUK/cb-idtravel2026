@@ -24909,6 +24909,17 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   margin-bottom: 3rem;
 }
 
+.cb-slido-embed__iframe {
+  height: 100%;
+  width: 100%;
+  min-height: 560px;
+}
+@media (min-width: 768px) {
+  .cb-slido-embed__iframe {
+    min-height: 730px;
+  }
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

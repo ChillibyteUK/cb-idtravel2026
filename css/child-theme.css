@@ -24910,6 +24910,7 @@ form .gform_confirmation_message_1.gform_confirmation_message {
 }
 
 .cb-slido-embed__iframe {
+  display: block;
   height: 100%;
   width: 100%;
   min-height: 560px;

@@ -585,6 +585,13 @@ function core_block_type_args( $args, $name ) {
 	if ( 'core/separator' === $name ) {
 		$args['render_callback'] = 'modify_core_add_container';
 	}
+	if ( 'core/spacer' === $name ) {
+		$args['supports']['color'] = array(
+			'background' => true,
+			'text'       => false,
+			'gradients'  => true,
+		);
+	}
 
     return $args;
 }

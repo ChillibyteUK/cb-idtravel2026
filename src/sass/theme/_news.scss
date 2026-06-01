@@ -226,6 +226,13 @@
       margin-block: 2rem;
       padding-block: 0.75rem 1.5rem;
     }
+
+    .container:first-of-type:not([class*="post-date"]):has(> p:first-of-type) + .container:has(> h2) > h2 {
+      border-top: 0 !important;
+      margin-top: -2rem;
+    }
+
+
   }
   &.post-people {
     p:first-of-type {

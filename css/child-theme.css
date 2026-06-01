@@ -22529,6 +22529,10 @@ header:has(.navbar-collapse.collapse.show) {
   margin-block: 2rem;
   padding-block: 0.75rem 1.5rem;
 }
+.single-blog .post-content .container:first-of-type:not([class*=post-date]):has(> p:first-of-type) + .container:has(> h2, > .h2) > h2, .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):has(> p:first-of-type):not(.alignfull) + .container:has(> h2, > .h2) > h2, .single-blog .post-content .container:first-of-type:not([class*=post-date]):has(> p:first-of-type) + .wp-block-group:has(> h2, > .h2):not(.alignfull) > h2, .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):has(> p:first-of-type):not(.alignfull) + .wp-block-group:has(> h2, > .h2):not(.alignfull) > h2, .single-blog .post-content .container:first-of-type:not([class*=post-date]):has(> p:first-of-type) + .container:has(> h2, > .h2) > .h2, .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):has(> p:first-of-type):not(.alignfull) + .container:has(> h2, > .h2) > .h2, .single-blog .post-content .container:first-of-type:not([class*=post-date]):has(> p:first-of-type) + .wp-block-group:has(> h2, > .h2):not(.alignfull) > .h2, .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):has(> p:first-of-type):not(.alignfull) + .wp-block-group:has(> h2, > .h2):not(.alignfull) > .h2 {
+  border-top: 0 !important;
+  margin-top: -2rem;
+}
 .single-blog.post-people p:first-of-type {
   border-bottom: none !important;
 }

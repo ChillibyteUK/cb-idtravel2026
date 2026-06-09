@@ -87,6 +87,7 @@ $extra      = $block['className'] ?? '';
 $bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
 $fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
 $line_class = 'dark-lines';
+$is_post_context = is_singular( 'post' );
 
 if ( ! empty( $block['backgroundColor'] ) ) {
 	if ( preg_match( '/(\d+)(?!.*\d)/', $block['backgroundColor'], $matches ) ) {
@@ -97,6 +98,24 @@ if ( ! empty( $block['backgroundColor'] ) ) {
 }
 
 ?>
+<?php if ( $is_post_context ) : ?>
+	<?php foreach ( $faqs as $faq ) : ?>
+		<?php
+		$question = $faq['question'] ?? '';
+		$answer   = $faq['answer'] ?? '';
+
+		if ( '' === trim( wp_strip_all_tags( $question ) ) && '' === trim( wp_strip_all_tags( $answer ) ) ) {
+			continue;
+		}
+		?>
+		<?php if ( '' !== trim( $question ) ) : ?>
+	<h2><?= esc_html( $question ); ?></h2>
+		<?php endif; ?>
+		<?php if ( '' !== trim( wp_strip_all_tags( $answer ) ) ) : ?>
+	<?= wpautop( wp_kses_post( $answer ) ); ?>
+		<?php endif; ?>
+	<?php endforeach; ?>
+<?php else : ?>
 <section class="cb-faq <?= esc_attr( trim( $bg . ' ' . $fg . ' ' . $line_class . ' ' . $extra ) ); ?>" id="<?= esc_attr( $block_id ); ?>">
 	<div class="id-container px-4 px-md-5">
 		<?php foreach ( $faqs as $index => $faq ) : ?>
@@ -126,3 +145,4 @@ if ( ! empty( $block['backgroundColor'] ) ) {
 		<?php endforeach; ?>
 	</div>
 </section>
+<?php endif; ?>

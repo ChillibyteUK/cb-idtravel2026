@@ -22434,24 +22434,32 @@ header:has(.navbar-collapse.collapse.show) {
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
+  --_link: #B8FF52;
+  --_link-hover: var(--col-white);
 }
 .single-blog.post-insight {
   --_background: var(--col-ink);
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
+  --_link: #B8FF52;
+  --_link-hover: var(--col-white);
 }
 .single-blog.post-people {
   --_background: var(--col-purple-1100);
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
+  --_link: #B8FF52;
+  --_link-hover: var(--col-white);
 }
 .single-blog.post-tmc {
   --_background: var(--col-white);
   --_cat-colour: var(--col-raspberry);
   --_text-colour: var(--col-ink);
   --_first-colour: var(--col-purple-700);
+  --_link: var(--col-raspberry);
+  --_link-hover: var(--col-ink);
 }
 .single-blog .post-hero-image {
   width: 100%;
@@ -22541,6 +22549,19 @@ header:has(.navbar-collapse.collapse.show) {
 }
 .single-blog.post-tmc .post-date {
   display: none;
+}
+.single-blog .post-content a {
+  color: var(--_link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--_link);
+  transition: color var(--transition), text-decoration-color var(--transition), text-decoration-thickness var(--transition);
+}
+.single-blog .post-content a:hover {
+  color: var(--_link-hover);
+  text-decoration-color: var(--_link-hover);
+  text-decoration-thickness: 0.05em;
 }
 
 .text-page {

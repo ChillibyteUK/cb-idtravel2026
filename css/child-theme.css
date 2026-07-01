@@ -22434,7 +22434,7 @@ header:has(.navbar-collapse.collapse.show) {
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
-  --_link: #B8FF52;
+  --_link: var(--col-purple-400);
   --_link-hover: var(--col-white);
 }
 .single-blog.post-insight {
@@ -22442,7 +22442,7 @@ header:has(.navbar-collapse.collapse.show) {
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
-  --_link: #B8FF52;
+  --_link: var(--col-purple-400);
   --_link-hover: var(--col-white);
 }
 .single-blog.post-people {
@@ -22450,7 +22450,7 @@ header:has(.navbar-collapse.collapse.show) {
   --_cat-colour: var(--col-purple-500);
   --_text-colour: var(--col-white);
   --_first-colour: var(--col-purple-500);
-  --_link: #B8FF52;
+  --_link: var(--col-purple-400);
   --_link-hover: var(--col-white);
 }
 .single-blog.post-tmc {

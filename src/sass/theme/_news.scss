@@ -123,7 +123,7 @@
     --_cat-colour: var(--col-purple-500);
     --_text-colour: var(--col-white);
     --_first-colour: var(--col-purple-500);
-    --_link: #B8FF52;
+    --_link: var(--col-purple-400);
     --_link-hover: var(--col-white);
   }
   &.post-insight {
@@ -131,7 +131,7 @@
     --_cat-colour: var(--col-purple-500);
     --_text-colour: var(--col-white);
     --_first-colour: var(--col-purple-500);
-    --_link: #B8FF52;
+    --_link: var(--col-purple-400);
     --_link-hover: var(--col-white);
   }
   &.post-people {
@@ -139,7 +139,7 @@
     --_cat-colour: var(--col-purple-500);
     --_text-colour: var(--col-white);
     --_first-colour: var(--col-purple-500);
-    --_link: #B8FF52;
+    --_link: var(--col-purple-400);
     --_link-hover: var(--col-white);
   }
   &.post-tmc {
